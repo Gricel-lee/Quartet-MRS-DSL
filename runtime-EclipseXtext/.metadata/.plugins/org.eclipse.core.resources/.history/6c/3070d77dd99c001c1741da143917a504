@@ -1,0 +1,22 @@
+problem specifications
+{
+	locations: r2loc, // location of robot 2
+	CP, TA, HA, l1,l2,l3,l4,l5,l10,goal_point,final_position, takeoff, landing, target, obstacle_location, S0 , S2 , S3 , S5 , S7 , S9
+	actions: act1, act2, pick_up
+	robots: r1,r2,r3,r10,r11
+	
+	conditions:
+		close: Close is true
+		record: Record is true
+		c1: r1 at loc l1
+		c2: r2 at loc l1
+		
+		c6 :r2 at loc l1
+		c5:r3 at loc l1
+		c2: cond1 is true
+		c3: act1 is ended
+		c4: act2 is true
+		
+	missions: 
+		m1:  (((probability at least 1 r1 shall visit l1,l2) and (r1 shall react instantly to c1 by exec pick_up)) and (probability at least 1 r1 shall avoid l1 until c2)) and (probability at most 9 r1 shall avoid r2loc until c2)
+}

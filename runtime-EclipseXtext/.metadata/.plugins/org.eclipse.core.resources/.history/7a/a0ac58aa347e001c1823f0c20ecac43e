@@ -1,0 +1,18 @@
+problem specifications
+{
+	locations: l1,l2,l3
+	actions: a1
+	robots: r1,r2
+	conditions: 
+		c1: robot r1 in l1,
+		c2: cond1 is true,d
+		c3: a1 is ended,
+		c4: a2 is true
+	missions: 
+	//r1 shall visit in sequence l1,l2,
+	r1 shall patrol in order l1,l2,
+	((r1 shall visit in sequence l1,l2 and r1 shall patrol in sequence l1,l2) or r2 shall counteract instantly c1 by exec a1)
+	
+	//miss: not r1 shall visit in order l1,l2
+	
+}

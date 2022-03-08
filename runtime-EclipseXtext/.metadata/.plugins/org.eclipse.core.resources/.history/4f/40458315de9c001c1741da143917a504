@@ -1,0 +1,26 @@
+problem specifications
+{
+	locations: goal
+	actions: act1, act2, pick_up
+	robots: r1,r2,r3,r10,r11
+	
+	conditions:
+		close: Close is true
+		record: Record is true
+		c1: r1 at loc l1
+		c2: r2 at loc l1
+		
+		c6 :r2 at loc l1
+		c5:r3 at loc l1
+		c2: cond1 is true
+		c3: act1 is ended
+		c4: act2 is true
+		
+	missions: 
+		// Paper example
+		m0: reward  minimize Time r1 shall visit goal; //
+		m1: (r1 shall react instantly to close by visit CP, TA, HA) and
+		(r1 shall counteract instantly when reach CP by record);
+		m2: (r1 shall counteract instantly when reach TA by record) and (r1 shall counteract instantly when reach HA by record) 
+		 
+}

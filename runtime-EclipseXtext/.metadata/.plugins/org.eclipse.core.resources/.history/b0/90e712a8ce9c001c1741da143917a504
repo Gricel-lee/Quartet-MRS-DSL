@@ -1,0 +1,148 @@
+problem specifications
+{
+	locations: CP, TA, HA, l1,l2,l3,l4,l5,l10,goal_point,final_position, takeoff, landing, target, obstacle_location, S0 , S2 , S3 , S5 , S7 , S9
+	actions: act1, act2, pick_up
+	robots: r1,r2,r3,r10,r11
+	conditions:
+		close: Close is true
+		record: Record is true
+		c1: r1 at loc l1
+		c2: r2 at loc l1
+		
+		c6 :r2 at loc l1
+		c5:r3 at loc l1
+		c2: cond1 is true
+		c3: act1 is ended
+		c4: act2 is true
+		
+	missions: 
+	m: ( Time at least 10 ((r1 shall visit l1) or (r2 shall visit l1)) and ((r2 shall visit l1) or (r1 shall visit l1)) ) and
+                ( achieve ((r1 shall visit l1) or (r2 shall visit l1)) and ((r2 shall visit l1) or (r1 shall visit l1)) with reliability probability less than 1);
+		// Paper example
+		m00: r1 shall react instantly to close by visit CP, TA, HA;
+		m0: reward Time less than 2 r1 shall react instantly to close by visit CP, TA, HA;
+		m1: reward minimize Time (r1 shall react instantly to close by visit CP, TA, HA) and
+		(r1 shall counteract instantly when reach CP by record);
+		m2: (r1 shall counteract instantly when reach TA by record) and (r1 shall counteract instantly when reach HA by record); 
+		
+		
+		m3: reward minimize Time r1 shall visit l1,l2,l3;
+		m4: preserve channel_quality within [1,2] while timeout 3 r1 shall visit goal_point; 
+		//NA: m5: velocity within 30 and 31 conserve transmission_rate while minimize energy timeout 3 r1 shall visit goal_point;
+		m6: reward transmission_rate exactly 10 timeout 30 r1 shall visit goal_point;
+		//NA m7
+		m8: (reward Time strictly within 1 and 2 r1 shall visit final_position) and (preserve transition_rate within [1,2] while r1 shall visit final_position);
+		//NA m9
+		//NA: m10: repeat (conserve energy while minimize Time r1 shall visit l1,l2) and (Time exactly 1 r1 shall patrol l1) every 1;
+		m11: reward minimize Time r1 shall visit in order l1,l2;
+		m12: (((probability at least 1 r1 shall visit l1,l2) and (r1 shall react instantly to c1 by exec pick_up)) and (probability at least 1 r1 shall avoid l1 until c2)) and (probability at most 1 r1 shall avoid l1 until c2);
+		
+		m1: preserve energy within [1,2] while r1 shall patrol l1,l2,l3;
+		//m1: preserve energy within [1,2] while r1 shall patrol in sequence l1,l2;
+		
+		m13:  ((preserve energy within [1,2] while r1 shall patrol l1,l2,l3)
+		and ((reward distance_opt_path within 10 and 20 r1 shall patrol l1,l2,l3)
+		and (distance_from_l1 at least 10 r1 shall patrol l1,l2,l3)))
+		and (reward distance_from_l1 strictly within 10 and 20 r1 shall patrol l1,l2,l3);
+		//or wrongly: m13: preserve energy within [1,2] while reward distance_opt_path within 10 and 20 distance_from_l1 at least 10 distance_from_l1 at most 20 r1 shall patrol l1,l2,l3;
+				
+		m14: (preserve energy within [1,2] while  r1 shall patrol l1,l2,l3) and (reward Time at most 10 r1 shall patrol l1,l2,l3);
+		m15: (reward maximize Reward r1 shall patrol l1,l2,l3) and (timeout 10 r1 shall patrol l1,l2,l3);
+		m16: (maximize Reward timeout 10 r1 shall visit l1,l2,l3) or ((timeout 5 r1 shall visit l1,l2) or (timeout 5 r1 shall visit l1));
+		m17: maximize Reward r1 shall visit takeoff, landing;
+		//MISSING ACCRUE 
+		m18: (r1 accrue Reward while r1 shall visit l1,l2) and ((conserve energy while r1 shall visit l1,l2) and (execute r1 actions act1,act2));
+		//m19: conserve Time while ((r1 shall visit l1) or (r2 shall visit l1)) and ((r1 shall visit l1) or (r2 shall visit l1)) 
+//			 ( (r2 shall visit l1) or (r1 shall visit l1)) and (Time at least 10 (r1 shall visit l1) or (r2 shall visit l1) )    ) // and time at least v ((robot1 shall visit l1 or robot2 shall visit l1) and (robot2 shall visit l1 or robot1 shall visit l1)) and achieve ((robot1 shall visit l1 or robot2 shall visit l1) and (robot2 shall visit l1 or robot1 shall visit l1)) with reliability probability less than 0.95.
+		
+		
+		m19: (  ( conserve Time while ((r1 shall visit l1) or (r2 shall visit l1)) and ((r2 shall visit l1) or (r1 shall visit l1)) ) and 
+		( Time at least 10 ((r1 shall visit l1) or (r2 shall visit l1)) and ((r2 shall visit l1) or (r1 shall visit l1)) )  ) and
+		( achieve ((r1 shall visit l1) or (r2 shall visit l1)) and ((r2 shall visit l1) or (r1 shall visit l1)) with reliability probability less than 1);
+
+		m19_1:conserve Time while ((r1 shall visit l1) or (r2 shall visit l1)) and ((r2 shall visit l1) or (r1 shall visit l1));
+			 
+		m19_2:( Time at least 10 ((r1 shall visit l1) or (r2 shall visit l1)) and ((r2 shall visit l1) or (r1 shall visit l1)) ) and
+		( achieve ((r1 shall visit l1) or (r2 shall visit l1)) and ((r2 shall visit l1) or (r1 shall visit l1)) with reliability probability less than 1);
+		
+		m20: maximize Reward r1 shall patrol l1,l2;
+		m20_1: r1 accrue Reward while r1 shall patrol l1,l2; // bool and quantitative for this mission
+
+		m21: achieve (r1 shall visit target) and (r1 shall avoid obstacle_location) with reliability rel less than 1;
+		m22_2: achieve (r1 shall patrol S0 , S2 , S3 , S5 , S7 , S9) and (r1 shall avoid obstacle_location) with reliability reliab greater than 10;
+		m22_3: maximize probability (r1 shall patrol S0 , S2 , S3 , S5 , S7 , S9) and (r1 shall avoid obstacle_location); // bool and quantitative for this mission
+		
+		
+		
+		
+		m1: r1 shall visit l1,l2;
+		m2: r1 shall visit in sequence l1,l2,l3,l4;
+		m3: r1 shall visit in order l1,l2,l3,l4;
+		m4: r1 shall visit in strict order l2,l3;
+		m5: r1 shall visit fairly l2,l3; //-----DONE
+		m6: r1 shall patrol l10,l2;
+		m7: r1 shall patrol in sequence l1,l2;
+		m8: r1 shall patrol in order l1,l2,l3,l4;//-----
+		m9: r1 shall patrol in strict order l2,l3;//-----
+		m10: r1 shall patrol fairly l2,l3;//-----
+		//translation of visit2 ***
+		m11: r1 shall avoid l2 , l4, l5;
+		m12: r1 shall avoid l2 , l4, l5 until c2;
+		m13: r2 shall avoid l2 , l4, l5 after c2;
+		m14: r10 shall react instantly to c4 by exec act1;
+		m15: r10 shall react instantly to c2 by reach l2;
+		m16: r10 shall react instantly to c2 by visit l2;
+		m17: r10 shall react with a delay to c4 by exec act1;
+		m18: r10 shall react with a delay to c2 by reach l2;
+		m19: r10 shall react with a delay to c2 by visit l2;
+		m20: r10 shall react promptly to c4 by exec act1;
+		m21: r10 shall react promptly to c2 by reach l2;
+		m22: r10 shall react promptly to c2 by visit l2;
+		
+		m23: r11 shall counteract instantly when reach l2 by c1;
+		m24: r11 shall counteract with a delay when reach l1 by c2;
+		//m27: r11 shall counteract with a delay to c2 by patrol l2, l1;//counteract changed
+		//m28: r11 shall counteract with a delay to c2 by reach l3;
+		
+		m29: r2 shall wait in l1 until c2;
+
+		// not/and/ or:
+		m30: not ( r2 shall wait in l1 until c2 ); 
+		m30: (r2 shall wait in l1 until c2) and (r2 shall wait in l1 until c2);
+		m30_2: (r2 shall wait in l1 until c2) and ( (r2 shall wait in l1 until c2) and (r2 shall wait in l1 until c2) );
+		m31: (r2 shall wait in l1 until c2) or (r2 shall wait in l1 until c2);
+		m31_2: (r2 shall wait in l1 until c2) or ( (r2 shall wait in l1 until c2) and (r2 shall wait in l1 until c2) );
+		m31_3: (r2 shall wait in l1 until c2) and ( (r2 shall wait in l1 until c2) or (r2 shall wait in l1 until c2) );
+		
+		//e_qpat
+		//--- CHANGE PROBABILITIES TO BE DOUBLE
+		m32: maximize energy r1 shall patrol l1, l2; 
+		m33: minimize energy r1 shall patrol l1, l2;
+		m34: energy at most 30 r1 shall patrol l1, l2;
+		m35: energy less than 30 r1 shall patrol l1, l2;
+		m36: energy at least 30 r1 shall patrol l1, l2;
+		m37: energy greater than 30 r1 shall patrol l1, l2;
+		m38: energy exactly 20 r1 shall patrol l1, l2; //-----
+		m39: energy within 30 and 31 r1 shall patrol l1, l2; //----- CHECK WHY "f" AT THE BEGGINING
+		m40: energy strictly within 30 and 31 r1 shall patrol l1, l2; //----- CHECK WHY "f" AT THE BEGGINING
+		 
+		//c_qpat
+		m41: conserve energy while r1 shall patrol l1, l2;//----- ok
+		m42: preserve energy within [30,31] while r1 shall patrol l1, l2;//----- its ok
+		m43: pause 30 r1 shall patrol l1, l2;
+		m44: timeout 30 r1 shall patrol l1, l2;
+		m45: repeat r1 shall patrol l1, l2 every 30;
+		//m46: end r1 shall patrol l1, l2 exactly at 30; //CHECK
+		m47: time of r1 shall patrol l1, l2 proportional to r2 shall patrol l1, l2 by factor 3;
+		m48: execute r1 actions act1,act2;//----- to be added (check later)
+		//**** why I don't have accrue??
+		m49: achieve r1 shall patrol l1, l2 with reliability energy greater than 30; // CHECK
+		m50: achieve r1 shall patrol l1, l2 with reliability energy less than 3; //CHECK
+		m51: achieve r1 shall patrol l1, l2 with confidence energy greater than 30; // CHECK
+		m52: achieve r1 shall patrol l1, l2 with confidence energy less than 3; //CHECK
+
+		// no translation available for:
+		m53: r1 r1 shall patrol l1, l2 equidistance r2 r10; // ASK THIS DOESNT MAKE SENSE with r at the beginning (although not translated)
+		m54: r1 trail object1 with distance 3
+		
+}

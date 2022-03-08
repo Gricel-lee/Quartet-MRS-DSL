@@ -1,0 +1,17 @@
+problem specifications
+{
+	locations: l1,l2,l3
+	actions: a1
+	robots: r1,r2
+	conditions: 
+		robot r1 in l1,
+		cond1 is true,
+		a1 is ended
+		
+	missions: 
+	//r1 shall visit in sequence l1,l2,
+	r1 shall patrol in order l1,l2,
+	miss: r1 shall visit in sequence l1,l2 and r1 shall visit in sequednce l1,l2
+	//miss: not r1 shall visit in order l1,l2	
+	
+}

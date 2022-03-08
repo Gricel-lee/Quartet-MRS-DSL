@@ -1,0 +1,158 @@
+m1: (((P>=1[(F "r1l1") & (F "r1l2")]) & (A[G "c1" => "pick_up"] )) & (P>=1[((!"r1l1") ) U ("c2")] )) & (P<=9[((!"r1l1") ) U ("c2")] )
+
+m00: A[G"close" => ((F "r1CP") & (F "r1TA") & (F "r1HA"))]
+
+m0: R{"Time"}<2 [A[G"close" => ((F "r1CP") & (F "r1TA") & (F "r1HA"))]]
+
+m1: R{"Time"}min=?[(A[G"close" => ((F "r1CP") & (F "r1TA") & (F "r1HA"))]) & (A[G"record" <=> (X"CP")] )]
+
+m2: (A[G"record" <=> (X"TA")]) & (A[G"record" <=> (X"HA")] )
+
+m3: R{"Time"}min=?[(F "r1l1") & (F "r1l2") & (F "r1l3")]
+
+m4: (R{"channel_quality"}>=1[G<=3 !(F "r1goal_point")]) & (R{"channel_quality"}<=2[G<=3 !(F "r1goal_point")])
+
+m6: (R{"transmission_rate"}>=10 [G<=30 !(F "r1goal_point")]) & (R{"transmission_rate"}<=10 [G<=30 !(F "r1goal_point")])
+
+m8: ((R{"Time"}>1 [F "r1final_position"]) & (R{"Time"}<2 [F "r1final_position"])) & ((R{"transition_rate"}>=1[F "r1final_position"]) & (R{"transition_rate"}<=2[F "r1final_position"]) )
+
+m11: R{"Time"}min=?[( F( ("r1l1") & (F("r1l2")))) )& ((!("r1l2")) U ("r1l1"))]
+
+m12: (((P>=1[(F "r1l1") & (F "r1l2")]) & (A[G "c1" => "pick_up"] )) & (P>=1[((!"r1l1") ) U ("c2")] )) & (P<=1[((!"r1l1") ) U ("c2")] )
+
+m1: (R{"energy"}>=1[(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )]) & (R{"energy"}<=2[(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )])
+
+m13: (((R{"energy"}>=1[(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )]) & (R{"energy"}<=2[(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )])) & (((R{"distance_opt_path"}>=10 [(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )]) & (R{"distance_opt_path"}<=20 [(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )])) & (P>=10[(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )] ) )) & ((R{"distance_from_l1"}>10 [(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )]) & (R{"distance_from_l1"}<20 [(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )]) )
+
+m14: ((R{"energy"}>=1[(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )]) & (R{"energy"}<=2[(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )])) & (R{"Time"}<=10 [(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )] )
+
+m15: (R{"Reward"}max=?[(G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )]) & (G<=10 !((G F ("r1l1") ) & (G F ("r1l2") ) & (G F ("r1l3") )) )
+
+m16: (Pmax=?[G<=10 !((F "r1l1") & (F "r1l2") & (F "r1l3"))]) | ((G<=5 !((F "r1l1") & (F "r1l2"))) | (G<=5 !(F "r1l1") ) )
+
+m17: Pmax=?[(F "r1takeoff") & (F "r1landing")]
+
+m18: (Pmax=?[(F "r1l1") & (F "r1l2")]) & ((R{"energy"}min=?[(F "r1l1") & (F "r1l2")]) & ((F r1act1) & (F r1act2) ) )
+
+m19: ((R{"Time"}min=?[((F "r1l1") | (F "r2l1" )) & ((F "r2l1") | (F "r1l1" ) )]) & (P>=10[((F "r1l1") | (F "r2l1" )) & ((F "r2l1") | (F "r1l1" ) )] )) & (R{"probability"}<1 [((F "r1l1") | (F "r2l1" )) & ((F "r2l1") | (F "r1l1" ) )] )
+
+m19_1: R{"Time"}min=?[((F "r1l1") | (F "r2l1" )) & ((F "r2l1") | (F "r1l1" ) )]
+
+m19_2: (P>=10[((F "r1l1") | (F "r2l1" )) & ((F "r2l1") | (F "r1l1" ) )]) & (R{"probability"}<1 [((F "r1l1") | (F "r2l1" )) & ((F "r2l1") | (F "r1l1" ) )] )
+
+m20: Pmax=?[(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m20_1: Pmax=?[(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m21: R{"rel"}<1 [(F "r1target") & (G(!"r1obstacle_location")  )]
+
+m22_2: R{"reliab"}>10 [((G F ("r1S0") ) & (G F ("r1S2") ) & (G F ("r1S3") ) & (G F ("r1S5") ) & (G F ("r1S7") ) & (G F ("r1S9") )) & (G(!"r1obstacle_location")  )]
+
+m22_3: Pmax=?[((G F ("r1S0") ) & (G F ("r1S2") ) & (G F ("r1S3") ) & (G F ("r1S5") ) & (G F ("r1S7") ) & (G F ("r1S9") )) & (G(!"r1obstacle_location")  )]
+
+m1: (F "r1l1") & (F "r1l2")
+
+m2: F ("r1l1" & F ("r1l2" & F ("r1l3" & F ("r1l4" ))))
+
+m3: ( F( ("r1l1") & (F( ("r1l2") & (F( ("r1l3") & (F("r1l4")))))))) )& ((!("r1l2")) U ("r1l1"))& ((!("r1l3")) U ("r1l2"))& ((!("r1l4")) U ("r1l3"))
+
+m4: F ("r1l2" & F ("r1l3" )) & ( (!("r1l3")) U ("r1l2")) & ( (!("r1l2")) U( ( "r1l2") & (X(!("r1l3") U ("r1l2" ) ) ))
+
+m5: F ("r1"r1l2"") & F ("r1"r1l3"") & F ("r1"r1l2"") & F ("r1"r1l3"") & (A[G("r1l2"=>(X !"r1l2" U "r1l2") | (A[G "r1l2"]) )]) & (A[G("r1l3"=>(X !"r1l3" U "r1l3") | (A[G "r1l3"]) )])
+
+m6: (G F ("r1l10") ) & (G F ("r1l2") )
+
+m7: F[ (G ("r1l1" & G ("r1l2"))) ]
+
+m8: F[ (G (""r1l1"" & G (""r1l2"" & G (""r1l3"" & G (""r1l4"") ]) ]) ]) ]) & (!("r1l2") U ("r1l1")) & (!("r1l3") U ("r1l2")) & (!("r1l4") U ("r1l3")) & ( F[G("r1"r1l3"" => (X!"r1"r1l3"" U "r1"r1l2"") )] ) & ( F[G("r1"r1l4"" => (X!"r1"r1l4"" U "r1"r1l3"") )] ) & ( F[G("r1"r1l1"" => (X!"r1"r1l1"" U "r1"r1l4"") )] )
+
+m9: G(F ("r1l2" & F ("r1l3" ))) & ((!("r1l3")) U ("r1l2")) & G(ASK WHAT is % and =>) & G(ASK WHAT is % and =>)
+
+m10: GF ("r1l2") & GF ("r1l3") ASK how to do weak on prism, and what does W in prism means
+
+m11: G(!"r1l2") & !"r1l4") & !"r1l5") 
+
+m12: ((!"r1l2") & (!"r1l4") & (!"r1l5") ) U ("c2")
+
+m13: A[G( ("c2") => (G(!"r2l2") & (G(!"r2l4") & (G(!"r2l5") ))) )]
+
+m14: A[G "c4" => "act1"]
+
+m15: A[G "c2" => "r10l2"]
+
+m16: A[G"c2" => (F "r10l2")]
+
+m17: A[G"c4" => F("act1") ]
+
+m18: A[G"c2" => F("r10l2") ]
+
+m19: A[G"c2" => (F "r10l2") ]
+
+m20: G("c4" => (X"act1) )
+
+m21: G("c2" => (X"r10l2") )
+
+m22: G("c2" => (XF "r10l2"") )
+
+m23: A[G"c1" <=> (X"l2")]
+
+m24: A[G"c2" <=> "l1"]
+
+m29: ("r2l1") U ("c2")
+
+m30: !(("r2l1") U ("c2"))
+
+m30: (("r2l1") U ("c2")) & (("r2l1") U ("c2") )
+
+m30_2: (("r2l1") U ("c2")) & ((("r2l1") U ("c2")) & (("r2l1") U ("c2") ) )
+
+m31: (("r2l1") U ("c2")) | (("r2l1") U ("c2") )
+
+m31_2: (("r2l1") U ("c2")) | ((("r2l1") U ("c2")) & (("r2l1") U ("c2") ) )
+
+m31_3: (("r2l1") U ("c2")) & ((("r2l1") U ("c2")) | (("r2l1") U ("c2") ) )
+
+m32: Pmax=?[(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m33: Pmin=?[(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m34: P<=30[(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m35: P<30[(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m36: P>=30[(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m37: P>30[(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m38: (P>=20[(G F ("r1l1") ) & (G F ("r1l2") )]) & (P<=20[(G F ("r1l1") ) & (G F ("r1l2") )])
+
+m39: (P>=30[(G F ("r1l1") ) & (G F ("r1l2") )]) & (P<=31[(G F ("r1l1") ) & (G F ("r1l2") )])
+
+m40: (P>30[(G F ("r1l1") ) & (G F ("r1l2") )]) & (P<31[(G F ("r1l1") ) & (G F ("r1l2") )])
+
+m41: R{"energy"}min=?[(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m42: (R{"energy"}>=30[(G F ("r1l1") ) & (G F ("r1l2") )]) & (R{"energy"}<=31[(G F ("r1l1") ) & (G F ("r1l2") )])
+
+m43: (G [0,30] !((G F ("r1l1") ) & (G F ("r1l2") )) ) & ( F[31,31])
+
+m44: G<=30 !((G F ("r1l1") ) & (G F ("r1l2") ))
+
+m45: ((G F ("r1l1") ) & (G F ("r1l2") )) & (G(((G F ("r1l1") ) & (G F ("r1l2") ))->(G[1,29] (!((G F ("r1l1") ) & (G F ("r1l2") ))) & (F[30,30] ((G F ("r1l1") ) & (G F ("r1l2") )) ) )))
+
+m47: NA (NOT AVAILABLE)
+
+m48: (F r1act1) & (F r1act2)
+
+m49: R{"energy"}>30 [(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m50: R{"energy"}<3 [(G F ("r1l1") ) & (G F ("r1l2") )]
+
+m51: *** No translation for L
+
+m52: *** No translation for L
+
+m53: NA (NOT AVAILABLE)
+
+m54: NA (NOT AVAILABLE)
+

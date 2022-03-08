@@ -1,0 +1,28 @@
+problem specifications
+{
+	locations: goal, CP, TA, HA
+	
+	robots: r1
+	
+	conditions:
+	  record: ActionRecord is true
+	  close: CloseAction is true
+	  
+	missions:
+	  m1: (reward  minimize Time r1 shall visit goal) and
+	  ((r1 shall react instantly to close by visit CP, TA, HA) and
+	  ((r1 shall counteract instantly when reach CP by record) and
+	  ((r1 shall counteract instantly when reach TA by record) and
+	  (r1 shall counteract instantly when reach HA by record))));
+	  
+	  m2: reward  minimize Time r1 shall visit goal;
+	  
+	  m3: (r1 shall react instantly to close by visit CP,TA,HA) and
+	  ((r1 shall counteract instantly when reach CP by record) and
+	  ((r1 shall counteract instantly when reach TA by record) and
+	  (r1 shall counteract instantly when reach HA by record)))
+}
+
+
+
+

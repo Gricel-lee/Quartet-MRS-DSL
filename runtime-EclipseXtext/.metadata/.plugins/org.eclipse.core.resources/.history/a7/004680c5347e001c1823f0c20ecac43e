@@ -1,0 +1,9 @@
+problem specifications
+{
+	locations: l1,l2
+	actions: act1
+	robots: r1
+	missions: 
+		r1 shall patrol in sequence,
+	
+}
