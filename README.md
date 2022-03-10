@@ -1,10 +1,11 @@
-# Quartet-MRS-DSL
+# Quartet MRS Tool
 Quartet Tool for the specification of Multi-robot missions + translation into PRISM language.
 
+The instructions in the Set up section guide you to deploy Quartet on any OS and Eclipse distribution.
 
-## Set up
+The tool was tested on Eclipse Modeling Tools (EMF) Version 2020-12, Windows 10.
 
-Tool tested on Eclipse Modeling Tools (EMF) Version 2020-12.
+# Set up
 
 To use Quartet, you must have installed EMF and SDK (already installed for EMF). It can be installed via Help>Install New Software> EMF - Eclipse Modeling Framework SDK and the Ecore Diagram Editor (SDK).
 
