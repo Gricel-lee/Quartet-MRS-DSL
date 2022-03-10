@@ -1,0 +1,52 @@
+problem specifications
+{
+	locations: CP, TA, HA, l1,l2,l3,l4,l5,l10,goal_point,final_position, takeoff, landing, target, obstacle_location, S0 , S2 , S3 , S5 , S7 , S9
+	actions: act1, act2, pick_up
+	robots: r1,r2,r3,r10,r11
+	conditions:
+		close: Close is true
+		record: Record is true
+		c1: r1 at loc l1
+		c2: r2 at loc l1
+		c6 :r2 at loc l1
+		c5:r3 at loc l1
+		c2: cond1 is true
+		c3: act1 is ended
+		c4: act2 is true
+		
+	missions: 
+		m1: r1 shall visit l1,l2;
+		m2: r1 shall visit in sequence l1,l2,l3,l4;
+		m3: r1 shall visit in order l1,l2,l3,l4;
+		m4: r1 shall visit in strict order l2,l3;
+		m6: r1 shall patrol l10,l2;
+		m7: r1 shall patrol in sequence l1,l2;
+		m11: r1 shall avoid l2 , l4, l5;
+		m12: r1 shall avoid l2 , l4, l5 until c2;
+		m13: r2 shall avoid l2 , l4, l5 after c2;
+		m14: r10 shall react instantly to c4 by exec act1;
+		m15: r10 shall react instantly to c2 by reach l2;
+		m16: r10 shall react instantly to c2 by visit l2;
+		m17: r10 shall react with a delay to c4 by exec act1;
+		m18: r10 shall react with a delay to c2 by reach l2;
+		m19: r10 shall react with a delay to c2 by visit l2;
+		m20: r10 shall react promptly to c4 by exec act1;
+		m21: r10 shall react promptly to c2 by reach l2;
+		m22: r10 shall react promptly to c2 by visit l2;
+		m23: r11 shall counteract instantly when reach l2 by c1;
+		m24: r11 shall counteract with a delay when reach l1 by c2;
+		m29: r2 shall wait in l1 until c2;
+
+		// not / and / or:
+		m30: not ( r2 shall wait in l1 until c2 ); 
+		m30: (r2 shall wait in l1 until c2) and (r2 shall wait in l1 until c2);
+		m30_2: (r2 shall wait in l1 until c2) and ( (r2 shall wait in l1 until c2) and (r2 shall wait in l1 until c2) );
+		m31: (r2 shall wait in l1 until c2) or (r2 shall wait in l1 until c2);
+		m31_2: (r2 shall wait in l1 until c2) or ( (r2 shall wait in l1 until c2) and (r2 shall wait in l1 until c2) );
+		m31_3: (r2 shall wait in l1 until c2) and ( (r2 shall wait in l1 until c2) or (r2 shall wait in l1 until c2) );
+		
+		m43: pause 30 r1 shall patrol l1, l2;
+		m44: timeout 30 r1 shall patrol l1, l2;
+		m45: repeat r1 shall patrol l1, l2 every 30;
+		m47: time of r1 shall patrol l1, l2 proportional to r2 shall patrol l1, l2 by factor 3
+}
