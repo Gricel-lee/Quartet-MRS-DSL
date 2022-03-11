@@ -1,7 +1,7 @@
 # Quartet MRS Tool
 Quartet Tool for the specification of Multi-robot missions + translation into PRISM language.
 
-The tool was tested on Eclipse Modeling Tools (EMF) Version 2020-12, Windows 10. However, instructions in the Set up section guide you to deploy Quartet on Eclipse from scratch for compatibility purposes.
+The tool was tested on Eclipse Modeling Tools (EMF) Version 2020-12, Windows 10. However, instructions in the **Set up** section guide you to deploy Quartet on Eclipse from scratch for compatibility purposes.
 
 
 # Set up
