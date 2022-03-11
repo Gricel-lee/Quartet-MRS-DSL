@@ -1,7 +1,7 @@
 # Quartet MRS Tool
 Quartet Tool for the specification of Multi-robot missions + translation into PRISM language.
 
-The tool was tested on Eclipse Modeling Tools (EMF) Version 2020-12, Windows 10. However, instructions in the **Set up** section guide you to deploy Quartet on Eclipse from scratch for compatibility purposes.
+The plugin was tested on Eclipse Modeling Tools (EMF) Version 2020-12, Windows 10. However, instructions in the **Set up** section guide you to deploy Quartet on Eclipse from scratch for compatibility purposes.
 
 
 # Set up
@@ -29,7 +29,7 @@ File name: quantitativePatterns.ecore > Finish
 
 ![image](https://user-images.githubusercontent.com/63869574/157303148-d87b5443-1f5c-48d6-a9f7-ca6b67a7c945.png)
 
-Replace this file with the one provided here.
+Replace this file with the one provided here in Github.
 
 Right click on the Ecore Model and create a new EMF Generator Model> Next > Next > Ecore model > Select the Ecore File and click Load > Next > Finish
 
@@ -67,7 +67,7 @@ It should generate 4 new plugins:
 
 ![image](https://user-images.githubusercontent.com/63869574/157304117-8c0b7fd3-b38c-4126-b9e8-8cc52e0ddc05.png)
 
-Replace these folders with the ones provided here.
+Replace these folders with the ones provided here in Github.
 
 Right click on the .xtext file on the src folder (of the first plugin) > Run As > MWE2:
 
@@ -78,6 +78,6 @@ Right click on the .xtext file on the src folder (of the first plugin) > Run As 
 
 Right click on the first folder (org.xtext.mydsl) > Run as > Run Configuration > Eclipse Application > Launch Runtime Eclipse
 
-You can copy the examples provided here ```runtime-EclipseXtext/demoQuartet/Examples``` and automatically generate the Prism translation in ```runtime-EclipseXtext/demoQuartet/src-gen```
+You can copy the examples provided in ```runtime-EclipseXtext/demoQuartet/Examples``` and automatically generate the Prism translation in ```runtime-EclipseXtext/demoQuartet/src-gen```
 
 ![DSLexample2_1 - Copy](https://user-images.githubusercontent.com/63869574/157305096-d1fc0e81-980a-4367-8a9a-a9f01a689621.JPG)
