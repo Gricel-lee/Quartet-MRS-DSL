@@ -81,3 +81,7 @@ Right click on the first folder (org.xtext.mydsl) > Run as > Run Configuration >
 You can copy the examples provided in ```runtime-EclipseXtext/demoQuartet/Examples``` and automatically generate the Prism translation in ```runtime-EclipseXtext/demoQuartet/src-gen```
 
 ![DSLexample2_1 - Copy](https://user-images.githubusercontent.com/63869574/157305096-d1fc0e81-980a-4367-8a9a-a9f01a689621.JPG)
+
+
+Note: Sometimes the project needs to be refreshed or cleaned to see the output:
+<img width="193" alt="Screenshot 2022-07-12 at 16 03 08" src="https://user-images.githubusercontent.com/63869574/178522451-ca18c2bb-c6de-42a7-b5d7-f6b3de2bf7a7.png">
