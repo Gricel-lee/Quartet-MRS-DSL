@@ -57,7 +57,8 @@ Right click on each of the folders (plugins) and click Configure > Convert to Xt
 
 ### 2 Create Xtext model
 
-Go to File > New > Other > Xtext > Xtext Project From Existing Ecore Models > Add the .genmodel and select Scenario as Entry rule > Next > Finish
+Go to File > New > Other > Xtext > Xtext Project From Existing Ecore Models > Add the .genmodel and select **Scenario as Entry rule** > Next > Finish
+(make sure Scenario is the entry rule or it would create a differnt root for the model)
 
 ![image](https://user-images.githubusercontent.com/63869574/157304022-08fef1ad-3a43-4f4f-aabd-13ee6c6224ef.png)
 
