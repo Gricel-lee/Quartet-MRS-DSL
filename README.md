@@ -6,7 +6,7 @@ The plugin was tested on Eclipse Modeling Tools (EMF) Version 2020-12, Windows 1
 
 # Set up
 
-To use Quartet, you must have installed EMF and SDK (already installed for EMF). It can be installed via Help>Install New Software> EMF - Eclipse Modeling Framework SDK and the Ecore Diagram Editor (SDK).
+To use Quartet, you must have installed EMF and SDK (already installed for EMF). It can be installed via Help>Install New Software> Work with: 2022-09 - http://download.eclipse.org/releases/2022-09/ [or your Eclipse verison downaload page] > Modelling > Select EMF - Eclipse Modeling Framework SDK and the Ecore Diagram Editor (SDK).
 
 Install the plugins Xtext and Xtend (Help> Eclipse Marketplace).
 
