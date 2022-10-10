@@ -69,6 +69,7 @@ It should generate 4 new plugins:
 ![image](https://user-images.githubusercontent.com/63869574/157304117-8c0b7fd3-b38c-4126-b9e8-8cc52e0ddc05.png)
 
 Replace these folders with the ones provided here in Github.
+(If replacing causes problems, try replacing the content in mydsl/MyDsl.xtext, then right click> Run as> 1 Generate Xtext Artifacts. Three new subfolder must appear: .formatting2, .generator, .scoping and .validation. Go to the second, example.mydsl.generator, and copy the 3 .txt files. Finally replace MyDslGenerator.xtend in the same folder.)
 
 Right click on the .xtext file on the src folder (of the first plugin) > Run As > MWE2:
 
