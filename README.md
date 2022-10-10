@@ -47,7 +47,7 @@ This should create some code in the "src" folder and the .genmodel. Right click 
 
 ![image](https://user-images.githubusercontent.com/63869574/157303738-2fc08257-0cf5-47e5-870c-a1571508725b.png)
 
-It should have created:
+It should have created edit, editor and tests folders:
 
 ![image](https://user-images.githubusercontent.com/63869574/157303770-a5cae357-5b30-4dd0-9d98-a9c67297117c.png)
 
