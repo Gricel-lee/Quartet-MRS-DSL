@@ -58,11 +58,11 @@ Right click on each of the folders (plugins) and click Configure > Convert to Xt
 ### 2 Create Xtext model
 
 Go to File > New > Other > Xtext > Xtext Project From Existing Ecore Models > Add the .genmodel and select **Scenario as Entry rule** > Next > Finish
-(Make sure Scenario is the entry rule or it would create a different root for the model).
+(Make sure ProblemSpecifications is the entry rule or it would create a different root for the model).
 
 ![image](https://user-images.githubusercontent.com/63869574/157304022-08fef1ad-3a43-4f4f-aabd-13ee6c6224ef.png)
 
-![image](https://user-images.githubusercontent.com/63869574/157304032-fcd42080-685c-489b-b156-6d6c54905a31.png)
+![image](https://user-images.githubusercontent.com/63869574/198169946-d45f7d31-8140-42f8-97a3-625d3ebdf69a.png)
 
 It should generate 4 new plugins:
 
