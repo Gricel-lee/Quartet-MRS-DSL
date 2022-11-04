@@ -73,7 +73,7 @@ public class Visit2Impl extends MinimalEObjectImpl.Container implements Visit2 {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NUMBER_EDEFAULT = 0;
+	protected static final double NUMBER_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
@@ -83,7 +83,7 @@ public class Visit2Impl extends MinimalEObjectImpl.Container implements Visit2 {
 	 * @generated
 	 * @ordered
 	 */
-	protected int number = NUMBER_EDEFAULT;
+	protected double number = NUMBER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,7 +109,6 @@ public class Visit2Impl extends MinimalEObjectImpl.Container implements Visit2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Location> getLocations() {
 		if (locations == null) {
 			locations = new EObjectResolvingEList<Location>(Location.class, this, PatternsPackage.VISIT2__LOCATIONS);
@@ -122,7 +121,6 @@ public class Visit2Impl extends MinimalEObjectImpl.Container implements Visit2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType() {
 		return type;
 	}
@@ -132,7 +130,6 @@ public class Visit2Impl extends MinimalEObjectImpl.Container implements Visit2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -145,8 +142,7 @@ public class Visit2Impl extends MinimalEObjectImpl.Container implements Visit2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public int getNumber() {
+	public double getNumber() {
 		return number;
 	}
 
@@ -155,9 +151,8 @@ public class Visit2Impl extends MinimalEObjectImpl.Container implements Visit2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setNumber(int newNumber) {
-		int oldNumber = number;
+	public void setNumber(double newNumber) {
+		double oldNumber = number;
 		number = newNumber;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.VISIT2__NUMBER, oldNumber, number));
@@ -198,7 +193,7 @@ public class Visit2Impl extends MinimalEObjectImpl.Container implements Visit2 {
 				setType((String)newValue);
 				return;
 			case PatternsPackage.VISIT2__NUMBER:
-				setNumber((Integer)newValue);
+				setNumber((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

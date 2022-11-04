@@ -96,7 +96,6 @@ public class MaintainImpl extends MinimalEObjectImpl.Container implements Mainta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Condition getCondition() {
 		if (condition != null && condition.eIsProxy()) {
 			InternalEObject oldCondition = (InternalEObject)condition;
@@ -123,7 +122,6 @@ public class MaintainImpl extends MinimalEObjectImpl.Container implements Mainta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCondition(Condition newCondition) {
 		Condition oldCondition = condition;
 		condition = newCondition;
@@ -136,7 +134,6 @@ public class MaintainImpl extends MinimalEObjectImpl.Container implements Mainta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<LocationEvent> getLocationevent() {
 		if (locationevent == null) {
 			locationevent = new EObjectContainmentEList<LocationEvent>(LocationEvent.class, this, PatternsPackage.MAINTAIN__LOCATIONEVENT);
@@ -149,7 +146,6 @@ public class MaintainImpl extends MinimalEObjectImpl.Container implements Mainta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -174,7 +170,6 @@ public class MaintainImpl extends MinimalEObjectImpl.Container implements Mainta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;

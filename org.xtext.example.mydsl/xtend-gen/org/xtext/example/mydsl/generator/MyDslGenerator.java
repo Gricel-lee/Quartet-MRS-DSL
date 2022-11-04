@@ -46,6 +46,13 @@ import org.xtext.example.mydsl.myDsl.Within;
  * Generates code from your model files on save.
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
+ * 
+ * Constraints:
+ * (a) prohibit nested probabilities, (b) accept only LTL
+ * properties for the reward and probability operators, and
+ * (c) prohibit the definition of specifications that lead to
+ * the conjunction of quantitative and non-quantitative PRISM
+ * formulae since such formulae can not be processed by PRISM.
  */
 @SuppressWarnings("all")
 public class MyDslGenerator extends AbstractGenerator {
@@ -72,102 +79,246 @@ public class MyDslGenerator extends AbstractGenerator {
     String _plus = (_lastSegment + ".pm");
     fsa.generateFile(_plus, finalString);
   }
-  
+
   public static String getMissionTranslated(final Missions miss, final Resource resource) {
-    String _xblockexpression = null;
-    {
-      String s = new String();
-      boolean _matched = false;
-      if (miss instanceof ShallMissions) {
+    String s = new String();
+    boolean _matched = false;
+    if (miss instanceof ShallMissions) {
+      _matched=true;
+      String rob = ((ShallMissions)miss).getRobots().getName();
+      SpecificationPatterns pat = ((ShallMissions)miss).getMovementPatterns();
+      String patt = ResourcePattern.getPat(pat, rob, resource);
+      String _s = s;
+      s = (_s + patt);
+    }
+    if (!_matched) {
+      if (miss instanceof ComplexMissions) {
         _matched=true;
-        String rob = ((ShallMissions)miss).getRobots().getName();
-        SpecificationPatterns pat = ((ShallMissions)miss).getMovementPatterns();
-        String patt = ResourcePattern.getPat(pat, rob, resource);
-        String _s = s;
-        s = (_s + patt);
-      }
-      if (!_matched) {
-        if (miss instanceof ComplexMissions) {
-          _matched=true;
-          MissionOperation typeComplexMiss = ((ComplexMissions)miss).getComposition();
-          boolean _matched_1 = false;
-          if (typeComplexMiss instanceof Negation) {
+        MissionOperation typeComplexMiss = ((ComplexMissions)miss).getComposition();
+        boolean _matched_1 = false;
+        if (typeComplexMiss instanceof Negation) {
+          _matched_1=true;
+          Missions miss_negated = ((Negation)typeComplexMiss).getNot();
+          String _s = s;
+          s = (_s + "!(");
+          String _s_1 = s;
+          String _missionTranslated = MyDslGenerator.getMissionTranslated(miss_negated, resource);
+          s = (_s_1 + _missionTranslated);
+          String _s_2 = s;
+          s = (_s_2 + ")");
+        }
+        if (!_matched_1) {
+          if (typeComplexMiss instanceof Composition) {
             _matched_1=true;
-            Missions miss_negated = ((Negation)typeComplexMiss).getNot();
+            Missions miss1 = ((Composition)typeComplexMiss).getMiss1();
+            Missions miss2 = ((Composition)typeComplexMiss).getMiss2();
             String _s = s;
-            s = (_s + "!(");
+            s = (_s + "(");
             String _s_1 = s;
-            String _missionTranslated = MyDslGenerator.getMissionTranslated(miss_negated, resource);
+            String _missionTranslated = MyDslGenerator.getMissionTranslated(miss1, resource);
             s = (_s_1 + _missionTranslated);
-            String _s_2 = s;
-            s = (_s_2 + ")");
-          }
-          if (!_matched_1) {
-            if (typeComplexMiss instanceof Composition) {
-              _matched_1=true;
-              Missions miss1 = ((Composition)typeComplexMiss).getMiss1();
-              Missions miss2 = ((Composition)typeComplexMiss).getMiss2();
-              String _s = s;
-              s = (_s + "(");
-              String _s_1 = s;
-              String _missionTranslated = MyDslGenerator.getMissionTranslated(miss1, resource);
-              s = (_s_1 + _missionTranslated);
-              String _binaryType = ((Composition)typeComplexMiss).getBinaryType();
-              boolean _equals = Objects.equal(_binaryType, "and");
-              if (_equals) {
-                String _s_2 = s;
-                s = (_s_2 + ") & (");
-              } else {
-                String _binaryType_1 = ((Composition)typeComplexMiss).getBinaryType();
-                boolean _equals_1 = Objects.equal(_binaryType_1, "or");
-                if (_equals_1) {
-                  String _s_3 = s;
-                  s = (_s_3 + ") | (");
-                }
+            String _binaryType = ((Composition)typeComplexMiss).getBinaryType();
+            boolean _equals = Objects.equal(_binaryType, "and");
+            if (_equals) {
+              String _s_2 = s;
+              s = (_s_2 + ") & (");
+            } else {
+              String _binaryType_1 = ((Composition)typeComplexMiss).getBinaryType();
+              boolean _equals_1 = Objects.equal(_binaryType_1, "or");
+              if (_equals_1) {
+                String _s_3 = s;
+                s = (_s_3 + ") | (");
               }
-              String _s_4 = s;
-              String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(miss2, resource);
-              s = (_s_4 + _missionTranslated_1);
-              String _s_5 = s;
-              s = (_s_5 + " )");
             }
+            String _s_4 = s;
+            String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(miss2, resource);
+            s = (_s_4 + _missionTranslated_1);
+            String _s_5 = s;
+            s = (_s_5 + " )");
           }
         }
       }
-      if (!_matched) {
-        if (miss instanceof ElementaryPatterns) {
-          _matched=true;
-          ElementaryPatterns m = ((ElementaryPatterns)miss);
-          Missions submission = m.getMission();
-          String _reward = m.getReward();
-          boolean _tripleEquals = (_reward == null);
-          if (_tripleEquals) {
-            boolean _matched_1 = false;
-            if (m instanceof Maximize) {
+    }
+    if (!_matched) {
+      if (miss instanceof ElementaryPatterns) {
+        _matched=true;
+        ElementaryPatterns m = ((ElementaryPatterns)miss);
+        Missions submission = m.getMission();
+        String _reward = m.getReward();
+        boolean _tripleEquals = (_reward == null);
+        if (_tripleEquals) {
+          boolean _matched_1 = false;
+          if (m instanceof Maximize) {
+            _matched_1=true;
+            String _type = ((Maximize)m).getType();
+            boolean _equals = Objects.equal(_type, "maximize");
+            if (_equals) {
+              String _s = s;
+              String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
+              String _plus = ("Pmax=?[" + _missionTranslated);
+              String _plus_1 = (_plus + "]");
+              s = (_s + _plus_1);
+            } else {
+              String _type_1 = ((Maximize)m).getType();
+              boolean _equals_1 = Objects.equal(_type_1, "minimize");
+              if (_equals_1) {
+                String _s_1 = s;
+                String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
+                String _plus_2 = ("Pmin=?[" + _missionTranslated_1);
+                String _plus_3 = (_plus_2 + "]");
+                s = (_s_1 + _plus_3);
+              }
+            }
+          }
+          if (!_matched_1) {
+            if (m instanceof AtMost) {
               _matched_1=true;
+              String sign = "";
+              String _type = ((AtMost)m).getType();
+              boolean _equals = Objects.equal(_type, "at most");
+              if (_equals) {
+                sign = "<=";
+              } else {
+                String _type_1 = ((AtMost)m).getType();
+                boolean _equals_1 = Objects.equal(_type_1, "less than");
+                if (_equals_1) {
+                  sign = "<";
+                } else {
+                  String _type_2 = ((AtMost)m).getType();
+                  boolean _equals_2 = Objects.equal(_type_2, "at least");
+                  if (_equals_2) {
+                    sign = ">=";
+                  } else {
+                    String _type_3 = ((AtMost)m).getType();
+                    boolean _equals_3 = Objects.equal(_type_3, "greater than");
+                    if (_equals_3) {
+                      sign = ">";
+                    } else {
+                      String _type_4 = ((AtMost)m).getType();
+                      boolean _equals_4 = Objects.equal(_type_4, "exactly");
+                      if (_equals_4) {
+                        sign = "=";
+                      }
+                    }
+                  }
+                }
+              }
+              String _type_5 = ((AtMost)m).getType();
+              boolean _equals_5 = Objects.equal(_type_5, "exactly");
+              if (_equals_5) {
+                sign = ">=";
+                String _s = s;
+                String _string = Integer.valueOf(((AtMost)m).getValue()).toString();
+                String _plus = (("(P" + sign) + _string);
+                String _plus_1 = (_plus + "[");
+                String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
+                String _plus_2 = (_plus_1 + _missionTranslated);
+                String _plus_3 = (_plus_2 + "]");
+                s = (_s + _plus_3);
+                String _s_1 = s;
+                s = (_s_1 + ") & (");
+                sign = "<=";
+                String _s_2 = s;
+                String _string_1 = Integer.valueOf(((AtMost)m).getValue()).toString();
+                String _plus_4 = (("P" + sign) + _string_1);
+                String _plus_5 = (_plus_4 + "[");
+                String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
+                String _plus_6 = (_plus_5 + _missionTranslated_1);
+                String _plus_7 = (_plus_6 + "])");
+                s = (_s_2 + _plus_7);
+              } else {
+                String _s_3 = s;
+                String _string_2 = Integer.valueOf(((AtMost)m).getValue()).toString();
+                String _plus_8 = (("P" + sign) + _string_2);
+                String _plus_9 = (_plus_8 + "[");
+                String _missionTranslated_2 = MyDslGenerator.getMissionTranslated(submission, resource);
+                String _plus_10 = (_plus_9 + _missionTranslated_2);
+                String _plus_11 = (_plus_10 + "]");
+                s = (_s_3 + _plus_11);
+              }
+            }
+          }
+          if (!_matched_1) {
+            if (m instanceof Within) {
+              _matched_1=true;
+              String _type = ((Within)m).getType();
+              boolean _equals = Objects.equal(_type, "within");
+              if (_equals) {
+                String _s = s;
+                String _string = Integer.valueOf(((Within)m).getValue1()).toString();
+                String _plus = ("(P>=" + _string);
+                String _plus_1 = (_plus + "[");
+                String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
+                String _plus_2 = (_plus_1 + _missionTranslated);
+                String _plus_3 = (_plus_2 + "])");
+                s = (_s + _plus_3);
+                String _s_1 = s;
+                s = (_s_1 + " & ");
+                String _s_2 = s;
+                String _string_1 = Integer.valueOf(((Within)m).getValue2()).toString();
+                String _plus_4 = ("(P<=" + _string_1);
+                String _plus_5 = (_plus_4 + "[");
+                String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
+                String _plus_6 = (_plus_5 + _missionTranslated_1);
+                String _plus_7 = (_plus_6 + "])");
+                s = (_s_2 + _plus_7);
+              } else {
+                String _type_1 = ((Within)m).getType();
+                boolean _equals_1 = Objects.equal(_type_1, "strictly within");
+                if (_equals_1) {
+                  String _s_3 = s;
+                  String _string_2 = Integer.valueOf(((Within)m).getValue1()).toString();
+                  String _plus_8 = ("(P>" + _string_2);
+                  String _plus_9 = (_plus_8 + "[");
+                  String _missionTranslated_2 = MyDslGenerator.getMissionTranslated(submission, resource);
+                  String _plus_10 = (_plus_9 + _missionTranslated_2);
+                  String _plus_11 = (_plus_10 + "])");
+                  s = (_s_3 + _plus_11);
+                  String _s_4 = s;
+                  s = (_s_4 + " & ");
+                  String _s_5 = s;
+                  String _string_3 = Integer.valueOf(((Within)m).getValue2()).toString();
+                  String _plus_12 = ("(P<" + _string_3);
+                  String _plus_13 = (_plus_12 + "[");
+                  String _missionTranslated_3 = MyDslGenerator.getMissionTranslated(submission, resource);
+                  String _plus_14 = (_plus_13 + _missionTranslated_3);
+                  String _plus_15 = (_plus_14 + "])");
+                  s = (_s_5 + _plus_15);
+                }
+              }
+            }
+          }
+        } else {
+          String _reward_1 = m.getReward();
+          boolean _tripleNotEquals = (_reward_1 != null);
+          if (_tripleNotEquals) {
+            boolean _matched_2 = false;
+            if (m instanceof Maximize) {
+              _matched_2=true;
               String _type = ((Maximize)m).getType();
               boolean _equals = Objects.equal(_type, "maximize");
               if (_equals) {
                 String _s = s;
+                String _measure = ((Maximize)m).getMeasure();
+                String _plus = ("R{\"" + _measure);
+                String _plus_1 = (_plus + "\"}max=?[");
                 String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
-                String _plus = ("Pmax=?[" + _missionTranslated);
-                String _plus_1 = (_plus + "]");
-                s = (_s + _plus_1);
+                String _plus_2 = (_plus_1 + _missionTranslated);
+                String _plus_3 = (_plus_2 + "]");
+                s = (_s + _plus_3);
               } else {
                 String _type_1 = ((Maximize)m).getType();
                 boolean _equals_1 = Objects.equal(_type_1, "minimize");
                 if (_equals_1) {
                   String _s_1 = s;
-                  String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
-                  String _plus_2 = ("Pmin=?[" + _missionTranslated_1);
-                  String _plus_3 = (_plus_2 + "]");
-                  s = (_s_1 + _plus_3);
+                  String _minimizeReward = MyDslGenerator.minimizeReward(((Maximize)m), resource);
+                  s = (_s_1 + _minimizeReward);
                 }
               }
             }
-            if (!_matched_1) {
+            if (!_matched_2) {
               if (m instanceof AtMost) {
-                _matched_1=true;
+                _matched_2=true;
                 String sign = "";
                 String _type = ((AtMost)m).getType();
                 boolean _equals = Objects.equal(_type, "at most");
@@ -188,213 +339,66 @@ public class MyDslGenerator extends AbstractGenerator {
                       boolean _equals_3 = Objects.equal(_type_3, "greater than");
                       if (_equals_3) {
                         sign = ">";
-                      } else {
-                        String _type_4 = ((AtMost)m).getType();
-                        boolean _equals_4 = Objects.equal(_type_4, "exactly");
-                        if (_equals_4) {
-                          sign = "=";
-                        }
                       }
                     }
                   }
                 }
-                String _type_5 = ((AtMost)m).getType();
-                boolean _equals_5 = Objects.equal(_type_5, "exactly");
-                if (_equals_5) {
-                  sign = ">=";
+                String _type_4 = ((AtMost)m).getType();
+                boolean _equals_4 = Objects.equal(_type_4, "exactly");
+                if (_equals_4) {
                   String _s = s;
-                  String _string = Integer.valueOf(((AtMost)m).getValue()).toString();
-                  String _plus = (("(P" + sign) + _string);
-                  String _plus_1 = (_plus + "[");
-                  String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
-                  String _plus_2 = (_plus_1 + _missionTranslated);
-                  String _plus_3 = (_plus_2 + "]");
-                  s = (_s + _plus_3);
+                  String _rewardSign = MyDslGenerator.rewardSign(s, ">=", ((AtMost)m).getMeasure(), ((AtMost)m).getValue(), submission, resource);
+                  String _plus = ("(" + _rewardSign);
+                  String _plus_1 = (_plus + ")");
+                  s = (_s + _plus_1);
                   String _s_1 = s;
-                  s = (_s_1 + ") & (");
-                  sign = "<=";
+                  s = (_s_1 + " & ");
                   String _s_2 = s;
-                  String _string_1 = Integer.valueOf(((AtMost)m).getValue()).toString();
-                  String _plus_4 = (("P" + sign) + _string_1);
-                  String _plus_5 = (_plus_4 + "[");
-                  String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
-                  String _plus_6 = (_plus_5 + _missionTranslated_1);
-                  String _plus_7 = (_plus_6 + "])");
-                  s = (_s_2 + _plus_7);
+                  String _rewardSign_1 = MyDslGenerator.rewardSign(s, "<=", ((AtMost)m).getMeasure(), ((AtMost)m).getValue(), submission, resource);
+                  String _plus_2 = ("(" + _rewardSign_1);
+                  String _plus_3 = (_plus_2 + ")");
+                  s = (_s_2 + _plus_3);
                 } else {
                   String _s_3 = s;
-                  String _string_2 = Integer.valueOf(((AtMost)m).getValue()).toString();
-                  String _plus_8 = (("P" + sign) + _string_2);
-                  String _plus_9 = (_plus_8 + "[");
-                  String _missionTranslated_2 = MyDslGenerator.getMissionTranslated(submission, resource);
-                  String _plus_10 = (_plus_9 + _missionTranslated_2);
-                  String _plus_11 = (_plus_10 + "]");
-                  s = (_s_3 + _plus_11);
+                  String _rewardSign_2 = MyDslGenerator.rewardSign(s, sign, ((AtMost)m).getMeasure(), ((AtMost)m).getValue(), submission, resource);
+                  s = (_s_3 + _rewardSign_2);
                 }
               }
             }
-            if (!_matched_1) {
+            if (!_matched_2) {
               if (m instanceof Within) {
-                _matched_1=true;
+                _matched_2=true;
                 String _type = ((Within)m).getType();
                 boolean _equals = Objects.equal(_type, "within");
                 if (_equals) {
                   String _s = s;
-                  String _string = Integer.valueOf(((Within)m).getValue1()).toString();
-                  String _plus = ("(P>=" + _string);
-                  String _plus_1 = (_plus + "[");
-                  String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
-                  String _plus_2 = (_plus_1 + _missionTranslated);
-                  String _plus_3 = (_plus_2 + "])");
-                  s = (_s + _plus_3);
+                  String _rewardSign = MyDslGenerator.rewardSign(s, ">=", ((Within)m).getMeasure(), ((Within)m).getValue1(), submission, resource);
+                  String _plus = ("(" + _rewardSign);
+                  String _plus_1 = (_plus + ")");
+                  s = (_s + _plus_1);
                   String _s_1 = s;
                   s = (_s_1 + " & ");
                   String _s_2 = s;
-                  String _string_1 = Integer.valueOf(((Within)m).getValue2()).toString();
-                  String _plus_4 = ("(P<=" + _string_1);
-                  String _plus_5 = (_plus_4 + "[");
-                  String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
-                  String _plus_6 = (_plus_5 + _missionTranslated_1);
-                  String _plus_7 = (_plus_6 + "])");
-                  s = (_s_2 + _plus_7);
+                  String _rewardSign_1 = MyDslGenerator.rewardSign(s, "<=", ((Within)m).getMeasure(), ((Within)m).getValue2(), submission, resource);
+                  String _plus_2 = ("(" + _rewardSign_1);
+                  String _plus_3 = (_plus_2 + ")");
+                  s = (_s_2 + _plus_3);
                 } else {
                   String _type_1 = ((Within)m).getType();
                   boolean _equals_1 = Objects.equal(_type_1, "strictly within");
                   if (_equals_1) {
                     String _s_3 = s;
-                    String _string_2 = Integer.valueOf(((Within)m).getValue1()).toString();
-                    String _plus_8 = ("(P>" + _string_2);
-                    String _plus_9 = (_plus_8 + "[");
-                    String _missionTranslated_2 = MyDslGenerator.getMissionTranslated(submission, resource);
-                    String _plus_10 = (_plus_9 + _missionTranslated_2);
-                    String _plus_11 = (_plus_10 + "])");
-                    s = (_s_3 + _plus_11);
+                    String _rewardSign_2 = MyDslGenerator.rewardSign(s, ">", ((Within)m).getMeasure(), ((Within)m).getValue1(), submission, resource);
+                    String _plus_4 = ("(" + _rewardSign_2);
+                    String _plus_5 = (_plus_4 + ")");
+                    s = (_s_3 + _plus_5);
                     String _s_4 = s;
                     s = (_s_4 + " & ");
                     String _s_5 = s;
-                    String _string_3 = Integer.valueOf(((Within)m).getValue2()).toString();
-                    String _plus_12 = ("(P<" + _string_3);
-                    String _plus_13 = (_plus_12 + "[");
-                    String _missionTranslated_3 = MyDslGenerator.getMissionTranslated(submission, resource);
-                    String _plus_14 = (_plus_13 + _missionTranslated_3);
-                    String _plus_15 = (_plus_14 + "])");
-                    s = (_s_5 + _plus_15);
-                  }
-                }
-              }
-            }
-          } else {
-            String _reward_1 = m.getReward();
-            boolean _tripleNotEquals = (_reward_1 != null);
-            if (_tripleNotEquals) {
-              boolean _matched_2 = false;
-              if (m instanceof Maximize) {
-                _matched_2=true;
-                String _type = ((Maximize)m).getType();
-                boolean _equals = Objects.equal(_type, "maximize");
-                if (_equals) {
-                  String _s = s;
-                  String _measure = ((Maximize)m).getMeasure();
-                  String _plus = ("R{\"" + _measure);
-                  String _plus_1 = (_plus + "\"}max=?[");
-                  String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
-                  String _plus_2 = (_plus_1 + _missionTranslated);
-                  String _plus_3 = (_plus_2 + "]");
-                  s = (_s + _plus_3);
-                } else {
-                  String _type_1 = ((Maximize)m).getType();
-                  boolean _equals_1 = Objects.equal(_type_1, "minimize");
-                  if (_equals_1) {
-                    String _s_1 = s;
-                    String _minimizeReward = MyDslGenerator.minimizeReward(((Maximize)m), resource);
-                    s = (_s_1 + _minimizeReward);
-                  }
-                }
-              }
-              if (!_matched_2) {
-                if (m instanceof AtMost) {
-                  _matched_2=true;
-                  String sign = "";
-                  String _type = ((AtMost)m).getType();
-                  boolean _equals = Objects.equal(_type, "at most");
-                  if (_equals) {
-                    sign = "<=";
-                  } else {
-                    String _type_1 = ((AtMost)m).getType();
-                    boolean _equals_1 = Objects.equal(_type_1, "less than");
-                    if (_equals_1) {
-                      sign = "<";
-                    } else {
-                      String _type_2 = ((AtMost)m).getType();
-                      boolean _equals_2 = Objects.equal(_type_2, "at least");
-                      if (_equals_2) {
-                        sign = ">=";
-                      } else {
-                        String _type_3 = ((AtMost)m).getType();
-                        boolean _equals_3 = Objects.equal(_type_3, "greater than");
-                        if (_equals_3) {
-                          sign = ">";
-                        }
-                      }
-                    }
-                  }
-                  String _type_4 = ((AtMost)m).getType();
-                  boolean _equals_4 = Objects.equal(_type_4, "exactly");
-                  if (_equals_4) {
-                    String _s = s;
-                    String _rewardSign = MyDslGenerator.rewardSign(s, ">=", ((AtMost)m).getMeasure(), ((AtMost)m).getValue(), submission, resource);
-                    String _plus = ("(" + _rewardSign);
-                    String _plus_1 = (_plus + ")");
-                    s = (_s + _plus_1);
-                    String _s_1 = s;
-                    s = (_s_1 + " & ");
-                    String _s_2 = s;
-                    String _rewardSign_1 = MyDslGenerator.rewardSign(s, "<=", ((AtMost)m).getMeasure(), ((AtMost)m).getValue(), submission, resource);
-                    String _plus_2 = ("(" + _rewardSign_1);
-                    String _plus_3 = (_plus_2 + ")");
-                    s = (_s_2 + _plus_3);
-                  } else {
-                    String _s_3 = s;
-                    String _rewardSign_2 = MyDslGenerator.rewardSign(s, sign, ((AtMost)m).getMeasure(), ((AtMost)m).getValue(), submission, resource);
-                    s = (_s_3 + _rewardSign_2);
-                  }
-                }
-              }
-              if (!_matched_2) {
-                if (m instanceof Within) {
-                  _matched_2=true;
-                  String _type = ((Within)m).getType();
-                  boolean _equals = Objects.equal(_type, "within");
-                  if (_equals) {
-                    String _s = s;
-                    String _rewardSign = MyDslGenerator.rewardSign(s, ">=", ((Within)m).getMeasure(), ((Within)m).getValue1(), submission, resource);
-                    String _plus = ("(" + _rewardSign);
-                    String _plus_1 = (_plus + ")");
-                    s = (_s + _plus_1);
-                    String _s_1 = s;
-                    s = (_s_1 + " & ");
-                    String _s_2 = s;
-                    String _rewardSign_1 = MyDslGenerator.rewardSign(s, "<=", ((Within)m).getMeasure(), ((Within)m).getValue2(), submission, resource);
-                    String _plus_2 = ("(" + _rewardSign_1);
-                    String _plus_3 = (_plus_2 + ")");
-                    s = (_s_2 + _plus_3);
-                  } else {
-                    String _type_1 = ((Within)m).getType();
-                    boolean _equals_1 = Objects.equal(_type_1, "strictly within");
-                    if (_equals_1) {
-                      String _s_3 = s;
-                      String _rewardSign_2 = MyDslGenerator.rewardSign(s, ">", ((Within)m).getMeasure(), ((Within)m).getValue1(), submission, resource);
-                      String _plus_4 = ("(" + _rewardSign_2);
-                      String _plus_5 = (_plus_4 + ")");
-                      s = (_s_3 + _plus_5);
-                      String _s_4 = s;
-                      s = (_s_4 + " & ");
-                      String _s_5 = s;
-                      String _rewardSign_3 = MyDslGenerator.rewardSign(s, "<", ((Within)m).getMeasure(), ((Within)m).getValue2(), submission, resource);
-                      String _plus_6 = ("(" + _rewardSign_3);
-                      String _plus_7 = (_plus_6 + ")");
-                      s = (_s_5 + _plus_7);
-                    }
+                    String _rewardSign_3 = MyDslGenerator.rewardSign(s, "<", ((Within)m).getMeasure(), ((Within)m).getValue2(), submission, resource);
+                    String _plus_6 = ("(" + _rewardSign_3);
+                    String _plus_7 = (_plus_6 + ")");
+                    s = (_s_5 + _plus_7);
                   }
                 }
               }
@@ -402,241 +406,286 @@ public class MyDslGenerator extends AbstractGenerator {
           }
         }
       }
-      if (!_matched) {
-        if (miss instanceof CompositePatterns) {
-          _matched=true;
-          CompositePatterns m = ((CompositePatterns)miss);
-          boolean _matched_1 = false;
-          if (m instanceof Conservation) {
+    }
+    if (!_matched) {
+      if (miss instanceof CompositePatterns) {
+        _matched=true;
+        CompositePatterns m = ((CompositePatterns)miss);
+        boolean _matched_1 = false;
+        if (m instanceof Conservation) {
+          _matched_1=true;
+          String _s = s;
+          String _minimizeReward = MyDslGenerator.minimizeReward(((Conservation)m), resource);
+          s = (_s + _minimizeReward);
+        }
+        if (!_matched_1) {
+          if (m instanceof Preservation) {
             _matched_1=true;
             String _s = s;
-            String _minimizeReward = MyDslGenerator.minimizeReward(((Conservation)m), resource);
-            s = (_s + _minimizeReward);
+            String _rewardBetween_v1v2 = MyDslGenerator.rewardBetween_v1v2(((Preservation)m), resource);
+            s = (_s + _rewardBetween_v1v2);
           }
-          if (!_matched_1) {
-            if (m instanceof Preservation) {
-              _matched_1=true;
+        }
+        if (!_matched_1) {
+          if (m instanceof Pause) {
+            _matched_1=true;
+            Missions submission = ((Pause)m).getMissions();
+            int _value = ((Pause)m).getValue();
+            int m2 = (_value + 1);
+            String _s = s;
+            String _string = Integer.valueOf(((Pause)m).getValue()).toString();
+            String _plus = ("(G [0," + _string);
+            String _plus_1 = (_plus + "] ");
+            s = (_s + _plus_1);
+            String _s_1 = s;
+            s = (_s_1 + "!(");
+            String _s_2 = s;
+            String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
+            s = (_s_2 + _missionTranslated);
+            String _s_3 = s;
+            s = (_s_3 + ") ) & ( ");
+            String _s_4 = s;
+            String _string_1 = Integer.valueOf(m2).toString();
+            String _plus_2 = ("F[" + _string_1);
+            String _plus_3 = (_plus_2 + ",");
+            String _string_2 = Integer.valueOf(m2).toString();
+            String _plus_4 = (_plus_3 + _string_2);
+            String _plus_5 = (_plus_4 + "])");
+            s = (_s_4 + _plus_5);
+          }
+        }
+        if (!_matched_1) {
+          if (m instanceof Timeout) {
+            _matched_1=true;
+            Missions submission = ((Timeout)m).getMissions();
+            ((Timeout)m).getValue();
+            String _s = s;
+            String _string = Integer.valueOf(((Timeout)m).getValue()).toString();
+            String _plus = ("G<=" + _string);
+            s = (_s + _plus);
+            String _s_1 = s;
+            String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
+            String _plus_1 = (" !" + _missionTranslated);
+            s = (_s_1 + _plus_1);
+            String _s_2 = s;
+            s = (_s_2 + "Timeout: Translation not available.");
+          }
+        }
+        if (!_matched_1) {
+          if (m instanceof Repeat) {
+            _matched_1=true;
+            Missions submission = ((Repeat)m).getMissions();
+            int _value = ((Repeat)m).getValue();
+            int m0 = (_value - 1);
+            String _s = s;
+            s = (_s + "(");
+            String _s_1 = s;
+            String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
+            s = (_s_1 + _missionTranslated);
+            String _s_2 = s;
+            s = (_s_2 + ") & (");
+            String _s_3 = s;
+            s = (_s_3 + "G(");
+            String _s_4 = s;
+            String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
+            String _plus = ("(" + _missionTranslated_1);
+            String _plus_1 = (_plus + ")");
+            s = (_s_4 + _plus_1);
+            String _s_5 = s;
+            String _string = Integer.valueOf(m0).toString();
+            String _plus_2 = ("=>(G[1," + _string);
+            String _plus_3 = (_plus_2 + "] (!(");
+            String _missionTranslated_2 = MyDslGenerator.getMissionTranslated(submission, resource);
+            String _plus_4 = (_plus_3 + _missionTranslated_2);
+            String _plus_5 = (_plus_4 + ")) & (F[");
+            int _value_1 = ((Repeat)m).getValue();
+            String _plus_6 = (_plus_5 + Integer.valueOf(_value_1));
+            String _plus_7 = (_plus_6 + ",");
+            int _value_2 = ((Repeat)m).getValue();
+            String _plus_8 = (_plus_7 + Integer.valueOf(_value_2));
+            String _plus_9 = (_plus_8 + "] (");
+            String _missionTranslated_3 = MyDslGenerator.getMissionTranslated(submission, resource);
+            String _plus_10 = (_plus_9 + _missionTranslated_3);
+            String _plus_11 = (_plus_10 + ") ) )");
+            s = (_s_5 + _plus_11);
+            String _s_6 = s;
+            s = (_s_6 + "))");
+          }
+        }
+        if (!_matched_1) {
+          if (m instanceof End) {
+            _matched_1=true;
+            Missions submission = ((End)m).getMissions();
+            ((End)m).getValue();
+            String _s = s;
+            String _string = Integer.valueOf(((End)m).getValue()).toString();
+            String _plus = ("G<" + _string);
+            String _plus_1 = (_plus + " (");
+            s = (_s + _plus_1);
+            String _s_1 = s;
+            String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
+            String _plus_2 = ("(" + _missionTranslated);
+            String _plus_3 = (_plus_2 + ")");
+            s = (_s_1 + _plus_3);
+            String _s_2 = s;
+            String _string_1 = Integer.valueOf(((End)m).getValue()).toString();
+            String _plus_4 = (" & G>" + _string_1);
+            String _plus_5 = (_plus_4 + "!(");
+            String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
+            String _plus_6 = (_plus_5 + _missionTranslated_1);
+            String _plus_7 = (_plus_6 + ")");
+            s = (_s_2 + _plus_7);
+            String _s_3 = s;
+            s = (_s_3 + ")");
+          }
+        }
+        if (!_matched_1) {
+          if (m instanceof Proportional) {
+            _matched_1=true;
+            String _s = s;
+            s = (_s + "Proportional: No translation available.");
+          }
+        }
+        if (!_matched_1) {
+          if (m instanceof Execute) {
+            _matched_1=true;
+            ((Execute)m).getRobots();
+            ((Execute)m).getSetOfActions();
+            EList<Action> _setOfActions = ((Execute)m).getSetOfActions();
+            for (final Action a : _setOfActions) {
               String _s = s;
-              String _rewardBetween_v1v2 = MyDslGenerator.rewardBetween_v1v2(((Preservation)m), resource);
-              s = (_s + _rewardBetween_v1v2);
+              String _name = ((Execute)m).getRobots().getName();
+              String _plus = ("(F \"" + _name);
+              String _name_1 = a.getName();
+              String _plus_1 = (_plus + _name_1);
+              String _plus_2 = (_plus_1 + "\") & ");
+              s = (_s + _plus_2);
             }
+            int _length = s.length();
+            int _minus = (_length - 3);
+            s = s.substring(0, _minus);
           }
-          if (!_matched_1) {
-            if (m instanceof Pause) {
-              _matched_1=true;
-              Missions submission = ((Pause)m).getMissions();
-              int _value = ((Pause)m).getValue();
-              int m2 = (_value + 1);
-              String _s = s;
-              String _string = Integer.valueOf(((Pause)m).getValue()).toString();
-              String _plus = ("(G [0," + _string);
-              String _plus_1 = (_plus + "] ");
-              s = (_s + _plus_1);
-              String _s_1 = s;
-              s = (_s_1 + "!(");
-              String _s_2 = s;
-              String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
-              s = (_s_2 + _missionTranslated);
-              String _s_3 = s;
-              s = (_s_3 + ") ) & ( ");
-              String _s_4 = s;
-              String _string_1 = Integer.valueOf(m2).toString();
-              String _plus_2 = ("F[" + _string_1);
-              String _plus_3 = (_plus_2 + ",");
-              String _string_2 = Integer.valueOf(m2).toString();
-              String _plus_4 = (_plus_3 + _string_2);
-              String _plus_5 = (_plus_4 + "])");
-              s = (_s_4 + _plus_5);
-            }
+        }
+        if (!_matched_1) {
+          if (m instanceof Accrue) {
+            _matched_1=true;
+            Missions submission = ((Accrue)m).getMissions();
+            ((Accrue)m).getRobots();
+            ((Accrue)m).getMeasure();
+            String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
+            String _plus = ("Rmax=?[" + _missionTranslated);
+            String _plus_1 = (_plus + "]");
+            s = _plus_1;
           }
-          if (!_matched_1) {
-            if (m instanceof Timeout) {
-              _matched_1=true;
-              Missions submission = ((Timeout)m).getMissions();
-              ((Timeout)m).getValue();
-              String _s = s;
-              String _string = Integer.valueOf(((Timeout)m).getValue()).toString();
-              String _plus = ("G<=" + _string);
-              s = (_s + _plus);
-              String _s_1 = s;
-              String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
-              String _plus_1 = (" !" + _missionTranslated);
-              s = (_s_1 + _plus_1);
-              String _s_2 = s;
-              s = (_s_2 + "Timeout: NOT WORKING YET");
-            }
-          }
-          if (!_matched_1) {
-            if (m instanceof Repeat) {
-              _matched_1=true;
-              Missions submission = ((Repeat)m).getMissions();
-              int _value = ((Repeat)m).getValue();
-              int m0 = (_value - 1);
-              String _s = s;
-              s = (_s + "(");
-              String _s_1 = s;
-              String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
-              s = (_s_1 + _missionTranslated);
-              String _s_2 = s;
-              s = (_s_2 + ") & (");
-              String _s_3 = s;
-              s = (_s_3 + "G(");
-              String _s_4 = s;
-              String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
-              String _plus = ("(" + _missionTranslated_1);
-              String _plus_1 = (_plus + ")");
-              s = (_s_4 + _plus_1);
-              String _s_5 = s;
-              String _string = Integer.valueOf(m0).toString();
-              String _plus_2 = ("->(G[1," + _string);
-              String _plus_3 = (_plus_2 + "] (!(");
-              String _missionTranslated_2 = MyDslGenerator.getMissionTranslated(submission, resource);
-              String _plus_4 = (_plus_3 + _missionTranslated_2);
-              String _plus_5 = (_plus_4 + ")) & (F[");
-              int _value_1 = ((Repeat)m).getValue();
-              String _plus_6 = (_plus_5 + Integer.valueOf(_value_1));
-              String _plus_7 = (_plus_6 + ",");
-              int _value_2 = ((Repeat)m).getValue();
-              String _plus_8 = (_plus_7 + Integer.valueOf(_value_2));
-              String _plus_9 = (_plus_8 + "] (");
-              String _missionTranslated_3 = MyDslGenerator.getMissionTranslated(submission, resource);
-              String _plus_10 = (_plus_9 + _missionTranslated_3);
-              String _plus_11 = (_plus_10 + ") ) )");
-              s = (_s_5 + _plus_11);
-              String _s_6 = s;
-              s = (_s_6 + "))");
-            }
-          }
-          if (!_matched_1) {
-            if (m instanceof End) {
-              _matched_1=true;
-              Missions submission = ((End)m).getMissions();
-              ((End)m).getValue();
-              String _s = s;
-              String _string = Integer.valueOf(((End)m).getValue()).toString();
-              String _plus = ("G<" + _string);
-              String _plus_1 = (_plus + " (");
-              s = (_s + _plus_1);
-              String _s_1 = s;
-              String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
-              String _plus_2 = ("(" + _missionTranslated);
-              String _plus_3 = (_plus_2 + ")");
-              s = (_s_1 + _plus_3);
-              String _s_2 = s;
-              String _string_1 = Integer.valueOf(((End)m).getValue()).toString();
-              String _plus_4 = (" & G>" + _string_1);
-              String _plus_5 = (_plus_4 + "!(");
-              String _missionTranslated_1 = MyDslGenerator.getMissionTranslated(submission, resource);
-              String _plus_6 = (_plus_5 + _missionTranslated_1);
-              String _plus_7 = (_plus_6 + ")");
-              s = (_s_2 + _plus_7);
-              String _s_3 = s;
-              s = (_s_3 + ")");
-            }
-          }
-          if (!_matched_1) {
-            if (m instanceof Proportional) {
-              _matched_1=true;
-              String _s = s;
-              s = (_s + "Proportional: NA (NOT AVAILABLE)");
-            }
-          }
-          if (!_matched_1) {
-            if (m instanceof Execute) {
-              _matched_1=true;
-              ((Execute)m).getRobots();
-              ((Execute)m).getSetOfActions();
-              EList<Action> _setOfActions = ((Execute)m).getSetOfActions();
-              for (final Action a : _setOfActions) {
+        }
+        if (!_matched_1) {
+          if (m instanceof ReliabilityConfidence) {
+            _matched_1=true;
+            Missions submission = ((ReliabilityConfidence)m).getMissions();
+            String _type1 = ((ReliabilityConfidence)m).getType1();
+            boolean _equals = Objects.equal(_type1, "with reliability");
+            if (_equals) {
+              String _type2 = ((ReliabilityConfidence)m).getType2();
+              boolean _equals_1 = Objects.equal(_type2, "greater than");
+              if (_equals_1) {
                 String _s = s;
-                String _name = ((Execute)m).getRobots().getName();
-                String _plus = ("(F \"" + _name);
-                String _name_1 = a.getName();
-                String _plus_1 = (_plus + _name_1);
-                String _plus_2 = (_plus_1 + "\") & ");
-                s = (_s + _plus_2);
-              }
-              int _length = s.length();
-              int _minus = (_length - 3);
-              s = s.substring(0, _minus);
-            }
-          }
-          if (!_matched_1) {
-            if (m instanceof Accrue) {
-              _matched_1=true;
-              Missions submission = ((Accrue)m).getMissions();
-              ((Accrue)m).getRobots();
-              ((Accrue)m).getMeasure();
-              String _missionTranslated = MyDslGenerator.getMissionTranslated(submission, resource);
-              String _plus = ("Rmax=?[" + _missionTranslated);
-              String _plus_1 = (_plus + "]");
-              s = _plus_1;
-            }
-          }
-          if (!_matched_1) {
-            if (m instanceof ReliabilityConfidence) {
-              _matched_1=true;
-              Missions submission = ((ReliabilityConfidence)m).getMissions();
-              String _type1 = ((ReliabilityConfidence)m).getType1();
-              boolean _equals = Objects.equal(_type1, "with reliability");
-              if (_equals) {
-                String _type2 = ((ReliabilityConfidence)m).getType2();
-                boolean _equals_1 = Objects.equal(_type2, "greater than");
-                if (_equals_1) {
-                  String _s = s;
-                  String _rewardSign = MyDslGenerator.rewardSign(s, ">", ((ReliabilityConfidence)m).getMeasure(), ((ReliabilityConfidence)m).getValue(), submission, resource);
-                  s = (_s + _rewardSign);
-                } else {
-                  String _type2_1 = ((ReliabilityConfidence)m).getType2();
-                  boolean _equals_2 = Objects.equal(_type2_1, "less than");
-                  if (_equals_2) {
-                    String _s_1 = s;
-                    String _rewardSign_1 = MyDslGenerator.rewardSign(s, "<", ((ReliabilityConfidence)m).getMeasure(), ((ReliabilityConfidence)m).getValue(), submission, resource);
-                    s = (_s_1 + _rewardSign_1);
-                  }
-                }
+                String _rewardSign = MyDslGenerator.rewardSign(s, ">", ((ReliabilityConfidence)m).getMeasure(), ((ReliabilityConfidence)m).getValue(), submission, resource);
+                s = (_s + _rewardSign);
               } else {
-                String _type1_1 = ((ReliabilityConfidence)m).getType1();
-                boolean _equals_3 = Objects.equal(_type1_1, "with confidence");
-                if (_equals_3) {
-                  String _type2_2 = ((ReliabilityConfidence)m).getType2();
-                  boolean _equals_4 = Objects.equal(_type2_2, "greater than");
-                  if (_equals_4) {
-                    String _s_2 = s;
-                    s = (_s_2 + "With confidence: No translation for L");
-                  } else {
-                    String _type2_3 = ((ReliabilityConfidence)m).getType2();
-                    boolean _equals_5 = Objects.equal(_type2_3, "less than");
-                    if (_equals_5) {
-                      String _s_3 = s;
-                      s = (_s_3 + "With confidence: No translation for L");
-                    }
+                String _type2_1 = ((ReliabilityConfidence)m).getType2();
+                boolean _equals_2 = Objects.equal(_type2_1, "less than");
+                if (_equals_2) {
+                  String _s_1 = s;
+                  String _rewardSign_1 = MyDslGenerator.rewardSign(s, "<", ((ReliabilityConfidence)m).getMeasure(), ((ReliabilityConfidence)m).getValue(), submission, resource);
+                  s = (_s_1 + _rewardSign_1);
+                }
+              }
+            } else {
+              String _type1_1 = ((ReliabilityConfidence)m).getType1();
+              boolean _equals_3 = Objects.equal(_type1_1, "with confidence");
+              if (_equals_3) {
+                String _type2_2 = ((ReliabilityConfidence)m).getType2();
+                boolean _equals_4 = Objects.equal(_type2_2, "greater than");
+                if (_equals_4) {
+                  String _s_2 = s;
+                  s = (_s_2 + "With confidence: No translation available.");
+                } else {
+                  String _type2_3 = ((ReliabilityConfidence)m).getType2();
+                  boolean _equals_5 = Objects.equal(_type2_3, "less than");
+                  if (_equals_5) {
+                    String _s_3 = s;
+                    s = (_s_3 + "With confidence: No translation available.");
                   }
                 }
               }
-            }
-          }
-          if (!_matched_1) {
-            if (m instanceof Equidistance) {
-              _matched_1=true;
-              String _s = s;
-              s = (_s + "NA (NOT AVAILABLE)");
-            }
-          }
-          if (!_matched_1) {
-            if (m instanceof Trail) {
-              _matched_1=true;
-              String _s = s;
-              s = (_s + "NA (NOT AVAILABLE)");
             }
           }
         }
+        if (!_matched_1) {
+          if (m instanceof Equidistance) {
+            _matched_1=true;
+            String _s = s;
+            s = (_s + "Equidistance: Translation not available.");
+          }
+        }
+        if (!_matched_1) {
+          if (m instanceof Trail) {
+            _matched_1=true;
+            String _s = s;
+            s = (_s + "Trail: Translation not available");
+          }
+        }
       }
-      _xblockexpression = s;
     }
-    return _xblockexpression;
+    return s;
   }
-  
+
+  /**
+   * Constraints:
+   * (a) prohibit nested probabilities, (b) accept only LTL
+   * properties for the reward and probability operators, and
+   * (c) prohibit the definition of specifications that lead to
+   * the conjunction of quantitative and non-quantitative PRISM
+   * formulae since such formulae can not be processed by PRISM.
+   */
+  public static String checkFormulae(final String s) {
+    String checked_s = s;
+    boolean _contains = s.contains("\"\"");
+    if (_contains) {
+      checked_s = checked_s.replaceAll("\"\"", "\"");
+    }
+    boolean _contains_1 = s.contains("(R");
+    if (_contains_1) {
+      checked_s = "WARNING. Translation into PRISM not supported.";
+      String _checked_s = checked_s;
+      checked_s = (_checked_s + "\n  \t\t\t\t--Feedback: Reward found inside inside parenthesis-- ");
+      String _checked_s_1 = checked_s;
+      checked_s = (_checked_s_1 + ("\n  \t\t\t\t--Formulae: " + s));
+      return checked_s;
+    } else {
+      boolean _contains_2 = s.contains("(P");
+      if (_contains_2) {
+        checked_s = "WARNING. Translation into PRISM not supported.";
+        String _checked_s_2 = checked_s;
+        checked_s = (_checked_s_2 + "\n  \t\t\t\t--Feedback: Probability found inside parenthesis-- ");
+        String _checked_s_3 = checked_s;
+        checked_s = (_checked_s_3 + ("\n  \t\t\t\t--Formulae: " + s));
+        return checked_s;
+      } else {
+        boolean _contains_3 = s.contains("(G[");
+        if (_contains_3) {
+          checked_s = "WARNING. Translation into PRISM not supported.";
+          String _checked_s_4 = checked_s;
+          checked_s = (_checked_s_4 + "\n  \t\t\t\t--Feedback: G bounded [...] found inside parenthesis-- ");
+          String _checked_s_5 = checked_s;
+          checked_s = (_checked_s_5 + ("\n  \t\t\t\t--Formulae: " + s));
+          return checked_s;
+        }
+      }
+    }
+    return checked_s;
+  }
+
   public static String rewardSign(final String s, final String sign, final String measure, final int value, final Missions submission, final Resource resource) {
     String _string = Integer.valueOf(value).toString();
     String _plus = (((("R{\"" + measure) + "\"}") + sign) + _string);
@@ -645,22 +694,22 @@ public class MyDslGenerator extends AbstractGenerator {
     String _plus_2 = (_plus_1 + _missionTranslated);
     return (_plus_2 + "]");
   }
-  
+
   /**
-   * Minimize reward
+   * Minimise reward
    */
   public static String minimizeReward(final Conservation m, final Resource resource) {
     String measure = m.getMeasure();
     Missions submission = m.getMissions();
     return MyDslGenerator.minimizeReward(submission, measure, resource);
   }
-  
+
   public static String minimizeReward(final Maximize m, final Resource resource) {
     String measure = m.getMeasure();
     Missions submission = m.getMission();
     return MyDslGenerator.minimizeReward(submission, measure, resource);
   }
-  
+
   public static String minimizeReward(final Missions submission, final String measure, final Resource resource) {
     String s = "";
     String _s = s;
@@ -670,7 +719,7 @@ public class MyDslGenerator extends AbstractGenerator {
     s = (_s + _plus_1);
     return s;
   }
-  
+
   /**
    * Reward between
    */
@@ -708,22 +757,21 @@ public class MyDslGenerator extends AbstractGenerator {
     }
     return _xblockexpression;
   }
-  
+
   public static String getTopMissionTranslated(final TopMissions tmiss, final Resource resource) {
     String _xblockexpression = null;
     {
       String id = tmiss.getName();
       Missions miss = tmiss.getMission();
       String s = new String();
-      String _missionTranslated = MyDslGenerator.getMissionTranslated(miss, resource);
-      String _plus = ((id + ": ") + _missionTranslated);
-      String _plus_1 = (_plus + "\n\n");
-      s = _plus_1;
+      s = MyDslGenerator.getMissionTranslated(miss, resource).replaceAll("\\s", "");
+      s = MyDslGenerator.checkFormulae(s);
+      s = (((id + ": ") + s) + "\n\n");
       _xblockexpression = s;
     }
     return _xblockexpression;
   }
-  
+
   public static String getCondition(final Resource resource) {
     String _xblockexpression = null;
     {

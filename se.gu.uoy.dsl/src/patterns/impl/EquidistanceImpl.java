@@ -142,7 +142,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -167,7 +166,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -187,7 +185,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Location getLocation1() {
 		if (location1 != null && location1.eIsProxy()) {
 			InternalEObject oldLocation1 = (InternalEObject)location1;
@@ -214,7 +211,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setLocation1(Location newLocation1) {
 		Location oldLocation1 = location1;
 		location1 = newLocation1;
@@ -227,7 +223,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Location getLocation2() {
 		if (location2 != null && location2.eIsProxy()) {
 			InternalEObject oldLocation2 = (InternalEObject)location2;
@@ -254,7 +249,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setLocation2(Location newLocation2) {
 		Location oldLocation2 = location2;
 		location2 = newLocation2;
@@ -267,7 +261,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getDistance() {
 		return distance;
 	}
@@ -277,7 +270,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setDistance(int newDistance) {
 		int oldDistance = distance;
 		distance = newDistance;
@@ -290,7 +282,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Robots getRobots1() {
 		if (robots1 != null && robots1.eIsProxy()) {
 			InternalEObject oldRobots1 = (InternalEObject)robots1;
@@ -317,7 +308,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setRobots1(Robots newRobots1) {
 		Robots oldRobots1 = robots1;
 		robots1 = newRobots1;
@@ -330,7 +320,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Robots getRobots2() {
 		if (robots2 != null && robots2.eIsProxy()) {
 			InternalEObject oldRobots2 = (InternalEObject)robots2;
@@ -357,7 +346,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setRobots2(Robots newRobots2) {
 		Robots oldRobots2 = robots2;
 		robots2 = newRobots2;
@@ -370,7 +358,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Robots getRobots() {
 		if (robots != null && robots.eIsProxy()) {
 			InternalEObject oldRobots = (InternalEObject)robots;
@@ -397,7 +384,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setRobots(Robots newRobots) {
 		Robots oldRobots = robots;
 		robots = newRobots;

@@ -65,7 +65,6 @@ public class SequencingImpl extends MinimalEObjectImpl.Container implements Sequ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Action> getSetOfActions() {
 		if (setOfActions == null) {
 			setOfActions = new EObjectResolvingEList<Action>(Action.class, this, PatternsPackage.SEQUENCING__SET_OF_ACTIONS);

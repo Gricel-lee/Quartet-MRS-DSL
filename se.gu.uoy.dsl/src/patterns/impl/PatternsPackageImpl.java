@@ -662,7 +662,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	private PatternsPackageImpl() {
 		super(eNS_URI, PatternsFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -710,7 +709,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getSpecificationPatterns() {
 		return specificationPatternsEClass;
 	}
@@ -720,7 +718,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getSpecificationPatterns_Locations() {
 		return (EReference)specificationPatternsEClass.getEStructuralFeatures().get(0);
 	}
@@ -730,7 +727,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getSpecificationPatterns_Type() {
 		return (EAttribute)specificationPatternsEClass.getEStructuralFeatures().get(1);
 	}
@@ -740,7 +736,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getVisit1() {
 		return visit1EClass;
 	}
@@ -750,7 +745,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getProblemSpecifications() {
 		return problemSpecificationsEClass;
 	}
@@ -760,7 +754,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProblemSpecifications_Condition() {
 		return (EReference)problemSpecificationsEClass.getEStructuralFeatures().get(0);
 	}
@@ -770,7 +763,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProblemSpecifications_Location() {
 		return (EReference)problemSpecificationsEClass.getEStructuralFeatures().get(1);
 	}
@@ -780,7 +772,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProblemSpecifications_Action() {
 		return (EReference)problemSpecificationsEClass.getEStructuralFeatures().get(2);
 	}
@@ -790,7 +781,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProblemSpecifications_Robots() {
 		return (EReference)problemSpecificationsEClass.getEStructuralFeatures().get(3);
 	}
@@ -800,7 +790,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProblemSpecifications_Topmissions() {
 		return (EReference)problemSpecificationsEClass.getEStructuralFeatures().get(4);
 	}
@@ -810,7 +799,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProblemSpecifications_ElementaryPatterns() {
 		return (EReference)problemSpecificationsEClass.getEStructuralFeatures().get(5);
 	}
@@ -820,7 +808,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProblemSpecifications_CompositePatterns() {
 		return (EReference)problemSpecificationsEClass.getEStructuralFeatures().get(6);
 	}
@@ -830,7 +817,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProblemSpecifications_SpecificationPatterns() {
 		return (EReference)problemSpecificationsEClass.getEStructuralFeatures().get(7);
 	}
@@ -840,7 +826,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getLocation() {
 		return locationEClass;
 	}
@@ -850,7 +835,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getLocation_Name() {
 		return (EAttribute)locationEClass.getEStructuralFeatures().get(0);
 	}
@@ -860,7 +844,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAction() {
 		return actionEClass;
 	}
@@ -870,7 +853,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAction_Name() {
 		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
 	}
@@ -880,7 +862,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getSequence() {
 		return sequenceEClass;
 	}
@@ -890,7 +871,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getOrder() {
 		return orderEClass;
 	}
@@ -900,7 +880,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getStrictOrder() {
 		return strictOrderEClass;
 	}
@@ -910,7 +889,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getPatrol() {
 		return patrolEClass;
 	}
@@ -920,7 +898,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAvoidanceVisit() {
 		return avoidanceVisitEClass;
 	}
@@ -930,7 +907,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRestricted() {
 		return restrictedEClass;
 	}
@@ -940,7 +916,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRestricted_Number() {
 		return (EAttribute)restrictedEClass.getEStructuralFeatures().get(0);
 	}
@@ -950,7 +925,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getConditional() {
 		return conditionalEClass;
 	}
@@ -960,7 +934,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getLocationEvent() {
 		return locationEventEClass;
 	}
@@ -970,7 +943,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getLocationEvent_Robots() {
 		return (EReference)locationEventEClass.getEStructuralFeatures().get(0);
 	}
@@ -980,7 +952,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getLocationEvent_Location() {
 		return (EReference)locationEventEClass.getEStructuralFeatures().get(1);
 	}
@@ -990,7 +961,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getCondition() {
 		return conditionEClass;
 	}
@@ -1000,7 +970,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getCondition_Name() {
 		return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
 	}
@@ -1010,7 +979,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getEvent() {
 		return eventEClass;
 	}
@@ -1020,7 +988,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getEvent_Description() {
 		return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
 	}
@@ -1030,7 +997,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getEvent_Condition() {
 		return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
 	}
@@ -1040,7 +1006,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRobots() {
 		return robotsEClass;
 	}
@@ -1050,7 +1015,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRobots_Name() {
 		return (EAttribute)robotsEClass.getEStructuralFeatures().get(0);
 	}
@@ -1060,7 +1024,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getFair() {
 		return fairEClass;
 	}
@@ -1070,7 +1033,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getVisit2() {
 		return visit2EClass;
 	}
@@ -1080,7 +1042,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getLess() {
 		return lessEClass;
 	}
@@ -1090,7 +1051,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getExactly() {
 		return exactlyEClass;
 	}
@@ -1100,7 +1060,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getSimple() {
 		return simpleEClass;
 	}
@@ -1110,7 +1069,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAvoid() {
 		return avoidEClass;
 	}
@@ -1120,7 +1078,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAfter() {
 		return afterEClass;
 	}
@@ -1130,7 +1087,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getConditionBased() {
 		return conditionBasedEClass;
 	}
@@ -1140,7 +1096,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getConditionBased_Condition() {
 		return (EReference)conditionBasedEClass.getEStructuralFeatures().get(0);
 	}
@@ -1150,7 +1105,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getConditionBased_Locationevent() {
 		return (EReference)conditionBasedEClass.getEStructuralFeatures().get(1);
 	}
@@ -1160,7 +1114,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getTrigger() {
 		return triggerEClass;
 	}
@@ -1170,7 +1123,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getTrigger_Condition() {
 		return (EReference)triggerEClass.getEStructuralFeatures().get(0);
 	}
@@ -1180,7 +1132,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getTrigger_Locationevent() {
 		return (EReference)triggerEClass.getEStructuralFeatures().get(1);
 	}
@@ -1190,7 +1141,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getWait() {
 		return waitEClass;
 	}
@@ -1200,7 +1150,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDescriptive() {
 		return descriptiveEClass;
 	}
@@ -1210,7 +1159,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getDescriptive_Pattern() {
 		return (EReference)descriptiveEClass.getEStructuralFeatures().get(0);
 	}
@@ -1220,7 +1168,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getDescriptive_Action() {
 		return (EReference)descriptiveEClass.getEStructuralFeatures().get(1);
 	}
@@ -1230,7 +1177,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getReact() {
 		return reactEClass;
 	}
@@ -1240,7 +1186,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getCounteract() {
 		return counteractEClass;
 	}
@@ -1250,7 +1195,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getMaximize() {
 		return maximizeEClass;
 	}
@@ -1260,7 +1204,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getMaximize_Reward() {
 		return (EAttribute)maximizeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1270,7 +1213,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getElementaryPatterns() {
 		return elementaryPatternsEClass;
 	}
@@ -1280,7 +1222,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getElementaryPatterns_Measure() {
 		return (EAttribute)elementaryPatternsEClass.getEStructuralFeatures().get(0);
 	}
@@ -1290,7 +1231,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getElementaryPatterns_Mission() {
 		return (EReference)elementaryPatternsEClass.getEStructuralFeatures().get(1);
 	}
@@ -1300,7 +1240,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getElementaryPatterns_Type() {
 		return (EAttribute)elementaryPatternsEClass.getEStructuralFeatures().get(2);
 	}
@@ -1310,7 +1249,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getLessThan() {
 		return lessThanEClass;
 	}
@@ -1320,7 +1258,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getLessThan_Value() {
 		return (EAttribute)lessThanEClass.getEStructuralFeatures().get(0);
 	}
@@ -1330,7 +1267,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getMinimize() {
 		return minimizeEClass;
 	}
@@ -1340,7 +1276,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAtMost() {
 		return atMostEClass;
 	}
@@ -1350,7 +1285,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAtMost_Value() {
 		return (EAttribute)atMostEClass.getEStructuralFeatures().get(0);
 	}
@@ -1360,7 +1294,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAtMost_Reward() {
 		return (EAttribute)atMostEClass.getEStructuralFeatures().get(1);
 	}
@@ -1370,7 +1303,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAtLeast() {
 		return atLeastEClass;
 	}
@@ -1380,7 +1312,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAtLeast_Value() {
 		return (EAttribute)atLeastEClass.getEStructuralFeatures().get(0);
 	}
@@ -1390,7 +1321,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getGreaterThan() {
 		return greaterThanEClass;
 	}
@@ -1400,7 +1330,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getGreaterThan_Value() {
 		return (EAttribute)greaterThanEClass.getEStructuralFeatures().get(0);
 	}
@@ -1410,7 +1339,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getWithin() {
 		return withinEClass;
 	}
@@ -1420,7 +1348,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getWithin_Value1() {
 		return (EAttribute)withinEClass.getEStructuralFeatures().get(0);
 	}
@@ -1430,7 +1357,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getWithin_Value2() {
 		return (EAttribute)withinEClass.getEStructuralFeatures().get(1);
 	}
@@ -1440,7 +1366,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getWithin_Reward() {
 		return (EAttribute)withinEClass.getEStructuralFeatures().get(2);
 	}
@@ -1450,7 +1375,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getStrictlyWithin() {
 		return strictlyWithinEClass;
 	}
@@ -1460,7 +1384,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getStrictlyWithin_Value1() {
 		return (EAttribute)strictlyWithinEClass.getEStructuralFeatures().get(0);
 	}
@@ -1470,7 +1393,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getStrictlyWithin_Value2() {
 		return (EAttribute)strictlyWithinEClass.getEStructuralFeatures().get(1);
 	}
@@ -1480,7 +1402,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getCompositePatterns() {
 		return compositePatternsEClass;
 	}
@@ -1490,7 +1411,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getMissions() {
 		return missionsEClass;
 	}
@@ -1500,7 +1420,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getShallMissions() {
 		return shallMissionsEClass;
 	}
@@ -1510,7 +1429,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getShallMissions_Id() {
 		return (EAttribute)shallMissionsEClass.getEStructuralFeatures().get(0);
 	}
@@ -1520,7 +1438,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getShallMissions_MovementPatterns() {
 		return (EReference)shallMissionsEClass.getEStructuralFeatures().get(1);
 	}
@@ -1530,7 +1447,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getShallMissions_Robots() {
 		return (EReference)shallMissionsEClass.getEStructuralFeatures().get(2);
 	}
@@ -1540,7 +1456,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getActionEnd() {
 		return actionEndEClass;
 	}
@@ -1550,7 +1465,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getActionEnd_Description() {
 		return (EAttribute)actionEndEClass.getEStructuralFeatures().get(0);
 	}
@@ -1560,7 +1474,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getActionEnd_Action() {
 		return (EReference)actionEndEClass.getEStructuralFeatures().get(1);
 	}
@@ -1570,7 +1483,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDelayed() {
 		return delayedEClass;
 	}
@@ -1580,7 +1492,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getComplexMissions() {
 		return complexMissionsEClass;
 	}
@@ -1590,7 +1501,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getComplexMissions_Composition() {
 		return (EReference)complexMissionsEClass.getEStructuralFeatures().get(0);
 	}
@@ -1600,7 +1510,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getMissionOperation() {
 		return missionOperationEClass;
 	}
@@ -1610,7 +1519,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getNegation() {
 		return negationEClass;
 	}
@@ -1620,7 +1528,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getNegation_Not() {
 		return (EReference)negationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1630,7 +1537,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getComposition() {
 		return compositionEClass;
 	}
@@ -1640,7 +1546,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getComposition_BinaryType() {
 		return (EAttribute)compositionEClass.getEStructuralFeatures().get(0);
 	}
@@ -1650,7 +1555,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getComposition_Miss1() {
 		return (EReference)compositionEClass.getEStructuralFeatures().get(1);
 	}
@@ -1660,7 +1564,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getComposition_Miss2() {
 		return (EReference)compositionEClass.getEStructuralFeatures().get(2);
 	}
@@ -1670,7 +1573,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getConservation() {
 		return conservationEClass;
 	}
@@ -1680,7 +1582,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getConservation_Measure() {
 		return (EAttribute)conservationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1690,7 +1591,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getPreservation() {
 		return preservationEClass;
 	}
@@ -1700,7 +1600,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getPreservation_Measure() {
 		return (EAttribute)preservationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1710,7 +1609,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getPreservation_Value1() {
 		return (EAttribute)preservationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1720,7 +1618,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getPreservation_Value2() {
 		return (EAttribute)preservationEClass.getEStructuralFeatures().get(2);
 	}
@@ -1730,7 +1627,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRepeatEvery() {
 		return repeatEveryEClass;
 	}
@@ -1740,7 +1636,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getTimed() {
 		return timedEClass;
 	}
@@ -1750,7 +1645,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getTimed_T() {
 		return (EAttribute)timedEClass.getEStructuralFeatures().get(0);
 	}
@@ -1760,7 +1654,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getConditionDependent() {
 		return conditionDependentEClass;
 	}
@@ -1770,7 +1663,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getConditionDependent_Condition() {
 		return (EReference)conditionDependentEClass.getEStructuralFeatures().get(0);
 	}
@@ -1780,7 +1672,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getConditionDependent_Locationevent() {
 		return (EReference)conditionDependentEClass.getEStructuralFeatures().get(1);
 	}
@@ -1790,7 +1681,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getActionDependent() {
 		return actionDependentEClass;
 	}
@@ -1800,7 +1690,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getActionDependent_Action() {
 		return (EReference)actionDependentEClass.getEStructuralFeatures().get(0);
 	}
@@ -1810,7 +1699,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getMissionDependent() {
 		return missionDependentEClass;
 	}
@@ -1820,7 +1708,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getMissionDependent_Missions() {
 		return (EReference)missionDependentEClass.getEStructuralFeatures().get(0);
 	}
@@ -1830,7 +1717,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getMaintain() {
 		return maintainEClass;
 	}
@@ -1840,7 +1726,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getEnd() {
 		return endEClass;
 	}
@@ -1850,7 +1735,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getEnd_Value() {
 		return (EAttribute)endEClass.getEStructuralFeatures().get(0);
 	}
@@ -1860,7 +1744,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getResumeIf() {
 		return resumeIfEClass;
 	}
@@ -1870,7 +1753,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAccrue() {
 		return accrueEClass;
 	}
@@ -1880,7 +1762,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getAccrue_Measure() {
 		return (EAttribute)accrueEClass.getEStructuralFeatures().get(0);
 	}
@@ -1890,7 +1771,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAccrue_Robots() {
 		return (EReference)accrueEClass.getEStructuralFeatures().get(1);
 	}
@@ -1900,7 +1780,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getSecure() {
 		return secureEClass;
 	}
@@ -1910,7 +1789,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getEquidistance() {
 		return equidistanceEClass;
 	}
@@ -1920,7 +1798,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEquidistance_Location1() {
 		return (EReference)equidistanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -1930,7 +1807,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEquidistance_Location2() {
 		return (EReference)equidistanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -1940,7 +1816,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getEquidistance_Distance() {
 		return (EAttribute)equidistanceEClass.getEStructuralFeatures().get(2);
 	}
@@ -1950,7 +1825,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEquidistance_Robots1() {
 		return (EReference)equidistanceEClass.getEStructuralFeatures().get(3);
 	}
@@ -1960,7 +1834,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEquidistance_Robots2() {
 		return (EReference)equidistanceEClass.getEStructuralFeatures().get(4);
 	}
@@ -1970,7 +1843,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEquidistance_Robots() {
 		return (EReference)equidistanceEClass.getEStructuralFeatures().get(5);
 	}
@@ -1980,7 +1852,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getTrail() {
 		return trailEClass;
 	}
@@ -1990,7 +1861,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getTrail_ObjetToFollow() {
 		return (EAttribute)trailEClass.getEStructuralFeatures().get(0);
 	}
@@ -2000,7 +1870,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getTrail_Value() {
 		return (EAttribute)trailEClass.getEStructuralFeatures().get(1);
 	}
@@ -2010,7 +1879,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getTrail_Robots() {
 		return (EReference)trailEClass.getEStructuralFeatures().get(2);
 	}
@@ -2020,7 +1888,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getLocationDependent() {
 		return locationDependentEClass;
 	}
@@ -2030,7 +1897,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getLocationDependent_Locations() {
 		return (EReference)locationDependentEClass.getEStructuralFeatures().get(0);
 	}
@@ -2040,7 +1906,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getPause() {
 		return pauseEClass;
 	}
@@ -2050,7 +1915,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getPause_Value() {
 		return (EAttribute)pauseEClass.getEStructuralFeatures().get(0);
 	}
@@ -2060,7 +1924,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getTimeout() {
 		return timeoutEClass;
 	}
@@ -2070,7 +1933,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getTimeout_Value() {
 		return (EAttribute)timeoutEClass.getEStructuralFeatures().get(0);
 	}
@@ -2080,7 +1942,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getReliabilityConfidence() {
 		return reliabilityConfidenceEClass;
 	}
@@ -2090,7 +1951,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getReliabilityConfidence_Measure() {
 		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -2100,7 +1960,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getReliabilityConfidence_Value() {
 		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(1);
 	}
@@ -2110,7 +1969,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getReliabilityConfidence_Type1() {
 		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(2);
 	}
@@ -2120,7 +1978,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getReliabilityConfidence_Type2() {
 		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(3);
 	}
@@ -2130,7 +1987,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getLevelOfConfidence() {
 		return levelOfConfidenceEClass;
 	}
@@ -2140,7 +1996,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getLevelOfConfidence_Confidence() {
 		return (EAttribute)levelOfConfidenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -2150,7 +2005,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRelaxed() {
 		return relaxedEClass;
 	}
@@ -2160,7 +2014,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAlmostAt() {
 		return almostAtEClass;
 	}
@@ -2170,7 +2023,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getExactlyAt() {
 		return exactlyAtEClass;
 	}
@@ -2180,7 +2032,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDeadlineAt() {
 		return deadlineAtEClass;
 	}
@@ -2190,7 +2041,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getProportional() {
 		return proportionalEClass;
 	}
@@ -2200,7 +2050,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProportional_Mission1() {
 		return (EReference)proportionalEClass.getEStructuralFeatures().get(0);
 	}
@@ -2210,7 +2059,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getProportional_Mission2() {
 		return (EReference)proportionalEClass.getEStructuralFeatures().get(1);
 	}
@@ -2220,7 +2068,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getProportional_Value() {
 		return (EAttribute)proportionalEClass.getEStructuralFeatures().get(2);
 	}
@@ -2230,7 +2077,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getExecute() {
 		return executeEClass;
 	}
@@ -2240,7 +2086,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getExecute_Robots() {
 		return (EReference)executeEClass.getEStructuralFeatures().get(0);
 	}
@@ -2250,7 +2095,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getSetOfActionsDependent() {
 		return setOfActionsDependentEClass;
 	}
@@ -2260,7 +2104,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getSetOfActionsDependent_SetOfActions() {
 		return (EReference)setOfActionsDependentEClass.getEStructuralFeatures().get(0);
 	}
@@ -2270,7 +2113,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getSequencing() {
 		return sequencingEClass;
 	}
@@ -2280,7 +2122,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDeviation() {
 		return deviationEClass;
 	}
@@ -2290,7 +2131,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRepeat() {
 		return repeatEClass;
 	}
@@ -2300,7 +2140,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRepeat_Value() {
 		return (EAttribute)repeatEClass.getEStructuralFeatures().get(0);
 	}
@@ -2310,7 +2149,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getTopMissions() {
 		return topMissionsEClass;
 	}
@@ -2320,7 +2158,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getTopMissions_Mission() {
 		return (EReference)topMissionsEClass.getEStructuralFeatures().get(0);
 	}
@@ -2330,7 +2167,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EEnum getCompositionOperator() {
 		return compositionOperatorEEnum;
 	}
@@ -2340,7 +2176,6 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public PatternsFactory getPatternsFactory() {
 		return (PatternsFactory)getEFactoryInstance();
 	}
@@ -2768,7 +2603,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		initEClass(avoidanceVisitEClass, AvoidanceVisit.class, "AvoidanceVisit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(restrictedEClass, Restricted.class, "Restricted", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRestricted_Number(), ecorePackage.getEInt(), "number", null, 1, 1, Restricted.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRestricted_Number(), ecorePackage.getEDouble(), "number", null, 1, 1, Restricted.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionalEClass, Conditional.class, "Conditional", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2827,28 +2662,28 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		initEAttribute(getElementaryPatterns_Type(), ecorePackage.getEString(), "type", null, 1, 1, ElementaryPatterns.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lessThanEClass, LessThan.class, "LessThan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLessThan_Value(), ecorePackage.getEInt(), "value", null, 1, 1, LessThan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLessThan_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, LessThan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(minimizeEClass, Minimize.class, "Minimize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(atMostEClass, AtMost.class, "AtMost", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAtMost_Value(), ecorePackage.getEInt(), "value", null, 1, 1, AtMost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAtMost_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, AtMost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAtMost_Reward(), ecorePackage.getEString(), "reward", "reward", 0, 1, AtMost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(atLeastEClass, AtLeast.class, "AtLeast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAtLeast_Value(), ecorePackage.getEInt(), "value", null, 1, 1, AtLeast.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAtLeast_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, AtLeast.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(greaterThanEClass, GreaterThan.class, "GreaterThan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGreaterThan_Value(), ecorePackage.getEInt(), "value", null, 1, 1, GreaterThan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGreaterThan_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, GreaterThan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(withinEClass, Within.class, "Within", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWithin_Value1(), ecorePackage.getEInt(), "value1", null, 1, 1, Within.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWithin_Value2(), ecorePackage.getEInt(), "value2", null, 1, 1, Within.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWithin_Value1(), ecorePackage.getEDouble(), "value1", null, 1, 1, Within.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWithin_Value2(), ecorePackage.getEDouble(), "value2", null, 1, 1, Within.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWithin_Reward(), ecorePackage.getEString(), "reward", "reward", 0, 1, Within.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(strictlyWithinEClass, StrictlyWithin.class, "StrictlyWithin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStrictlyWithin_Value1(), ecorePackage.getEInt(), "value1", null, 1, 1, StrictlyWithin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrictlyWithin_Value2(), ecorePackage.getEInt(), "value2", null, 1, 1, StrictlyWithin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrictlyWithin_Value1(), ecorePackage.getEDouble(), "value1", null, 1, 1, StrictlyWithin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrictlyWithin_Value2(), ecorePackage.getEDouble(), "value2", null, 1, 1, StrictlyWithin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositePatternsEClass, CompositePatterns.class, "CompositePatterns", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2883,8 +2718,8 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 
 		initEClass(preservationEClass, Preservation.class, "Preservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPreservation_Measure(), ecorePackage.getEString(), "measure", null, 1, 1, Preservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPreservation_Value1(), ecorePackage.getEInt(), "value1", null, 1, 1, Preservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPreservation_Value2(), ecorePackage.getEInt(), "value2", null, 1, 1, Preservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPreservation_Value1(), ecorePackage.getEDouble(), "value1", null, 1, 1, Preservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPreservation_Value2(), ecorePackage.getEDouble(), "value2", null, 1, 1, Preservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(repeatEveryEClass, RepeatEvery.class, "RepeatEvery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2904,7 +2739,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		initEClass(maintainEClass, Maintain.class, "Maintain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(endEClass, End.class, "End", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEnd_Value(), ecorePackage.getEInt(), "value", null, 1, 1, End.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnd_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, End.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resumeIfEClass, ResumeIf.class, "ResumeIf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

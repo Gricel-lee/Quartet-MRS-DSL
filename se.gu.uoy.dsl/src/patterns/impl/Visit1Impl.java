@@ -88,7 +88,6 @@ public class Visit1Impl extends MinimalEObjectImpl.Container implements Visit1 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Location> getLocations() {
 		if (locations == null) {
 			locations = new EObjectResolvingEList<Location>(Location.class, this, PatternsPackage.VISIT1__LOCATIONS);
@@ -101,7 +100,6 @@ public class Visit1Impl extends MinimalEObjectImpl.Container implements Visit1 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType() {
 		return type;
 	}
@@ -111,7 +109,6 @@ public class Visit1Impl extends MinimalEObjectImpl.Container implements Visit1 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;

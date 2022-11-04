@@ -81,7 +81,6 @@ public class ExecuteImpl extends MinimalEObjectImpl.Container implements Execute
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Action> getSetOfActions() {
 		if (setOfActions == null) {
 			setOfActions = new EObjectResolvingEList<Action>(Action.class, this, PatternsPackage.EXECUTE__SET_OF_ACTIONS);
@@ -94,7 +93,6 @@ public class ExecuteImpl extends MinimalEObjectImpl.Container implements Execute
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Robots getRobots() {
 		if (robots != null && robots.eIsProxy()) {
 			InternalEObject oldRobots = (InternalEObject)robots;
@@ -121,7 +119,6 @@ public class ExecuteImpl extends MinimalEObjectImpl.Container implements Execute
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setRobots(Robots newRobots) {
 		Robots oldRobots = robots;
 		robots = newRobots;

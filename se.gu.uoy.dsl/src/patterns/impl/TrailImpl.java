@@ -118,7 +118,6 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -143,7 +142,6 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -163,7 +161,6 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getObjetToFollow() {
 		return objetToFollow;
 	}
@@ -173,7 +170,6 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setObjetToFollow(String newObjetToFollow) {
 		String oldObjetToFollow = objetToFollow;
 		objetToFollow = newObjetToFollow;
@@ -186,7 +182,6 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getValue() {
 		return value;
 	}
@@ -196,7 +191,6 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setValue(int newValue) {
 		int oldValue = value;
 		value = newValue;
@@ -209,7 +203,6 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Robots getRobots() {
 		if (robots != null && robots.eIsProxy()) {
 			InternalEObject oldRobots = (InternalEObject)robots;
@@ -236,7 +229,6 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setRobots(Robots newRobots) {
 		Robots oldRobots = robots;
 		robots = newRobots;

@@ -70,7 +70,6 @@ public class RobotsImpl extends MinimalEObjectImpl.Container implements Robots {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 		return name;
 	}
@@ -80,7 +79,6 @@ public class RobotsImpl extends MinimalEObjectImpl.Container implements Robots {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

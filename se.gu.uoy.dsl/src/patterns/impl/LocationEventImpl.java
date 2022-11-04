@@ -95,7 +95,6 @@ public class LocationEventImpl extends MinimalEObjectImpl.Container implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 		return name;
 	}
@@ -105,7 +104,6 @@ public class LocationEventImpl extends MinimalEObjectImpl.Container implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -118,7 +116,6 @@ public class LocationEventImpl extends MinimalEObjectImpl.Container implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Robots getRobots() {
 		if (robots != null && robots.eIsProxy()) {
 			InternalEObject oldRobots = (InternalEObject)robots;
@@ -145,7 +142,6 @@ public class LocationEventImpl extends MinimalEObjectImpl.Container implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setRobots(Robots newRobots) {
 		Robots oldRobots = robots;
 		robots = newRobots;
@@ -158,7 +154,6 @@ public class LocationEventImpl extends MinimalEObjectImpl.Container implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Location getLocation() {
 		if (location != null && location.eIsProxy()) {
 			InternalEObject oldLocation = (InternalEObject)location;
@@ -185,7 +180,6 @@ public class LocationEventImpl extends MinimalEObjectImpl.Container implements L
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setLocation(Location newLocation) {
 		Location oldLocation = location;
 		location = newLocation;

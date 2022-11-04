@@ -105,7 +105,6 @@ public class MinimizeImpl extends MinimalEObjectImpl.Container implements Minimi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getMeasure() {
 		return measure;
 	}
@@ -115,7 +114,6 @@ public class MinimizeImpl extends MinimalEObjectImpl.Container implements Minimi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMeasure(String newMeasure) {
 		String oldMeasure = measure;
 		measure = newMeasure;
@@ -128,7 +126,6 @@ public class MinimizeImpl extends MinimalEObjectImpl.Container implements Minimi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMission() {
 		return mission;
 	}
@@ -153,7 +150,6 @@ public class MinimizeImpl extends MinimalEObjectImpl.Container implements Minimi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMission(Missions newMission) {
 		if (newMission != mission) {
 			NotificationChain msgs = null;
@@ -173,7 +169,6 @@ public class MinimizeImpl extends MinimalEObjectImpl.Container implements Minimi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType() {
 		return type;
 	}
@@ -183,7 +178,6 @@ public class MinimizeImpl extends MinimalEObjectImpl.Container implements Minimi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;

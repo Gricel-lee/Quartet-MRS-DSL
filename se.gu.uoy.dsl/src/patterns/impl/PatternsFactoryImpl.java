@@ -155,7 +155,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Visit1 createVisit1() {
 		Visit1Impl visit1 = new Visit1Impl();
 		return visit1;
@@ -166,7 +165,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ProblemSpecifications createProblemSpecifications() {
 		ProblemSpecificationsImpl problemSpecifications = new ProblemSpecificationsImpl();
 		return problemSpecifications;
@@ -177,7 +175,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Location createLocation() {
 		LocationImpl location = new LocationImpl();
 		return location;
@@ -188,7 +185,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
 		return action;
@@ -199,7 +195,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Sequence createSequence() {
 		SequenceImpl sequence = new SequenceImpl();
 		return sequence;
@@ -210,7 +205,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Order createOrder() {
 		OrderImpl order = new OrderImpl();
 		return order;
@@ -221,7 +215,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public StrictOrder createStrictOrder() {
 		StrictOrderImpl strictOrder = new StrictOrderImpl();
 		return strictOrder;
@@ -232,7 +225,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Patrol createPatrol() {
 		PatrolImpl patrol = new PatrolImpl();
 		return patrol;
@@ -243,7 +235,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public LocationEvent createLocationEvent() {
 		LocationEventImpl locationEvent = new LocationEventImpl();
 		return locationEvent;
@@ -254,7 +245,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Event createEvent() {
 		EventImpl event = new EventImpl();
 		return event;
@@ -265,7 +255,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Robots createRobots() {
 		RobotsImpl robots = new RobotsImpl();
 		return robots;
@@ -276,7 +265,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Fair createFair() {
 		FairImpl fair = new FairImpl();
 		return fair;
@@ -287,7 +275,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Visit2 createVisit2() {
 		Visit2Impl visit2 = new Visit2Impl();
 		return visit2;
@@ -298,7 +285,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Less createLess() {
 		LessImpl less = new LessImpl();
 		return less;
@@ -309,7 +295,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Exactly createExactly() {
 		ExactlyImpl exactly = new ExactlyImpl();
 		return exactly;
@@ -320,7 +305,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Simple createSimple() {
 		SimpleImpl simple = new SimpleImpl();
 		return simple;
@@ -331,7 +315,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Avoid createAvoid() {
 		AvoidImpl avoid = new AvoidImpl();
 		return avoid;
@@ -342,7 +325,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public After createAfter() {
 		AfterImpl after = new AfterImpl();
 		return after;
@@ -353,7 +335,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Wait createWait() {
 		WaitImpl wait = new WaitImpl();
 		return wait;
@@ -364,7 +345,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public React createReact() {
 		ReactImpl react = new ReactImpl();
 		return react;
@@ -375,7 +355,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Counteract createCounteract() {
 		CounteractImpl counteract = new CounteractImpl();
 		return counteract;
@@ -386,7 +365,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Maximize createMaximize() {
 		MaximizeImpl maximize = new MaximizeImpl();
 		return maximize;
@@ -397,7 +375,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public LessThan createLessThan() {
 		LessThanImpl lessThan = new LessThanImpl();
 		return lessThan;
@@ -408,7 +385,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Minimize createMinimize() {
 		MinimizeImpl minimize = new MinimizeImpl();
 		return minimize;
@@ -419,7 +395,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public AtMost createAtMost() {
 		AtMostImpl atMost = new AtMostImpl();
 		return atMost;
@@ -430,7 +405,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public AtLeast createAtLeast() {
 		AtLeastImpl atLeast = new AtLeastImpl();
 		return atLeast;
@@ -441,7 +415,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public GreaterThan createGreaterThan() {
 		GreaterThanImpl greaterThan = new GreaterThanImpl();
 		return greaterThan;
@@ -452,7 +425,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Within createWithin() {
 		WithinImpl within = new WithinImpl();
 		return within;
@@ -463,7 +435,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public StrictlyWithin createStrictlyWithin() {
 		StrictlyWithinImpl strictlyWithin = new StrictlyWithinImpl();
 		return strictlyWithin;
@@ -474,7 +445,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ShallMissions createShallMissions() {
 		ShallMissionsImpl shallMissions = new ShallMissionsImpl();
 		return shallMissions;
@@ -485,7 +455,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ActionEnd createActionEnd() {
 		ActionEndImpl actionEnd = new ActionEndImpl();
 		return actionEnd;
@@ -496,7 +465,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Delayed createDelayed() {
 		DelayedImpl delayed = new DelayedImpl();
 		return delayed;
@@ -507,7 +475,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ComplexMissions createComplexMissions() {
 		ComplexMissionsImpl complexMissions = new ComplexMissionsImpl();
 		return complexMissions;
@@ -518,7 +485,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Negation createNegation() {
 		NegationImpl negation = new NegationImpl();
 		return negation;
@@ -529,7 +495,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Composition createComposition() {
 		CompositionImpl composition = new CompositionImpl();
 		return composition;
@@ -540,7 +505,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Conservation createConservation() {
 		ConservationImpl conservation = new ConservationImpl();
 		return conservation;
@@ -551,7 +515,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Preservation createPreservation() {
 		PreservationImpl preservation = new PreservationImpl();
 		return preservation;
@@ -562,7 +525,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public RepeatEvery createRepeatEvery() {
 		RepeatEveryImpl repeatEvery = new RepeatEveryImpl();
 		return repeatEvery;
@@ -573,7 +535,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Maintain createMaintain() {
 		MaintainImpl maintain = new MaintainImpl();
 		return maintain;
@@ -584,7 +545,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public End createEnd() {
 		EndImpl end = new EndImpl();
 		return end;
@@ -595,7 +555,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ResumeIf createResumeIf() {
 		ResumeIfImpl resumeIf = new ResumeIfImpl();
 		return resumeIf;
@@ -606,7 +565,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Accrue createAccrue() {
 		AccrueImpl accrue = new AccrueImpl();
 		return accrue;
@@ -617,7 +575,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Secure createSecure() {
 		SecureImpl secure = new SecureImpl();
 		return secure;
@@ -628,7 +585,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Equidistance createEquidistance() {
 		EquidistanceImpl equidistance = new EquidistanceImpl();
 		return equidistance;
@@ -639,7 +595,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Trail createTrail() {
 		TrailImpl trail = new TrailImpl();
 		return trail;
@@ -650,7 +605,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Pause createPause() {
 		PauseImpl pause = new PauseImpl();
 		return pause;
@@ -661,7 +615,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Timeout createTimeout() {
 		TimeoutImpl timeout = new TimeoutImpl();
 		return timeout;
@@ -672,7 +625,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ReliabilityConfidence createReliabilityConfidence() {
 		ReliabilityConfidenceImpl reliabilityConfidence = new ReliabilityConfidenceImpl();
 		return reliabilityConfidence;
@@ -683,7 +635,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Relaxed createRelaxed() {
 		RelaxedImpl relaxed = new RelaxedImpl();
 		return relaxed;
@@ -694,7 +645,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public AlmostAt createAlmostAt() {
 		AlmostAtImpl almostAt = new AlmostAtImpl();
 		return almostAt;
@@ -705,7 +655,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ExactlyAt createExactlyAt() {
 		ExactlyAtImpl exactlyAt = new ExactlyAtImpl();
 		return exactlyAt;
@@ -716,7 +665,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public DeadlineAt createDeadlineAt() {
 		DeadlineAtImpl deadlineAt = new DeadlineAtImpl();
 		return deadlineAt;
@@ -727,7 +675,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Proportional createProportional() {
 		ProportionalImpl proportional = new ProportionalImpl();
 		return proportional;
@@ -738,7 +685,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Execute createExecute() {
 		ExecuteImpl execute = new ExecuteImpl();
 		return execute;
@@ -749,7 +695,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Sequencing createSequencing() {
 		SequencingImpl sequencing = new SequencingImpl();
 		return sequencing;
@@ -760,7 +705,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Deviation createDeviation() {
 		DeviationImpl deviation = new DeviationImpl();
 		return deviation;
@@ -771,7 +715,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Repeat createRepeat() {
 		RepeatImpl repeat = new RepeatImpl();
 		return repeat;
@@ -782,7 +725,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public TopMissions createTopMissions() {
 		TopMissionsImpl topMissions = new TopMissionsImpl();
 		return topMissions;
@@ -813,7 +755,6 @@ public class PatternsFactoryImpl extends EFactoryImpl implements PatternsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public PatternsPackage getPatternsPackage() {
 		return (PatternsPackage)getEPackage();
 	}

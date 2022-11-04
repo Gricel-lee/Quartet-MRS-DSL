@@ -86,7 +86,6 @@ public class RelaxedImpl extends MinimalEObjectImpl.Container implements Relaxed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -111,7 +110,6 @@ public class RelaxedImpl extends MinimalEObjectImpl.Container implements Relaxed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -131,7 +129,6 @@ public class RelaxedImpl extends MinimalEObjectImpl.Container implements Relaxed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getConfidence() {
 		return confidence;
 	}
@@ -141,7 +138,6 @@ public class RelaxedImpl extends MinimalEObjectImpl.Container implements Relaxed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setConfidence(int newConfidence) {
 		int oldConfidence = confidence;
 		confidence = newConfidence;

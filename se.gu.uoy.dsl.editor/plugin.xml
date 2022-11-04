@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated quantitativePatterns -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="patterns.presentation.PatternsModelWizardID"
+            name="%_UI_PatternsModelWizard_label"
+            class="patterns.presentation.PatternsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PatternsModelFile.gif">
+         <description>%_UI_PatternsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated quantitativePatterns -->
+      <editor
+            id="patterns.presentation.PatternsEditorID"
+            name="%_UI_PatternsEditor_label"
+            icon="icons/full/obj16/PatternsModelFile.gif"
+            extensions="patterns"
+            class="patterns.presentation.PatternsEditor"
+            contributorClass="patterns.presentation.PatternsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

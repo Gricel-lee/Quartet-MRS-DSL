@@ -112,7 +112,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 		return name;
 	}
@@ -122,7 +121,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -135,7 +133,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -145,7 +142,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -158,7 +154,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getCondition() {
 		return condition;
 	}
@@ -168,7 +163,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCondition(String newCondition) {
 		String oldCondition = condition;
 		condition = newCondition;

@@ -114,7 +114,6 @@ public class AvoidImpl extends MinimalEObjectImpl.Container implements Avoid {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Location> getLocations() {
 		if (locations == null) {
 			locations = new EObjectResolvingEList<Location>(Location.class, this, PatternsPackage.AVOID__LOCATIONS);
@@ -127,7 +126,6 @@ public class AvoidImpl extends MinimalEObjectImpl.Container implements Avoid {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType() {
 		return type;
 	}
@@ -137,7 +135,6 @@ public class AvoidImpl extends MinimalEObjectImpl.Container implements Avoid {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -150,7 +147,6 @@ public class AvoidImpl extends MinimalEObjectImpl.Container implements Avoid {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Condition getCondition() {
 		if (condition != null && condition.eIsProxy()) {
 			InternalEObject oldCondition = (InternalEObject)condition;
@@ -177,7 +173,6 @@ public class AvoidImpl extends MinimalEObjectImpl.Container implements Avoid {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCondition(Condition newCondition) {
 		Condition oldCondition = condition;
 		condition = newCondition;
@@ -190,7 +185,6 @@ public class AvoidImpl extends MinimalEObjectImpl.Container implements Avoid {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public LocationEvent getLocationevent() {
 		return locationevent;
 	}
@@ -215,7 +209,6 @@ public class AvoidImpl extends MinimalEObjectImpl.Container implements Avoid {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setLocationevent(LocationEvent newLocationevent) {
 		if (newLocationevent != locationevent) {
 			NotificationChain msgs = null;

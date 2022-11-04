@@ -25,12 +25,12 @@ public interface LessThan extends ElementaryPatterns {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(int)
+	 * @see #setValue(double)
 	 * @see patterns.PatternsPackage#getLessThan_Value()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getValue();
+	double getValue();
 
 	/**
 	 * Sets the value of the '{@link patterns.LessThan#getValue <em>Value</em>}' attribute.
@@ -40,6 +40,6 @@ public interface LessThan extends ElementaryPatterns {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(int value);
+	void setValue(double value);
 
 } // LessThan

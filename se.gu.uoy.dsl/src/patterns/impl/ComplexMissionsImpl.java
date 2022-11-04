@@ -63,7 +63,6 @@ public class ComplexMissionsImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public MissionOperation getComposition() {
 		return composition;
 	}
@@ -88,7 +87,6 @@ public class ComplexMissionsImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setComposition(MissionOperation newComposition) {
 		if (newComposition != composition) {
 			NotificationChain msgs = null;

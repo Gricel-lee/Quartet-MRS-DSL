@@ -65,7 +65,6 @@ public class DeviationImpl extends MinimalEObjectImpl.Container implements Devia
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Action> getSetOfActions() {
 		if (setOfActions == null) {
 			setOfActions = new EObjectResolvingEList<Action>(Action.class, this, PatternsPackage.DEVIATION__SET_OF_ACTIONS);

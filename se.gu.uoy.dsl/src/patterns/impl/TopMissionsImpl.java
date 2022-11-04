@@ -62,7 +62,6 @@ public class TopMissionsImpl extends MinimalEObjectImpl.Container implements Top
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMission() {
 		if (mission != null && mission.eIsProxy()) {
 			InternalEObject oldMission = (InternalEObject)mission;
@@ -89,7 +88,6 @@ public class TopMissionsImpl extends MinimalEObjectImpl.Container implements Top
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMission(Missions newMission) {
 		Missions oldMission = mission;
 		mission = newMission;

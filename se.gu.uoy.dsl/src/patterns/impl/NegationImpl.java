@@ -63,7 +63,6 @@ public class NegationImpl extends MinimalEObjectImpl.Container implements Negati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getNot() {
 		return not;
 	}
@@ -88,7 +87,6 @@ public class NegationImpl extends MinimalEObjectImpl.Container implements Negati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setNot(Missions newNot) {
 		if (newNot != not) {
 			NotificationChain msgs = null;

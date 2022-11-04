@@ -25,12 +25,12 @@ public interface Restricted extends AvoidanceVisit {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Number</em>' attribute.
-	 * @see #setNumber(int)
+	 * @see #setNumber(double)
 	 * @see patterns.PatternsPackage#getRestricted_Number()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getNumber();
+	double getNumber();
 
 	/**
 	 * Sets the value of the '{@link patterns.Restricted#getNumber <em>Number</em>}' attribute.
@@ -40,6 +40,6 @@ public interface Restricted extends AvoidanceVisit {
 	 * @see #getNumber()
 	 * @generated
 	 */
-	void setNumber(int value);
+	void setNumber(double value);
 
 } // Restricted

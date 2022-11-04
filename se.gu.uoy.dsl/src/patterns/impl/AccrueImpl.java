@@ -97,7 +97,6 @@ public class AccrueImpl extends MinimalEObjectImpl.Container implements Accrue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -122,7 +121,6 @@ public class AccrueImpl extends MinimalEObjectImpl.Container implements Accrue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -142,7 +140,6 @@ public class AccrueImpl extends MinimalEObjectImpl.Container implements Accrue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getMeasure() {
 		return measure;
 	}
@@ -152,7 +149,6 @@ public class AccrueImpl extends MinimalEObjectImpl.Container implements Accrue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMeasure(String newMeasure) {
 		String oldMeasure = measure;
 		measure = newMeasure;
@@ -165,7 +161,6 @@ public class AccrueImpl extends MinimalEObjectImpl.Container implements Accrue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Robots getRobots() {
 		if (robots != null && robots.eIsProxy()) {
 			InternalEObject oldRobots = (InternalEObject)robots;
@@ -192,7 +187,6 @@ public class AccrueImpl extends MinimalEObjectImpl.Container implements Accrue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setRobots(Robots newRobots) {
 		Robots oldRobots = robots;
 		robots = newRobots;

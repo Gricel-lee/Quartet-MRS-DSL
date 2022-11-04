@@ -138,7 +138,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Location> getLocations() {
 		if (locations == null) {
 			locations = new EObjectResolvingEList<Location>(Location.class, this, PatternsPackage.COUNTERACT__LOCATIONS);
@@ -151,7 +150,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType() {
 		return type;
 	}
@@ -161,7 +159,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -174,7 +171,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Condition getCondition() {
 		if (condition != null && condition.eIsProxy()) {
 			InternalEObject oldCondition = (InternalEObject)condition;
@@ -201,7 +197,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCondition(Condition newCondition) {
 		Condition oldCondition = condition;
 		condition = newCondition;
@@ -214,7 +209,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public LocationEvent getLocationevent() {
 		return locationevent;
 	}
@@ -239,7 +233,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setLocationevent(LocationEvent newLocationevent) {
 		if (newLocationevent != locationevent) {
 			NotificationChain msgs = null;
@@ -259,7 +252,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public SpecificationPatterns getPattern() {
 		return pattern;
 	}
@@ -284,7 +276,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setPattern(SpecificationPatterns newPattern) {
 		if (newPattern != pattern) {
 			NotificationChain msgs = null;
@@ -304,7 +295,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Action getAction() {
 		if (action != null && action.eIsProxy()) {
 			InternalEObject oldAction = (InternalEObject)action;
@@ -331,7 +321,6 @@ public class CounteractImpl extends MinimalEObjectImpl.Container implements Coun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setAction(Action newAction) {
 		Action oldAction = action;
 		action = newAction;

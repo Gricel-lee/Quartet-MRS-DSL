@@ -65,7 +65,6 @@ public class SecureImpl extends MinimalEObjectImpl.Container implements Secure {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Location> getLocations() {
 		if (locations == null) {
 			locations = new EObjectResolvingEList<Location>(Location.class, this, PatternsPackage.SECURE__LOCATIONS);

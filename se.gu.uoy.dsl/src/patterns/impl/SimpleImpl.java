@@ -88,7 +88,6 @@ public class SimpleImpl extends MinimalEObjectImpl.Container implements Simple {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Location> getLocations() {
 		if (locations == null) {
 			locations = new EObjectResolvingEList<Location>(Location.class, this, PatternsPackage.SIMPLE__LOCATIONS);
@@ -101,7 +100,6 @@ public class SimpleImpl extends MinimalEObjectImpl.Container implements Simple {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType() {
 		return type;
 	}
@@ -111,7 +109,6 @@ public class SimpleImpl extends MinimalEObjectImpl.Container implements Simple {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;

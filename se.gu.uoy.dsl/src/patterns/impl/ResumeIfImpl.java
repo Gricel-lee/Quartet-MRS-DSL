@@ -96,7 +96,6 @@ public class ResumeIfImpl extends MinimalEObjectImpl.Container implements Resume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Condition getCondition() {
 		if (condition != null && condition.eIsProxy()) {
 			InternalEObject oldCondition = (InternalEObject)condition;
@@ -123,7 +122,6 @@ public class ResumeIfImpl extends MinimalEObjectImpl.Container implements Resume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCondition(Condition newCondition) {
 		Condition oldCondition = condition;
 		condition = newCondition;
@@ -136,7 +134,6 @@ public class ResumeIfImpl extends MinimalEObjectImpl.Container implements Resume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<LocationEvent> getLocationevent() {
 		if (locationevent == null) {
 			locationevent = new EObjectContainmentEList<LocationEvent>(LocationEvent.class, this, PatternsPackage.RESUME_IF__LOCATIONEVENT);
@@ -149,7 +146,6 @@ public class ResumeIfImpl extends MinimalEObjectImpl.Container implements Resume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -174,7 +170,6 @@ public class ResumeIfImpl extends MinimalEObjectImpl.Container implements Resume
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;

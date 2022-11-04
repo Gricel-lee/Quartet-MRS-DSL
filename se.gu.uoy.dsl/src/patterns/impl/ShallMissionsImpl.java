@@ -103,7 +103,6 @@ public class ShallMissionsImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getId() {
 		return id;
 	}
@@ -113,7 +112,6 @@ public class ShallMissionsImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -126,7 +124,6 @@ public class ShallMissionsImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<SpecificationPatterns> getMovementPatterns() {
 		if (movementPatterns == null) {
 			movementPatterns = new EObjectContainmentEList<SpecificationPatterns>(SpecificationPatterns.class, this, PatternsPackage.SHALL_MISSIONS__MOVEMENT_PATTERNS);
@@ -139,7 +136,6 @@ public class ShallMissionsImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Robots getRobots() {
 		if (robots != null && robots.eIsProxy()) {
 			InternalEObject oldRobots = (InternalEObject)robots;
@@ -166,7 +162,6 @@ public class ShallMissionsImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setRobots(Robots newRobots) {
 		Robots oldRobots = robots;
 		robots = newRobots;

@@ -152,7 +152,6 @@ public class ProblemSpecificationsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Condition> getCondition() {
 		if (condition == null) {
 			condition = new EObjectContainmentEList<Condition>(Condition.class, this, PatternsPackage.PROBLEM_SPECIFICATIONS__CONDITION);
@@ -165,7 +164,6 @@ public class ProblemSpecificationsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Location> getLocation() {
 		if (location == null) {
 			location = new EObjectContainmentEList<Location>(Location.class, this, PatternsPackage.PROBLEM_SPECIFICATIONS__LOCATION);
@@ -178,7 +176,6 @@ public class ProblemSpecificationsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Action> getAction() {
 		if (action == null) {
 			action = new EObjectContainmentEList<Action>(Action.class, this, PatternsPackage.PROBLEM_SPECIFICATIONS__ACTION);
@@ -191,7 +188,6 @@ public class ProblemSpecificationsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Robots> getRobots() {
 		if (robots == null) {
 			robots = new EObjectContainmentEList<Robots>(Robots.class, this, PatternsPackage.PROBLEM_SPECIFICATIONS__ROBOTS);
@@ -204,7 +200,6 @@ public class ProblemSpecificationsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<TopMissions> getTopmissions() {
 		if (topmissions == null) {
 			topmissions = new EObjectContainmentEList<TopMissions>(TopMissions.class, this, PatternsPackage.PROBLEM_SPECIFICATIONS__TOPMISSIONS);
@@ -217,7 +212,6 @@ public class ProblemSpecificationsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<ElementaryPatterns> getElementaryPatterns() {
 		if (elementaryPatterns == null) {
 			elementaryPatterns = new EObjectContainmentEList<ElementaryPatterns>(ElementaryPatterns.class, this, PatternsPackage.PROBLEM_SPECIFICATIONS__ELEMENTARY_PATTERNS);
@@ -230,7 +224,6 @@ public class ProblemSpecificationsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<CompositePatterns> getCompositePatterns() {
 		if (compositePatterns == null) {
 			compositePatterns = new EObjectContainmentEList<CompositePatterns>(CompositePatterns.class, this, PatternsPackage.PROBLEM_SPECIFICATIONS__COMPOSITE_PATTERNS);
@@ -243,7 +236,6 @@ public class ProblemSpecificationsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<SpecificationPatterns> getSpecificationPatterns() {
 		if (specificationPatterns == null) {
 			specificationPatterns = new EObjectContainmentEList<SpecificationPatterns>(SpecificationPatterns.class, this, PatternsPackage.PROBLEM_SPECIFICATIONS__SPECIFICATION_PATTERNS);

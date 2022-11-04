@@ -25,12 +25,12 @@ public interface End extends CompositePatterns, ConditionDependent, MissionDepen
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(int)
+	 * @see #setValue(double)
 	 * @see patterns.PatternsPackage#getEnd_Value()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getValue();
+	double getValue();
 
 	/**
 	 * Sets the value of the '{@link patterns.End#getValue <em>Value</em>}' attribute.
@@ -40,6 +40,6 @@ public interface End extends CompositePatterns, ConditionDependent, MissionDepen
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(int value);
+	void setValue(double value);
 
 } // End

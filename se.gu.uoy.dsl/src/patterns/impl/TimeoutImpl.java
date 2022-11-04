@@ -107,7 +107,6 @@ public class TimeoutImpl extends MinimalEObjectImpl.Container implements Timeout
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getT() {
 		return t;
 	}
@@ -117,7 +116,6 @@ public class TimeoutImpl extends MinimalEObjectImpl.Container implements Timeout
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setT(int newT) {
 		int oldT = t;
 		t = newT;
@@ -130,7 +128,6 @@ public class TimeoutImpl extends MinimalEObjectImpl.Container implements Timeout
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -155,7 +152,6 @@ public class TimeoutImpl extends MinimalEObjectImpl.Container implements Timeout
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -175,7 +171,6 @@ public class TimeoutImpl extends MinimalEObjectImpl.Container implements Timeout
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getValue() {
 		return value;
 	}
@@ -185,7 +180,6 @@ public class TimeoutImpl extends MinimalEObjectImpl.Container implements Timeout
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setValue(int newValue) {
 		int oldValue = value;
 		value = newValue;

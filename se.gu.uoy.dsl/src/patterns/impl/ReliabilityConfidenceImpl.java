@@ -170,7 +170,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -195,7 +194,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -215,7 +213,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getConfidence() {
 		return confidence;
 	}
@@ -225,7 +222,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setConfidence(int newConfidence) {
 		int oldConfidence = confidence;
 		confidence = newConfidence;
@@ -238,7 +234,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getMeasure() {
 		return measure;
 	}
@@ -248,7 +243,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMeasure(String newMeasure) {
 		String oldMeasure = measure;
 		measure = newMeasure;
@@ -261,7 +255,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getValue() {
 		return value;
 	}
@@ -271,7 +264,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setValue(int newValue) {
 		int oldValue = value;
 		value = newValue;
@@ -284,7 +276,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType1() {
 		return type1;
 	}
@@ -294,7 +285,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType1(String newType1) {
 		String oldType1 = type1;
 		type1 = newType1;
@@ -307,7 +297,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType2() {
 		return type2;
 	}
@@ -317,7 +306,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType2(String newType2) {
 		String oldType2 = type2;
 		type2 = newType2;

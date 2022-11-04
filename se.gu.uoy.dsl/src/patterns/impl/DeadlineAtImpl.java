@@ -86,7 +86,6 @@ public class DeadlineAtImpl extends MinimalEObjectImpl.Container implements Dead
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getT() {
 		return t;
 	}
@@ -96,7 +95,6 @@ public class DeadlineAtImpl extends MinimalEObjectImpl.Container implements Dead
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setT(int newT) {
 		int oldT = t;
 		t = newT;
@@ -109,7 +107,6 @@ public class DeadlineAtImpl extends MinimalEObjectImpl.Container implements Dead
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -134,7 +131,6 @@ public class DeadlineAtImpl extends MinimalEObjectImpl.Container implements Dead
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;

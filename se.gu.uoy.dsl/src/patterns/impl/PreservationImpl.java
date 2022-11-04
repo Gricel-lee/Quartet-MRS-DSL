@@ -71,7 +71,7 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE1_EDEFAULT = 0;
+	protected static final double VALUE1_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getValue1() <em>Value1</em>}' attribute.
@@ -81,7 +81,7 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @generated
 	 * @ordered
 	 */
-	protected int value1 = VALUE1_EDEFAULT;
+	protected double value1 = VALUE1_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValue2() <em>Value2</em>}' attribute.
@@ -91,7 +91,7 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE2_EDEFAULT = 0;
+	protected static final double VALUE2_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getValue2() <em>Value2</em>}' attribute.
@@ -101,7 +101,7 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @generated
 	 * @ordered
 	 */
-	protected int value2 = VALUE2_EDEFAULT;
+	protected double value2 = VALUE2_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,7 +127,6 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -152,7 +151,6 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -172,7 +170,6 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getMeasure() {
 		return measure;
 	}
@@ -182,7 +179,6 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMeasure(String newMeasure) {
 		String oldMeasure = measure;
 		measure = newMeasure;
@@ -195,8 +191,7 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public int getValue1() {
+	public double getValue1() {
 		return value1;
 	}
 
@@ -205,9 +200,8 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setValue1(int newValue1) {
-		int oldValue1 = value1;
+	public void setValue1(double newValue1) {
+		double oldValue1 = value1;
 		value1 = newValue1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.PRESERVATION__VALUE1, oldValue1, value1));
@@ -218,8 +212,7 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public int getValue2() {
+	public double getValue2() {
 		return value2;
 	}
 
@@ -228,9 +221,8 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setValue2(int newValue2) {
-		int oldValue2 = value2;
+	public void setValue2(double newValue2) {
+		double oldValue2 = value2;
 		value2 = newValue2;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.PRESERVATION__VALUE2, oldValue2, value2));
@@ -285,10 +277,10 @@ public class PreservationImpl extends MinimalEObjectImpl.Container implements Pr
 				setMeasure((String)newValue);
 				return;
 			case PatternsPackage.PRESERVATION__VALUE1:
-				setValue1((Integer)newValue);
+				setValue1((Double)newValue);
 				return;
 			case PatternsPackage.PRESERVATION__VALUE2:
-				setValue2((Integer)newValue);
+				setValue2((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -49,12 +49,12 @@ public interface Preservation extends CompositePatterns, MissionDependent {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value1</em>' attribute.
-	 * @see #setValue1(int)
+	 * @see #setValue1(double)
 	 * @see patterns.PatternsPackage#getPreservation_Value1()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getValue1();
+	double getValue1();
 
 	/**
 	 * Sets the value of the '{@link patterns.Preservation#getValue1 <em>Value1</em>}' attribute.
@@ -64,19 +64,19 @@ public interface Preservation extends CompositePatterns, MissionDependent {
 	 * @see #getValue1()
 	 * @generated
 	 */
-	void setValue1(int value);
+	void setValue1(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Value2</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value2</em>' attribute.
-	 * @see #setValue2(int)
+	 * @see #setValue2(double)
 	 * @see patterns.PatternsPackage#getPreservation_Value2()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getValue2();
+	double getValue2();
 
 	/**
 	 * Sets the value of the '{@link patterns.Preservation#getValue2 <em>Value2</em>}' attribute.
@@ -86,6 +86,6 @@ public interface Preservation extends CompositePatterns, MissionDependent {
 	 * @see #getValue2()
 	 * @generated
 	 */
-	void setValue2(int value);
+	void setValue2(double value);
 
 } // Preservation

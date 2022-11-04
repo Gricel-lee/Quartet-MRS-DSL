@@ -91,7 +91,7 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
+	protected static final double VALUE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -101,7 +101,7 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * @generated
 	 * @ordered
 	 */
-	protected int value = VALUE_EDEFAULT;
+	protected double value = VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReward() <em>Reward</em>}' attribute.
@@ -147,7 +147,6 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getMeasure() {
 		return measure;
 	}
@@ -157,7 +156,6 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMeasure(String newMeasure) {
 		String oldMeasure = measure;
 		measure = newMeasure;
@@ -170,7 +168,6 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMission() {
 		return mission;
 	}
@@ -195,7 +192,6 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMission(Missions newMission) {
 		if (newMission != mission) {
 			NotificationChain msgs = null;
@@ -215,7 +211,6 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType() {
 		return type;
 	}
@@ -225,7 +220,6 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -238,8 +232,7 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public int getValue() {
+	public double getValue() {
 		return value;
 	}
 
@@ -248,9 +241,8 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setValue(int newValue) {
-		int oldValue = value;
+	public void setValue(double newValue) {
+		double oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.AT_MOST__VALUE, oldValue, value));
@@ -261,7 +253,6 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getReward() {
 		return reward;
 	}
@@ -271,7 +262,6 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setReward(String newReward) {
 		String oldReward = reward;
 		reward = newReward;
@@ -333,7 +323,7 @@ public class AtMostImpl extends MinimalEObjectImpl.Container implements AtMost {
 				setType((String)newValue);
 				return;
 			case PatternsPackage.AT_MOST__VALUE:
-				setValue((Integer)newValue);
+				setValue((Double)newValue);
 				return;
 			case PatternsPackage.AT_MOST__REWARD:
 				setReward((String)newValue);

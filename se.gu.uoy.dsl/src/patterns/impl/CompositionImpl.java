@@ -95,7 +95,6 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public CompositionOperator getBinaryType() {
 		return binaryType;
 	}
@@ -105,7 +104,6 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setBinaryType(CompositionOperator newBinaryType) {
 		CompositionOperator oldBinaryType = binaryType;
 		binaryType = newBinaryType == null ? BINARY_TYPE_EDEFAULT : newBinaryType;
@@ -118,7 +116,6 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMiss1() {
 		if (miss1 != null && miss1.eIsProxy()) {
 			InternalEObject oldMiss1 = (InternalEObject)miss1;
@@ -145,7 +142,6 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMiss1(Missions newMiss1) {
 		Missions oldMiss1 = miss1;
 		miss1 = newMiss1;
@@ -158,7 +154,6 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMiss2() {
 		if (miss2 != null && miss2.eIsProxy()) {
 			InternalEObject oldMiss2 = (InternalEObject)miss2;
@@ -185,7 +180,6 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMiss2(Missions newMiss2) {
 		Missions oldMiss2 = miss2;
 		miss2 = newMiss2;

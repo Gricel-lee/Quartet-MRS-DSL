@@ -126,7 +126,6 @@ public class MaximizeImpl extends MinimalEObjectImpl.Container implements Maximi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getMeasure() {
 		return measure;
 	}
@@ -136,7 +135,6 @@ public class MaximizeImpl extends MinimalEObjectImpl.Container implements Maximi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMeasure(String newMeasure) {
 		String oldMeasure = measure;
 		measure = newMeasure;
@@ -149,7 +147,6 @@ public class MaximizeImpl extends MinimalEObjectImpl.Container implements Maximi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMission() {
 		return mission;
 	}
@@ -174,7 +171,6 @@ public class MaximizeImpl extends MinimalEObjectImpl.Container implements Maximi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMission(Missions newMission) {
 		if (newMission != mission) {
 			NotificationChain msgs = null;
@@ -194,7 +190,6 @@ public class MaximizeImpl extends MinimalEObjectImpl.Container implements Maximi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType() {
 		return type;
 	}
@@ -204,7 +199,6 @@ public class MaximizeImpl extends MinimalEObjectImpl.Container implements Maximi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -217,7 +211,6 @@ public class MaximizeImpl extends MinimalEObjectImpl.Container implements Maximi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getReward() {
 		return reward;
 	}
@@ -227,7 +220,6 @@ public class MaximizeImpl extends MinimalEObjectImpl.Container implements Maximi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setReward(String newReward) {
 		String oldReward = reward;
 		reward = newReward;

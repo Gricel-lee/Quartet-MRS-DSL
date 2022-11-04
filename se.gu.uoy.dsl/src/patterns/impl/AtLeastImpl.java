@@ -90,7 +90,7 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
+	protected static final double VALUE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -100,7 +100,7 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * @generated
 	 * @ordered
 	 */
-	protected int value = VALUE_EDEFAULT;
+	protected double value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,7 +126,6 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getMeasure() {
 		return measure;
 	}
@@ -136,7 +135,6 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMeasure(String newMeasure) {
 		String oldMeasure = measure;
 		measure = newMeasure;
@@ -149,7 +147,6 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMission() {
 		return mission;
 	}
@@ -174,7 +171,6 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMission(Missions newMission) {
 		if (newMission != mission) {
 			NotificationChain msgs = null;
@@ -194,7 +190,6 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getType() {
 		return type;
 	}
@@ -204,7 +199,6 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -217,8 +211,7 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public int getValue() {
+	public double getValue() {
 		return value;
 	}
 
@@ -227,9 +220,8 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setValue(int newValue) {
-		int oldValue = value;
+	public void setValue(double newValue) {
+		double oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.AT_LEAST__VALUE, oldValue, value));
@@ -287,7 +279,7 @@ public class AtLeastImpl extends MinimalEObjectImpl.Container implements AtLeast
 				setType((String)newValue);
 				return;
 			case PatternsPackage.AT_LEAST__VALUE:
-				setValue((Integer)newValue);
+				setValue((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

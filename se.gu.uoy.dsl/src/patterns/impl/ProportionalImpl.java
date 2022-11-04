@@ -95,7 +95,6 @@ public class ProportionalImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMission1() {
 		return mission1;
 	}
@@ -120,7 +119,6 @@ public class ProportionalImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMission1(Missions newMission1) {
 		if (newMission1 != mission1) {
 			NotificationChain msgs = null;
@@ -140,7 +138,6 @@ public class ProportionalImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMission2() {
 		return mission2;
 	}
@@ -165,7 +162,6 @@ public class ProportionalImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMission2(Missions newMission2) {
 		if (newMission2 != mission2) {
 			NotificationChain msgs = null;
@@ -185,7 +181,6 @@ public class ProportionalImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getValue() {
 		return value;
 	}
@@ -195,7 +190,6 @@ public class ProportionalImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setValue(int newValue) {
 		int oldValue = value;
 		value = newValue;

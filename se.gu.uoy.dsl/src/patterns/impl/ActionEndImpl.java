@@ -104,7 +104,6 @@ public class ActionEndImpl extends MinimalEObjectImpl.Container implements Actio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getName() {
 		return name;
 	}
@@ -114,7 +113,6 @@ public class ActionEndImpl extends MinimalEObjectImpl.Container implements Actio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -127,7 +125,6 @@ public class ActionEndImpl extends MinimalEObjectImpl.Container implements Actio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -137,7 +134,6 @@ public class ActionEndImpl extends MinimalEObjectImpl.Container implements Actio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -150,7 +146,6 @@ public class ActionEndImpl extends MinimalEObjectImpl.Container implements Actio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Action getAction() {
 		if (action != null && action.eIsProxy()) {
 			InternalEObject oldAction = (InternalEObject)action;
@@ -177,7 +172,6 @@ public class ActionEndImpl extends MinimalEObjectImpl.Container implements Actio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setAction(Action newAction) {
 		Action oldAction = action;
 		action = newAction;

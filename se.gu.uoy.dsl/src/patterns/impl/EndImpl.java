@@ -81,7 +81,7 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
+	protected static final double VALUE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -91,7 +91,7 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 	 * @generated
 	 * @ordered
 	 */
-	protected int value = VALUE_EDEFAULT;
+	protected double value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,7 +117,6 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Condition getCondition() {
 		if (condition != null && condition.eIsProxy()) {
 			InternalEObject oldCondition = (InternalEObject)condition;
@@ -144,7 +143,6 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCondition(Condition newCondition) {
 		Condition oldCondition = condition;
 		condition = newCondition;
@@ -157,7 +155,6 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<LocationEvent> getLocationevent() {
 		if (locationevent == null) {
 			locationevent = new EObjectContainmentEList<LocationEvent>(LocationEvent.class, this, PatternsPackage.END__LOCATIONEVENT);
@@ -170,7 +167,6 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -195,7 +191,6 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -215,8 +210,7 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public int getValue() {
+	public double getValue() {
 		return value;
 	}
 
@@ -225,9 +219,8 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setValue(int newValue) {
-		int oldValue = value;
+	public void setValue(double newValue) {
+		double oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.END__VALUE, oldValue, value));
@@ -290,7 +283,7 @@ public class EndImpl extends MinimalEObjectImpl.Container implements End {
 				setMissions((Missions)newValue);
 				return;
 			case PatternsPackage.END__VALUE:
-				setValue((Integer)newValue);
+				setValue((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

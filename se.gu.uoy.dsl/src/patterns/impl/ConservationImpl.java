@@ -85,7 +85,6 @@ public class ConservationImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -110,7 +109,6 @@ public class ConservationImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -130,7 +128,6 @@ public class ConservationImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getMeasure() {
 		return measure;
 	}
@@ -140,7 +137,6 @@ public class ConservationImpl extends MinimalEObjectImpl.Container implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMeasure(String newMeasure) {
 		String oldMeasure = measure;
 		measure = newMeasure;

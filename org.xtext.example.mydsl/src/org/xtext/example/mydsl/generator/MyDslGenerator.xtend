@@ -37,6 +37,13 @@ import org.xtext.example.mydsl.myDsl.Trail
  * Generates code from your model files on save.
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
+ * 
+ * Constraints:
+ * (a) prohibit nested probabilities, (b) accept only LTL
+ * properties for the reward and probability operators, and 
+ * (c) prohibit the definition of specifications that lead to
+ * the conjunction of quantitative and non-quantitative PRISM
+ * formulae since such formulae can not be processed by PRISM.
  */
 
 class MyDslGenerator extends AbstractGenerator {
@@ -48,19 +55,16 @@ class MyDslGenerator extends AbstractGenerator {
 		val root = resource?.allContents?.head as ProblemSpecifications;
 		// -- top missions
 		val topmissions = root.topmissions
-		
 		// -- type of mission
 		var finalString = ""
 		for (tm: topmissions.toList){
 			finalString += org.xtext.example.mydsl.generator.MyDslGenerator.getTopMissionTranslated(tm, resource) //check each mission in topmissions
 		}
-		
 		// --save file
 		fsa.generateFile(resource.getURI().lastSegment + '.pm', finalString);
 		
 	}
-	
-	
+		
 	
 	
 	def static String getMissionTranslated(Missions miss, Resource resource){
@@ -247,7 +251,6 @@ class MyDslGenerator extends AbstractGenerator {
 					Preservation:{
 						
 						s += rewardBetween_v1v2(m, resource)
-						
 					}
 					Pause:{
 						var submission = m.missions
@@ -265,7 +268,7 @@ class MyDslGenerator extends AbstractGenerator {
 						// NOT WORKING ************
 						s+= "G<=" + m.value.toString
 						s+= " !"+ getMissionTranslated(submission, resource)
-						s+= "Timeout: NOT WORKING YET"
+						s+= "Timeout: Translation not available." // (NOT WORKING Translation).
 					}
 					Repeat:{
 						var submission = m.missions
@@ -276,7 +279,7 @@ class MyDslGenerator extends AbstractGenerator {
 						s+= ") & ("
 						s+= "G("
 						s+= "(" + getMissionTranslated(submission,resource)+")"
-						s+= "->(G[1,"+ m0.toString +"] (!(" +
+						s+= "=>(G[1,"+ m0.toString +"] (!(" +
 							getMissionTranslated(submission,resource)
 							+")) & (F["+m.value + "," + m.value+ "] ("
 							+ getMissionTranslated(submission,resource)
@@ -296,7 +299,7 @@ class MyDslGenerator extends AbstractGenerator {
 						//var miss1 = m.mission1
 						//var miss2 = m.mission2
 						//m.value
-						s+= "Proportional: NA (NOT AVAILABLE)"
+						s+= "Proportional: No translation available."
 					}
 					Execute:{
 						m.robots
@@ -325,33 +328,81 @@ class MyDslGenerator extends AbstractGenerator {
 						}
 						else if (m.type1=='with confidence'){
 							if(m.type2=='greater than'){
-								s+="With confidence: No translation for L"
+								s+="With confidence: No translation available."// for L
 							}
 							else if(m.type2=='less than'){
-								s+="With confidence: No translation for L"
+								s+="With confidence: No translation available."// for L
 							}
 						}
 						
 					}
 					Equidistance:{
-						s+= "NA (NOT AVAILABLE)"
+						s+= "Equidistance: Translation not available."
 					}
 					Trail:{
-						s+= "NA (NOT AVAILABLE)"
+						s+= "Trail: Translation not available"
 					}
-					
 				}
 			}
-			
 		}
-		s // return string
+		return s // return string
 	}
+	
+	
+	/** Constraints:
+	 * (a) prohibit nested probabilities, (b) accept only LTL
+	 * properties for the reward and probability operators, and 
+	 * (c) prohibit the definition of specifications that lead to
+	 * the conjunction of quantitative and non-quantitative PRISM
+	 * formulae since such formulae can not be processed by PRISM.
+	 */
+	def static String checkFormulae(String s){
+		var checked_s = s
+		
+		//Replace "" for "
+		if (s.contains("\"\"")){
+			 checked_s = checked_s.replaceAll("\"\"", "\"");
+		}
+		//Reward inside a parenthesis means it is inside a R or P structure P...(R...), or part of a logic boolean formulae (e.g.: (R...)&(...) ) 
+		if (s.contains("(R")){
+			checked_s = "WARNING. Translation into PRISM not supported."
+			checked_s += "\n  				--Feedback: Reward found inside inside parenthesis-- "
+			checked_s += "\n  				--Formulae: "+s
+			return checked_s
+		}
+		//Prob. inside a parenthesis means it is inside a R or P structure P...(P...), or part of a logic boolean formulae (e.g.: (P...)&(...) )
+		else if (s.contains("(P")){
+			checked_s = "WARNING. Translation into PRISM not supported."
+			checked_s += "\n  				--Feedback: Probability found inside parenthesis-- "
+			checked_s += "\n  				--Formulae: "+s
+			return checked_s
+		}
+		//Possible error using (G[
+		else if (s.contains("(G[")){
+			checked_s = "WARNING. Translation into PRISM not supported."
+			checked_s += "\n  				--Feedback: G bounded [...] found inside parenthesis-- "
+			checked_s += "\n  				--Formulae: "+s
+			return checked_s
+		}
+		
+		/**REGEX not working on xtend
+		var s2 = "1(R)"
+		var rege = "\\("
+		checked_s += s2
+		if (s2.matches(rege)){
+			checked_s += " here: " + rege
+		}
+		**/
+		return checked_s	
+	}
+	
+	
 	
 	def static rewardSign(String s, String sign, String measure, int value, Missions submission, Resource resource) {
 		return "R{\""+measure+"\"}"+ sign + value.toString + " [" + getMissionTranslated(submission, resource) + "]"
 	}
 	
-	/**Minimize reward */
+	/**Minimise reward */
 	def static minimizeReward(Conservation m, Resource resource){
 		var measure = m.measure
 		var submission = m.missions
@@ -386,8 +437,12 @@ class MyDslGenerator extends AbstractGenerator {
 		var id = tmiss.name // mission ID
 		var miss = tmiss.mission // mission in top mission
 		var s = new String // return string
-		// get mission translated
-		s = id + ": " + getMissionTranslated(miss,resource) + "\n\n"
+		// -- get mission translated
+		s = getMissionTranslated(miss,resource).replaceAll("\\s","")
+		// -- check formulae for consistency
+		s = checkFormulae(s)
+		// -- add id
+		s = id + ": " + s + "\n\n"
 		s //return string
 	}
 	

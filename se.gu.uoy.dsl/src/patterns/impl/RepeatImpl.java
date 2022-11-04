@@ -85,7 +85,6 @@ public class RepeatImpl extends MinimalEObjectImpl.Container implements Repeat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Missions getMissions() {
 		return missions;
 	}
@@ -110,7 +109,6 @@ public class RepeatImpl extends MinimalEObjectImpl.Container implements Repeat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setMissions(Missions newMissions) {
 		if (newMissions != missions) {
 			NotificationChain msgs = null;
@@ -130,7 +128,6 @@ public class RepeatImpl extends MinimalEObjectImpl.Container implements Repeat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public int getValue() {
 		return value;
 	}
@@ -140,7 +137,6 @@ public class RepeatImpl extends MinimalEObjectImpl.Container implements Repeat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setValue(int newValue) {
 		int oldValue = value;
 		value = newValue;
