@@ -3,6 +3,11 @@ Quartet Tool for the specification of Multi-robot missions + translation into PR
 
 The plugin was tested on Eclipse Modeling Tools (EMF) Version 2020-12, Windows 10. However, instructions in the **Set up** section guide you to deploy Quartet on Eclipse from scratch for compatibility purposes.
 
+Tutorial:
+https://www.youtube.com/watch?v=bNOjOF-TmOE&ab_channel=GricelVazquez
+Main page:
+https://dsg.tuwien.ac.at/staff/ctsigkanos/patterns/quantitative/quartet/
+
 
 # Set up
 
