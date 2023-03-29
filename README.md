@@ -48,7 +48,7 @@ Right click on the Ecore Model and create a new EMF Generator Model> Next > Next
 
 ![image](https://user-images.githubusercontent.com/63869574/157303676-8369f471-cfd5-418e-ad95-660df05fdb02.png)
 
-This should create some code in the "src" folder and the .genmodel. Right click at the root of the .genmodel and select Generate All.
+This should create the .genmodel. Right click at the root of the .genmodel and select Generate All.
 
 ![image](https://user-images.githubusercontent.com/63869574/157303738-2fc08257-0cf5-47e5-870c-a1571508725b.png)
 
