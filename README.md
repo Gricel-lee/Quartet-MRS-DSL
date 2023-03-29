@@ -75,7 +75,7 @@ It should generate 4 new plugins:
 
 Replace these folders with the ones provided here in Github. You'd need to change ```var path_sigAlloyDeclaration``` in MyDslGenerator.xtend to your own directory path.
 
-- (**ERROR1.** If replacing causes problems, try replacing the content in mydsl/MyDsl.xtext, then right click> Run as> 1 Generate Xtext Artifacts. Three new subfolder must appear: .formatting2, .generator, .scoping and .validation. Go to the second, example.mydsl.generator, and copy the 3 .txt files. Finally replace MyDslGenerator.xtend in the same folder.)
+- (**ERROR1.** If replacing causes problems, try replacing the content in mydsl/MyDsl.xtext (```org.xtext.example.mydsl/src/org/xtext/example/mydsl/MyDsl.xtext```), then right click> Run as> 1 Generate Xtext Artifacts. Three new subfolder must appear: .formatting2, .generator, .scoping and .validation. Go to the second, example.mydsl.generator, and copy the 3 .txt files. Finally replace MyDslGenerator.xtend in the same folder.)
 - (**ERROR2.** If an error appears in **Files.readString** it may be because of using JavaSE<11. Go to Project Properties > Java Build Path> Libraries > Add Library > JRE System Library > Execution environment> JavaSE-11(jdk19) )
 
 Right click on the .xtext file on the src folder (of the first plugin) > Run As > 1 Generate Xtext artifacts
