@@ -1,0 +1,152 @@
+m1: (F"r1l1")&(F"r1l2")&(F"r1l3")
+
+m2: (F"r1l1"&(F"r1l2"&(F"r1l3"&(F"r1l4"))))
+
+m3: (F"r1l1"&(F"r1l2"&(F"r1l3")))&(!"r1l2"U"r1l1")&(!"r1l3"U"r1l2")
+
+m4: (F"r1l1"&(F"r1l2"&(F"r1l3")))&(!"r1l2"U"r1l1")&(!"r1l3"U"r1l2")&(!"r1l1"U(("r1l1")&(X!"r1l1"U"r1l2")))&(!"r1l2"U(("r1l2")&(X!"r1l2"U"r1l3")))
+
+m5: (F"r1l1")&(F"r1l2")&(F"r1l3")&(G("r1l1"=>(X(!"r1l1"W"r1l2"))))&(G("r1l2"=>(X(!"r1l2"W"r1l3"))))&(G("r1l3"=>(X(!"r1l3"W"r1l1"))))
+
+m6: (G F("r1l1"))&(G F("r1l2"))
+
+m7: G(F"r1l1"&(F"r1l2"))
+
+m8: G(F"r1l1"&(F"r1l2"))&(!"r1l2"U"r1l1")&(G("r1l2"=>(X(!"r1l2"U"r1l1"))))&(G("r1l1"=>(X(!"r1l1"U"r1l2"))))
+
+m9: G(F"r1l2"&(F"r1l3"))&(!"r1l3"U"r1l2")&(G("r1l3"=>(X(!"r1l3"U"r1l2"))))&(G("r1l2"=>(X(!"r1l2"U"r1l3"))))&(G("r1l2"=>(X(!"r1l2"U"r1l3"))))
+
+m10: (G F("r1l2"))&(G F("r1l3"))&(G F("r1l4"))&(G("r1l2"=>(X(!"r1l2"W"r1l3"))))&(G("r1l3"=>(X(!"r1l3"W"r1l4"))))&(G("r1l4"=>(X(!"r1l4"W"r1l2"))))
+
+m11: (F"r1l1"&(X F"r1l1"))
+
+m12: !(F"r1l1"&(X F"r1l1"))
+
+m13: visit exactly: No translation provided.
+
+m14: (!"r1l2")U("c2")
+
+m15: G!"r1l2"
+
+m16: G("c2"=>(G !"r2l2"))
+
+m17: G("c4"=>"act1")
+
+m18: G("c2"=>(G F("r1l2")))
+
+m19: G("c2"=>"r1l2")
+
+m20: G("c4"=>(F"act1"))
+
+m21: G("c2"=>(G F("r1l2")))
+
+m22: G("c2"=>(F"r1l2"))
+
+m23: G("c4"=>(X"act1"))
+
+m24: G("c2"=>(X(F"r10l2") ))
+
+m25: G("c2"=>(X"r10l2"))
+
+m26: G("c1"<=>"l2")
+
+m27: G("c2"<=>(X"l1"))
+
+m28: ("r2l1")U("c2")
+
+m30: !(("r2l1")U("c2"))
+
+m30: (("r2l1")U("c2"))&(("r2l1")U("c2"))
+
+m30_2: (("r2l1")U("c2"))&((("r2l1")U("c2"))&(("r2l1")U("c2")))
+
+m31: (("r2l1")U("c2"))|(("r2l1")U("c2"))
+
+m31_2: (("r2l1")U("c2"))|((("r2l1")U("c2"))&(("r2l1")U("c2")))
+
+m31_3: (("r2l1")U("c2"))&((("r2l1")U("c2"))|(("r2l1")U("c2")))
+
+me1: Pmax=?[F"r1l2"]
+
+me1r: R{"m"}max=?[F"r1l2"]
+
+me2: Pmin=?[F"r1l1"]
+
+me2r: R{"m"}min=?[F"r1l2"]
+
+me3: P<=0.9[F"r1l1"]
+
+me3r: R{"m"}<=0.1[F"r2l1"]
+
+me4: P<0.1[F"r1l1"]
+
+me4r: R{"m"}<0.1[F"r1l1"]
+
+me5: P>=0.1[F"r1l1"]
+
+me5r: R{"m"}>=10.1[F"r1l1"]
+
+me6: P>0.1[F"r1l1"]
+
+me6r: R{"m"}>6.0[F"r1l1"]
+
+me7: -Formulae: (P>=0.1[F"r1l1"])&(P<=0.1[F"r1l1"])
+  				-WARNING. Translation into PRISM may not be supported.
+  				--Feedback: Probability found inside parenthesis-- 
+
+me7r: -Formulae: (R{"m"}>=0.1[F"r1l1"])&(R{"m"}<=0.1[F"r1l1"])
+  				-WARNING. Translation into PRISM may not be supported.
+  				--Feedback: Reward found inside inside parenthesis-- 
+
+me8: -Formulae: (P>=0.1[F"r1l1"])&(P<=0.2[F"r1l1"])
+  				-WARNING. Translation into PRISM may not be supported.
+  				--Feedback: Probability found inside parenthesis-- 
+
+me8r: -Formulae: (R{"m"}>=0.1[F"r1l1"])&(R{"m"}<=0.2[F"r1l1"])
+  				-WARNING. Translation into PRISM may not be supported.
+  				--Feedback: Reward found inside inside parenthesis-- 
+
+me9: -Formulae: (P>0.1[F"r1l1"])&(P<0.2[F"r1l1"])
+  				-WARNING. Translation into PRISM may not be supported.
+  				--Feedback: Probability found inside parenthesis-- 
+
+me9r: -Formulae: (R{"m"}>10.0[F"r1l1"])&(R{"m"}<11.0[F"r1l1"])
+  				-WARNING. Translation into PRISM may not be supported.
+  				--Feedback: Reward found inside inside parenthesis-- 
+
+mc1: R{"m"}min=?[F"r1l2"]
+
+mc2: -Formulae: (R{"m"}>=0.2[F"r1l1"])&(R{"m"}<=0.3[F"r1l1"])
+  				-WARNING. Translation into PRISM may not be supported.
+  				--Feedback: Reward found inside inside parenthesis-- 
+
+mc3: -Formulae: (G[0,2] !(F"r1l1"))&(F[3,3]F"r1l1")
+  				-WARNING. Translation into PRISM may not be supported.
+  				--Feedback: G bounded [...] found inside parenthesis-- 
+
+mc4: G>=30 !((F"r1l1")&(F"r1l2"))
+
+mc5: -Formulae: (F"r1l2")&(G((F"r1l2")=>(G[1,29](!(F"r1l2"))&(F[30,30](F"r1l2")))))
+  				-WARNING. Translation into PRISM may not be supported.
+  				--Feedback: G bounded [...] found inside parenthesis-- 
+
+mc6: (G>3 (F"r1l1"))&(G>=3 !(F"r1l1"))
+
+mc7: Proportional: No translation available.
+
+mc8: (F"r1act1")&(F"r1act2")
+
+mc9: Rmax=?[(F"r1l1")&(F"r1l2")]
+
+mc10: R{"m"}>10.0[F"r1l1"]
+
+mc11: R{"m"}<5.0[F"r1l1"]
+
+mc12: With confidence: No translation available.
+
+mc13: With confidence: No translation available.
+
+mc9: Equidistance: Translation not available.
+
+mc10: Trail: Translation not available
+

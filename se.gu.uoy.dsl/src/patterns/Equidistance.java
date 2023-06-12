@@ -14,10 +14,10 @@ package patterns;
  * <ul>
  *   <li>{@link patterns.Equidistance#getLocation1 <em>Location1</em>}</li>
  *   <li>{@link patterns.Equidistance#getLocation2 <em>Location2</em>}</li>
- *   <li>{@link patterns.Equidistance#getDistance <em>Distance</em>}</li>
  *   <li>{@link patterns.Equidistance#getRobots1 <em>Robots1</em>}</li>
  *   <li>{@link patterns.Equidistance#getRobots2 <em>Robots2</em>}</li>
  *   <li>{@link patterns.Equidistance#getRobots <em>Robots</em>}</li>
+ *   <li>{@link patterns.Equidistance#getDistance <em>Distance</em>}</li>
  * </ul>
  *
  * @see patterns.PatternsPackage#getEquidistance()
@@ -74,12 +74,12 @@ public interface Equidistance extends CompositePatterns, MissionDependent {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Distance</em>' attribute.
-	 * @see #setDistance(int)
+	 * @see #setDistance(double)
 	 * @see patterns.PatternsPackage#getEquidistance_Distance()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getDistance();
+	double getDistance();
 
 	/**
 	 * Sets the value of the '{@link patterns.Equidistance#getDistance <em>Distance</em>}' attribute.
@@ -89,7 +89,7 @@ public interface Equidistance extends CompositePatterns, MissionDependent {
 	 * @see #getDistance()
 	 * @generated
 	 */
-	void setDistance(int value);
+	void setDistance(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Robots1</b></em>' reference.

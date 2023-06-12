@@ -65,9 +65,9 @@ public class ReliabilityConfidenceItemProvider
 
 			addConfidencePropertyDescriptor(object);
 			addMeasurePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
 			addType1PropertyDescriptor(object);
 			addType2PropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,7 +89,7 @@ public class ReliabilityConfidenceItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -112,28 +112,6 @@ public class ReliabilityConfidenceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ReliabilityConfidence_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReliabilityConfidence_value_feature", "_UI_ReliabilityConfidence_type"),
-				 PatternsPackage.Literals.RELIABILITY_CONFIDENCE__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -178,6 +156,28 @@ public class ReliabilityConfidenceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ReliabilityConfidence_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReliabilityConfidence_value_feature", "_UI_ReliabilityConfidence_type"),
+				 PatternsPackage.Literals.RELIABILITY_CONFIDENCE__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -250,9 +250,9 @@ public class ReliabilityConfidenceItemProvider
 		switch (notification.getFeatureID(ReliabilityConfidence.class)) {
 			case PatternsPackage.RELIABILITY_CONFIDENCE__CONFIDENCE:
 			case PatternsPackage.RELIABILITY_CONFIDENCE__MEASURE:
-			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE1:
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE2:
+			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PatternsPackage.RELIABILITY_CONFIDENCE__MISSIONS:

@@ -3278,22 +3278,13 @@ public interface PatternsPackage extends EPackage {
 	int EQUIDISTANCE__LOCATION2 = COMPOSITE_PATTERNS_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Distance</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EQUIDISTANCE__DISTANCE = COMPOSITE_PATTERNS_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Robots1</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EQUIDISTANCE__ROBOTS1 = COMPOSITE_PATTERNS_FEATURE_COUNT + 4;
+	int EQUIDISTANCE__ROBOTS1 = COMPOSITE_PATTERNS_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Robots2</b></em>' reference.
@@ -3302,7 +3293,7 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EQUIDISTANCE__ROBOTS2 = COMPOSITE_PATTERNS_FEATURE_COUNT + 5;
+	int EQUIDISTANCE__ROBOTS2 = COMPOSITE_PATTERNS_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Robots</b></em>' reference.
@@ -3311,7 +3302,16 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EQUIDISTANCE__ROBOTS = COMPOSITE_PATTERNS_FEATURE_COUNT + 6;
+	int EQUIDISTANCE__ROBOTS = COMPOSITE_PATTERNS_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUIDISTANCE__DISTANCE = COMPOSITE_PATTERNS_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Equidistance</em>' class.
@@ -3360,22 +3360,22 @@ public interface PatternsPackage extends EPackage {
 	int TRAIL__OBJET_TO_FOLLOW = COMPOSITE_PATTERNS_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAIL__VALUE = COMPOSITE_PATTERNS_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Robots</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIL__ROBOTS = COMPOSITE_PATTERNS_FEATURE_COUNT + 3;
+	int TRAIL__ROBOTS = COMPOSITE_PATTERNS_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAIL__VALUE = COMPOSITE_PATTERNS_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Trail</em>' class.
@@ -3580,22 +3580,13 @@ public interface PatternsPackage extends EPackage {
 	int RELIABILITY_CONFIDENCE__MEASURE = COMPOSITE_PATTERNS_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELIABILITY_CONFIDENCE__VALUE = COMPOSITE_PATTERNS_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Type1</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELIABILITY_CONFIDENCE__TYPE1 = COMPOSITE_PATTERNS_FEATURE_COUNT + 4;
+	int RELIABILITY_CONFIDENCE__TYPE1 = COMPOSITE_PATTERNS_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Type2</b></em>' attribute.
@@ -3604,7 +3595,16 @@ public interface PatternsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELIABILITY_CONFIDENCE__TYPE2 = COMPOSITE_PATTERNS_FEATURE_COUNT + 5;
+	int RELIABILITY_CONFIDENCE__TYPE2 = COMPOSITE_PATTERNS_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELIABILITY_CONFIDENCE__VALUE = COMPOSITE_PATTERNS_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Reliability Confidence</em>' class.

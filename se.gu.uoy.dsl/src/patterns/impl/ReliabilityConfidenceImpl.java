@@ -28,9 +28,9 @@ import patterns.ReliabilityConfidence;
  *   <li>{@link patterns.impl.ReliabilityConfidenceImpl#getMissions <em>Missions</em>}</li>
  *   <li>{@link patterns.impl.ReliabilityConfidenceImpl#getConfidence <em>Confidence</em>}</li>
  *   <li>{@link patterns.impl.ReliabilityConfidenceImpl#getMeasure <em>Measure</em>}</li>
- *   <li>{@link patterns.impl.ReliabilityConfidenceImpl#getValue <em>Value</em>}</li>
  *   <li>{@link patterns.impl.ReliabilityConfidenceImpl#getType1 <em>Type1</em>}</li>
  *   <li>{@link patterns.impl.ReliabilityConfidenceImpl#getType2 <em>Type2</em>}</li>
+ *   <li>{@link patterns.impl.ReliabilityConfidenceImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,7 +54,7 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int CONFIDENCE_EDEFAULT = 0;
+	protected static final double CONFIDENCE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getConfidence() <em>Confidence</em>}' attribute.
@@ -64,7 +64,7 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected int confidence = CONFIDENCE_EDEFAULT;
+	protected double confidence = CONFIDENCE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMeasure() <em>Measure</em>}' attribute.
@@ -85,26 +85,6 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected String measure = MEASURE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int VALUE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected int value = VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getType1() <em>Type1</em>}' attribute.
@@ -145,6 +125,26 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected String type2 = TYPE2_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double VALUE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected double value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,7 +213,7 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getConfidence() {
+	public double getConfidence() {
 		return confidence;
 	}
 
@@ -222,8 +222,8 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConfidence(int newConfidence) {
-		int oldConfidence = confidence;
+	public void setConfidence(double newConfidence) {
+		double oldConfidence = confidence;
 		confidence = newConfidence;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.RELIABILITY_CONFIDENCE__CONFIDENCE, oldConfidence, confidence));
@@ -255,7 +255,7 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
+	public double getValue() {
 		return value;
 	}
 
@@ -264,8 +264,8 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(int newValue) {
-		int oldValue = value;
+	public void setValue(double newValue) {
+		double oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.RELIABILITY_CONFIDENCE__VALUE, oldValue, value));
@@ -341,12 +341,12 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 				return getConfidence();
 			case PatternsPackage.RELIABILITY_CONFIDENCE__MEASURE:
 				return getMeasure();
-			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
-				return getValue();
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE1:
 				return getType1();
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE2:
 				return getType2();
+			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,19 +363,19 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 				setMissions((Missions)newValue);
 				return;
 			case PatternsPackage.RELIABILITY_CONFIDENCE__CONFIDENCE:
-				setConfidence((Integer)newValue);
+				setConfidence((Double)newValue);
 				return;
 			case PatternsPackage.RELIABILITY_CONFIDENCE__MEASURE:
 				setMeasure((String)newValue);
-				return;
-			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
-				setValue((Integer)newValue);
 				return;
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE1:
 				setType1((String)newValue);
 				return;
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE2:
 				setType2((String)newValue);
+				return;
+			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
+				setValue((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -398,14 +398,14 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 			case PatternsPackage.RELIABILITY_CONFIDENCE__MEASURE:
 				setMeasure(MEASURE_EDEFAULT);
 				return;
-			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE1:
 				setType1(TYPE1_EDEFAULT);
 				return;
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE2:
 				setType2(TYPE2_EDEFAULT);
+				return;
+			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -425,12 +425,12 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 				return confidence != CONFIDENCE_EDEFAULT;
 			case PatternsPackage.RELIABILITY_CONFIDENCE__MEASURE:
 				return MEASURE_EDEFAULT == null ? measure != null : !MEASURE_EDEFAULT.equals(measure);
-			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
-				return value != VALUE_EDEFAULT;
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE1:
 				return TYPE1_EDEFAULT == null ? type1 != null : !TYPE1_EDEFAULT.equals(type1);
 			case PatternsPackage.RELIABILITY_CONFIDENCE__TYPE2:
 				return TYPE2_EDEFAULT == null ? type2 != null : !TYPE2_EDEFAULT.equals(type2);
+			case PatternsPackage.RELIABILITY_CONFIDENCE__VALUE:
+				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -493,12 +493,12 @@ public class ReliabilityConfidenceImpl extends MinimalEObjectImpl.Container impl
 		result.append(confidence);
 		result.append(", measure: ");
 		result.append(measure);
-		result.append(", value: ");
-		result.append(value);
 		result.append(", type1: ");
 		result.append(type1);
 		result.append(", type2: ");
 		result.append(type2);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

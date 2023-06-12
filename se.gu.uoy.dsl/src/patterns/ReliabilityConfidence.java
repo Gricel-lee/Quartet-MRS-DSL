@@ -13,9 +13,9 @@ package patterns;
  * </p>
  * <ul>
  *   <li>{@link patterns.ReliabilityConfidence#getMeasure <em>Measure</em>}</li>
- *   <li>{@link patterns.ReliabilityConfidence#getValue <em>Value</em>}</li>
  *   <li>{@link patterns.ReliabilityConfidence#getType1 <em>Type1</em>}</li>
  *   <li>{@link patterns.ReliabilityConfidence#getType2 <em>Type2</em>}</li>
+ *   <li>{@link patterns.ReliabilityConfidence#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see patterns.PatternsPackage#getReliabilityConfidence()
@@ -50,12 +50,12 @@ public interface ReliabilityConfidence extends CompositePatterns, MissionDepende
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(int)
+	 * @see #setValue(double)
 	 * @see patterns.PatternsPackage#getReliabilityConfidence_Value()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getValue();
+	double getValue();
 
 	/**
 	 * Sets the value of the '{@link patterns.ReliabilityConfidence#getValue <em>Value</em>}' attribute.
@@ -65,7 +65,7 @@ public interface ReliabilityConfidence extends CompositePatterns, MissionDepende
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(int value);
+	void setValue(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Type1</b></em>' attribute.

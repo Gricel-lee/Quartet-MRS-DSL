@@ -27,8 +27,8 @@ import patterns.Trail;
  * <ul>
  *   <li>{@link patterns.impl.TrailImpl#getMissions <em>Missions</em>}</li>
  *   <li>{@link patterns.impl.TrailImpl#getObjetToFollow <em>Objet To Follow</em>}</li>
- *   <li>{@link patterns.impl.TrailImpl#getValue <em>Value</em>}</li>
  *   <li>{@link patterns.impl.TrailImpl#getRobots <em>Robots</em>}</li>
+ *   <li>{@link patterns.impl.TrailImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +65,16 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	protected String objetToFollow = OBJET_TO_FOLLOW_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getRobots() <em>Robots</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRobots()
+	 * @generated
+	 * @ordered
+	 */
+	protected Robots robots;
+
+	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,7 +82,7 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
+	protected static final double VALUE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -82,17 +92,7 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * @generated
 	 * @ordered
 	 */
-	protected int value = VALUE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getRobots() <em>Robots</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRobots()
-	 * @generated
-	 * @ordered
-	 */
-	protected Robots robots;
+	protected double value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,7 +182,7 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
+	public double getValue() {
 		return value;
 	}
 
@@ -191,8 +191,8 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(int newValue) {
-		int oldValue = value;
+	public void setValue(double newValue) {
+		double oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.TRAIL__VALUE, oldValue, value));
@@ -262,11 +262,11 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 				return getMissions();
 			case PatternsPackage.TRAIL__OBJET_TO_FOLLOW:
 				return getObjetToFollow();
-			case PatternsPackage.TRAIL__VALUE:
-				return getValue();
 			case PatternsPackage.TRAIL__ROBOTS:
 				if (resolve) return getRobots();
 				return basicGetRobots();
+			case PatternsPackage.TRAIL__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -285,11 +285,11 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 			case PatternsPackage.TRAIL__OBJET_TO_FOLLOW:
 				setObjetToFollow((String)newValue);
 				return;
-			case PatternsPackage.TRAIL__VALUE:
-				setValue((Integer)newValue);
-				return;
 			case PatternsPackage.TRAIL__ROBOTS:
 				setRobots((Robots)newValue);
+				return;
+			case PatternsPackage.TRAIL__VALUE:
+				setValue((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -309,11 +309,11 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 			case PatternsPackage.TRAIL__OBJET_TO_FOLLOW:
 				setObjetToFollow(OBJET_TO_FOLLOW_EDEFAULT);
 				return;
-			case PatternsPackage.TRAIL__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 			case PatternsPackage.TRAIL__ROBOTS:
 				setRobots((Robots)null);
+				return;
+			case PatternsPackage.TRAIL__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -331,10 +331,10 @@ public class TrailImpl extends MinimalEObjectImpl.Container implements Trail {
 				return missions != null;
 			case PatternsPackage.TRAIL__OBJET_TO_FOLLOW:
 				return OBJET_TO_FOLLOW_EDEFAULT == null ? objetToFollow != null : !OBJET_TO_FOLLOW_EDEFAULT.equals(objetToFollow);
-			case PatternsPackage.TRAIL__VALUE:
-				return value != VALUE_EDEFAULT;
 			case PatternsPackage.TRAIL__ROBOTS:
 				return robots != null;
+			case PatternsPackage.TRAIL__VALUE:
+				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

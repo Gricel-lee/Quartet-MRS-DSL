@@ -14,28 +14,47 @@ problem specifications
 		c3: act1 is ended
 		c4: act2 is true
 		
-	missions: 
-		m1: r1 shall visit l1,l2;
+	missions:
+		//Patterns (allowed translation to LTL but not supported by PRISM)
+		m1: r1 shall visit l1,l2,l3; 
 		m2: r1 shall visit in sequence l1,l2,l3,l4;
-		m3: r1 shall visit in order l1,l2,l3,l4;
-		m4: r1 shall visit in strict order l2,l3;
-		m6: r1 shall patrol l10,l2;
+		//P=?[ (F "r1l1" & (F "r1l1" & (F "r1l1") ) ) & ( (!"r1l1")U("r1l1"))  ]
+		
+		m3: r1 shall visit in order l1,l2,l3; 
+		 
+		m4: r1 shall visit in strict order l1, l2,l3;
+		m5: r1 shall visit fairly l1, l2, l3;
+		
+		m6: r1 shall patrol l1, l2; 
 		m7: r1 shall patrol in sequence l1,l2;
-		m11: r1 shall avoid l2 , l4, l5;
-		m12: r1 shall avoid l2 , l4, l5 until c2;
-		m13: r2 shall avoid l2 , l4, l5 after c2;
-		m14: r10 shall react instantly to c4 by exec act1;
-		m15: r10 shall react instantly to c2 by reach l2;
-		m16: r10 shall react instantly to c2 by visit l2;
-		m17: r10 shall react with a delay to c4 by exec act1;
-		m18: r10 shall react with a delay to c2 by reach l2;
-		m19: r10 shall react with a delay to c2 by visit l2;
-		m20: r10 shall react promptly to c4 by exec act1;
-		m21: r10 shall react promptly to c2 by reach l2;
-		m22: r10 shall react promptly to c2 by visit l2;
-		m23: r11 shall counteract instantly when reach l2 by c1;
-		m24: r11 shall counteract with a delay when reach l1 by c2;
-		m29: r2 shall wait in l1 until c2;
+		m8: r1 shall patrol in order l1,l2;  
+		m9: r1 shall patrol in strict order l2, l3;
+		m10: r1 shall patrol fairly l2, l3, l4;
+		  
+		m11: r1 shall visit more than 1 times l1; //upper rest avoidance
+		m12: r1 shall visit less than 1 times l1; //lower rest. avoidance
+		m13: r1 shall visit exactly 10 times l1; //exact rest avoidance
+		
+		m14: r1 shall avoid l2 until c2; //past avoidance
+		m15: r1 shall avoid l2 ; //global avoidance
+		m16: r2 shall avoid l2 after c2; //future avoidance
+		 
+		m17: r1 shall react instantly to c4 by exec act1; 
+		m18: r1 shall react instantly to c2 by patrol l2;
+		m19: r1 shall react instantly to c2 by reach l2;
+		
+		m20: r1 shall react with a delay to c4 by exec act1;
+		m21: r1 shall react with a delay to c2 by patrol l2;
+		m22: r1 shall react with a delay to c2 by reach l2;
+		
+		m23: r10 shall react promptly to c4 by exec act1;
+		m24: r10 shall react promptly to c2 by visit l2;
+		m25: r10 shall react promptly to c2 by reach l2;
+		
+		m26: r11 shall counteract instantly when reach l2 by c1;
+		m27: r11 shall counteract with a delay when reach l1 by c2;
+		 
+		m28: r2 shall wait in l1 until c2;
 
 		// not / and / or:
 		m30: not ( r2 shall wait in l1 until c2 ); 
@@ -45,8 +64,56 @@ problem specifications
 		m31_2: (r2 shall wait in l1 until c2) or ( (r2 shall wait in l1 until c2) and (r2 shall wait in l1 until c2) );
 		m31_3: (r2 shall wait in l1 until c2) and ( (r2 shall wait in l1 until c2) or (r2 shall wait in l1 until c2) );
 		
-		m43: pause 30 r1 shall patrol l1, l2;
-		m44: timeout 30 r1 shall patrol l1, l2;
-		m45: repeat r1 shall patrol l1, l2 every 30;
-		m47: time of r1 shall patrol l1, l2 proportional to r2 shall patrol l1, l2 by factor 3
+		// Elementary patterns
+		me1: maximize m r1 shall visit l2;
+		me1r: reward maximize m r1 shall visit l2;
+		me2: minimize m r1 shall visit l1;
+		me2r: reward minimize m r1 shall visit l2;
+		me3: m at most 0.9 r1 shall visit l1;
+		me3r: reward m at most 0.1 r2 shall visit l1;
+		me4: m less than 0.1 r1 shall visit l1;
+		me4r: reward m less than 0.1 r1 shall visit l1;
+		me5: m at least 0.1 r1 shall visit l1; 
+		me5r: reward m at least 10.1 r1 shall visit l1; 
+		me6: m greater than 0.1 r1 shall visit l1; 
+		me6r: reward m greater than 6.0 r1 shall visit l1; 
+		
+		me7: m exactly 0.1 r1 shall visit l1; //checked, allowed in PRISM
+		me7r: reward m exactly 0.1 r1 shall visit l1; //checked, allowed in PRISM
+		me8: m within 0.1 and 0.2 r1 shall visit l1;
+		me8r: reward m within 0.1 and 0.2 r1 shall visit l1;
+		  
+		me9: m strictly within 0.1 and 0.2 r1 shall visit l1; 
+		me9r: reward m strictly within 10.0 and 11.0 r1 shall visit l1; 
+		 
+		//Composite patterns
+		mc1: conserve m while r1 shall visit l2;
+		mc2: preserve m within [0.2,0.3] while r1 shall visit l1;
+		
+		
+		mc3: pause 2 r1 shall visit l1;
+		mc4: timeout 30 r1 shall visit l1, l2;
+		
+		mc5: repeat r1 shall visit l2 every 30;
+		mc6: end r1 shall visit l1 exactly_at 3;
+		mc7: time of r1 shall patrol l1, l2 proportional to r2 shall patrol l1, l2 by factor 3;
+		  
+		mc8: execute r1 actions act1, act2;
+		mc9: r1 accrue m while r1 shall visit l1, l2;
+		
+		mc10: achieve r1 shall visit l1 with reliability m greater than 10.0;
+		mc11: achieve r1 shall visit l1 with reliability m less than 5.0;
+		 
+		mc12: achieve r1 shall visit l1 with confidence m greater than 1.1;
+		mc13: achieve r1 shall visit l1 with confidence m less than 1.1;
+		
+		mc9: r1 r1 shall visit l2 equidistance r1 r2; //what?
+		
+		mc10: r1 trail obj with distance 10
+		
+		
+		//m: pause 30 r1 shall patrol l1, l2;
+		//m44: timeout 30 r1 shall patrol l1, l2;
+		//m45: repeat r1 shall patrol l1, l2 every 30;
+		//m47: time of r1 shall patrol l1, l2 proportional to r2 shall patrol l1, l2 by factor 3
 }

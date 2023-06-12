@@ -65,10 +65,10 @@ public class EquidistanceItemProvider
 
 			addLocation1PropertyDescriptor(object);
 			addLocation2PropertyDescriptor(object);
-			addDistancePropertyDescriptor(object);
 			addRobots1PropertyDescriptor(object);
 			addRobots2PropertyDescriptor(object);
 			addRobotsPropertyDescriptor(object);
+			addDistancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -113,28 +113,6 @@ public class EquidistanceItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Distance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDistancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Equidistance_distance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Equidistance_distance_feature", "_UI_Equidistance_type"),
-				 PatternsPackage.Literals.EQUIDISTANCE__DISTANCE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -201,6 +179,28 @@ public class EquidistanceItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Distance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDistancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Equidistance_distance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Equidistance_distance_feature", "_UI_Equidistance_type"),
+				 PatternsPackage.Literals.EQUIDISTANCE__DISTANCE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}

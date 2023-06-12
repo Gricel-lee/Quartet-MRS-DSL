@@ -116,7 +116,7 @@ AvoidanceVisit returns AvoidanceVisit:
 
 Visit2 returns Visit2:
 	{Visit2}
-	'visit' type =('more than' | 'less than' | 'exactly') number=EInt 'times' locations+=[Location|EString] ("," locations+=[Location|EString])* ;
+	'visit' type =('more than' | 'less than' | 'exactly') number=EInt 'times' locations+=[Location|EString] ;
 
 Avoid returns Avoid:
 	{Avoid}
@@ -166,12 +166,13 @@ Maximize returns Maximize:
 AtMost returns AtMost:
 	{AtMost}
 	reward = ('reward')?
-	measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EInt mission=Missions;
+	measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EDouble mission=Missions;
 	
 Within returns Within:
 	{Within}
 	reward = ('reward')?
-	measure=EString type=('within'|'strictly within') value1=EInt 'and' value2=EInt mission=Missions;
+	measure=EString type=('within'|'strictly within') value1=EDouble 'and' value2=EDouble mission=Missions;
+
 
 
 /* Composite patterns */
@@ -188,7 +189,7 @@ Conservation returns Conservation:
 
 Preservation returns Preservation:
 	{Preservation}
-	'preserve' measure=EString 'within' '[' value1=EInt ',' value2=EInt ']' 'while' missions=Missions;
+	'preserve' measure=EString 'within' '[' value1=EDouble ',' value2=EDouble ']' 'while' missions=Missions;
 
 Pause returns Pause:
 	{Pause}
@@ -204,7 +205,7 @@ Repeat returns Repeat:
 
 End returns End:
 	{End}
-	'end' missions=Missions 'exactly' 'at' value=EInt; //***delete all except missions and add t
+	'end' missions=Missions 'exactly_at' value=EInt; //***delete all except missions and add t
 	//NOTE: I use exactly at instead of exactly_at as the paper
 	//***'abort' missions=Missions 'if' (condition=[Condition|EString]| locationevent+=LocationEvent); // added + in "locationevent+=LocationEvent" to delete error
 
@@ -223,7 +224,7 @@ Accrue returns Accrue:
 
 ReliabilityConfidence returns ReliabilityConfidence:
 	{ReliabilityConfidence}
-	'achieve' missions=Missions type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EInt ;
+	'achieve' missions=Missions type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EDouble ;
 	
 Equidistance returns Equidistance:
 	{Equidistance}
@@ -242,7 +243,10 @@ Trail returns Trail:
 	
 	
 /* Others */
-
+EDouble returns ecore::EDouble: 
+	INT  '.' INT
+;
+	
 EInt returns ecore::EInt:
 	'-'? INT;
 

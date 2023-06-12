@@ -1,7 +1,8 @@
 '('=48
 ')'=49
 ','=39
-'-'=88
+'-'=89
+'.'=88
 ':'=45
 ';'=44
 '['=69
@@ -15,7 +16,6 @@
 'at least'=28
 'at loc'=51
 'at most'=27
-'at'=76
 'avoid'=57
 'by'=60
 'conditions:'=42
@@ -26,6 +26,7 @@
 'equidistance'=85
 'every'=74
 'exactly'=19
+'exactly_at'=76
 'exec'=61
 'execute'=81
 'factor'=80
@@ -54,7 +55,7 @@
 'reach'=62
 'react'=58
 'repeat'=73
-'reward'=89
+'reward'=90
 'robots:'=41
 'shall'=52
 'specifications'=35
@@ -163,3 +164,4 @@ T__86=86
 T__87=87
 T__88=88
 T__89=89
+T__90=90

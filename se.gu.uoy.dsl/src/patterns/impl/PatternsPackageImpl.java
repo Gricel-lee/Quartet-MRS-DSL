@@ -1817,7 +1817,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * @generated
 	 */
 	public EAttribute getEquidistance_Distance() {
-		return (EAttribute)equidistanceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)equidistanceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1826,7 +1826,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * @generated
 	 */
 	public EReference getEquidistance_Robots1() {
-		return (EReference)equidistanceEClass.getEStructuralFeatures().get(3);
+		return (EReference)equidistanceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1835,7 +1835,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * @generated
 	 */
 	public EReference getEquidistance_Robots2() {
-		return (EReference)equidistanceEClass.getEStructuralFeatures().get(4);
+		return (EReference)equidistanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1844,7 +1844,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * @generated
 	 */
 	public EReference getEquidistance_Robots() {
-		return (EReference)equidistanceEClass.getEStructuralFeatures().get(5);
+		return (EReference)equidistanceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1871,7 +1871,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * @generated
 	 */
 	public EAttribute getTrail_Value() {
-		return (EAttribute)trailEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)trailEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1880,7 +1880,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * @generated
 	 */
 	public EReference getTrail_Robots() {
-		return (EReference)trailEClass.getEStructuralFeatures().get(2);
+		return (EReference)trailEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1961,7 +1961,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * @generated
 	 */
 	public EAttribute getReliabilityConfidence_Value() {
-		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1970,7 +1970,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * @generated
 	 */
 	public EAttribute getReliabilityConfidence_Type1() {
-		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1979,7 +1979,7 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 	 * @generated
 	 */
 	public EAttribute getReliabilityConfidence_Type2() {
-		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)reliabilityConfidenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2381,15 +2381,15 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		equidistanceEClass = createEClass(EQUIDISTANCE);
 		createEReference(equidistanceEClass, EQUIDISTANCE__LOCATION1);
 		createEReference(equidistanceEClass, EQUIDISTANCE__LOCATION2);
-		createEAttribute(equidistanceEClass, EQUIDISTANCE__DISTANCE);
 		createEReference(equidistanceEClass, EQUIDISTANCE__ROBOTS1);
 		createEReference(equidistanceEClass, EQUIDISTANCE__ROBOTS2);
 		createEReference(equidistanceEClass, EQUIDISTANCE__ROBOTS);
+		createEAttribute(equidistanceEClass, EQUIDISTANCE__DISTANCE);
 
 		trailEClass = createEClass(TRAIL);
 		createEAttribute(trailEClass, TRAIL__OBJET_TO_FOLLOW);
-		createEAttribute(trailEClass, TRAIL__VALUE);
 		createEReference(trailEClass, TRAIL__ROBOTS);
+		createEAttribute(trailEClass, TRAIL__VALUE);
 
 		locationDependentEClass = createEClass(LOCATION_DEPENDENT);
 		createEReference(locationDependentEClass, LOCATION_DEPENDENT__LOCATIONS);
@@ -2402,9 +2402,9 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 
 		reliabilityConfidenceEClass = createEClass(RELIABILITY_CONFIDENCE);
 		createEAttribute(reliabilityConfidenceEClass, RELIABILITY_CONFIDENCE__MEASURE);
-		createEAttribute(reliabilityConfidenceEClass, RELIABILITY_CONFIDENCE__VALUE);
 		createEAttribute(reliabilityConfidenceEClass, RELIABILITY_CONFIDENCE__TYPE1);
 		createEAttribute(reliabilityConfidenceEClass, RELIABILITY_CONFIDENCE__TYPE2);
+		createEAttribute(reliabilityConfidenceEClass, RELIABILITY_CONFIDENCE__VALUE);
 
 		levelOfConfidenceEClass = createEClass(LEVEL_OF_CONFIDENCE);
 		createEAttribute(levelOfConfidenceEClass, LEVEL_OF_CONFIDENCE__CONFIDENCE);
@@ -2752,15 +2752,15 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 		initEClass(equidistanceEClass, Equidistance.class, "Equidistance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEquidistance_Location1(), this.getLocation(), null, "location1", null, 0, 1, Equidistance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEquidistance_Location2(), this.getLocation(), null, "location2", null, 0, 1, Equidistance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEquidistance_Distance(), ecorePackage.getEInt(), "distance", null, 1, 1, Equidistance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEquidistance_Robots1(), this.getRobots(), null, "robots1", null, 1, 1, Equidistance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEquidistance_Robots2(), this.getRobots(), null, "robots2", null, 1, 1, Equidistance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEquidistance_Robots(), this.getRobots(), null, "robots", null, 1, 1, Equidistance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEquidistance_Distance(), ecorePackage.getEDouble(), "distance", null, 1, 1, Equidistance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trailEClass, Trail.class, "Trail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTrail_ObjetToFollow(), ecorePackage.getEString(), "objetToFollow", null, 1, 1, Trail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrail_Value(), ecorePackage.getEInt(), "value", null, 1, 1, Trail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrail_Robots(), this.getRobots(), null, "robots", null, 1, 1, Trail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrail_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, Trail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locationDependentEClass, LocationDependent.class, "LocationDependent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLocationDependent_Locations(), this.getLocation(), null, "locations", null, 1, -1, LocationDependent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2773,12 +2773,12 @@ public class PatternsPackageImpl extends EPackageImpl implements PatternsPackage
 
 		initEClass(reliabilityConfidenceEClass, ReliabilityConfidence.class, "ReliabilityConfidence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReliabilityConfidence_Measure(), ecorePackage.getEString(), "measure", null, 1, 1, ReliabilityConfidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReliabilityConfidence_Value(), ecorePackage.getEInt(), "value", null, 1, 1, ReliabilityConfidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReliabilityConfidence_Type1(), ecorePackage.getEString(), "type1", null, 1, 1, ReliabilityConfidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReliabilityConfidence_Type2(), ecorePackage.getEString(), "type2", null, 1, 1, ReliabilityConfidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReliabilityConfidence_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, ReliabilityConfidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(levelOfConfidenceEClass, LevelOfConfidence.class, "LevelOfConfidence", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLevelOfConfidence_Confidence(), ecorePackage.getEInt(), "confidence", null, 1, 1, LevelOfConfidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLevelOfConfidence_Confidence(), ecorePackage.getEDouble(), "confidence", null, 1, 1, LevelOfConfidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relaxedEClass, Relaxed.class, "Relaxed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

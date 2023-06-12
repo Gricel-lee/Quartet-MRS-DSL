@@ -26,12 +26,12 @@ public interface LevelOfConfidence extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Confidence</em>' attribute.
-	 * @see #setConfidence(int)
+	 * @see #setConfidence(double)
 	 * @see patterns.PatternsPackage#getLevelOfConfidence_Confidence()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getConfidence();
+	double getConfidence();
 
 	/**
 	 * Sets the value of the '{@link patterns.LevelOfConfidence#getConfidence <em>Confidence</em>}' attribute.
@@ -41,6 +41,6 @@ public interface LevelOfConfidence extends EObject {
 	 * @see #getConfidence()
 	 * @generated
 	 */
-	void setConfidence(int value);
+	void setConfidence(double value);
 
 } // LevelOfConfidence

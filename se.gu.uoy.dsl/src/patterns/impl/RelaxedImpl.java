@@ -50,7 +50,7 @@ public class RelaxedImpl extends MinimalEObjectImpl.Container implements Relaxed
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int CONFIDENCE_EDEFAULT = 0;
+	protected static final double CONFIDENCE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getConfidence() <em>Confidence</em>}' attribute.
@@ -60,7 +60,7 @@ public class RelaxedImpl extends MinimalEObjectImpl.Container implements Relaxed
 	 * @generated
 	 * @ordered
 	 */
-	protected int confidence = CONFIDENCE_EDEFAULT;
+	protected double confidence = CONFIDENCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,7 +129,7 @@ public class RelaxedImpl extends MinimalEObjectImpl.Container implements Relaxed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getConfidence() {
+	public double getConfidence() {
 		return confidence;
 	}
 
@@ -138,8 +138,8 @@ public class RelaxedImpl extends MinimalEObjectImpl.Container implements Relaxed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConfidence(int newConfidence) {
-		int oldConfidence = confidence;
+	public void setConfidence(double newConfidence) {
+		double oldConfidence = confidence;
 		confidence = newConfidence;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.RELAXED__CONFIDENCE, oldConfidence, confidence));
@@ -187,7 +187,7 @@ public class RelaxedImpl extends MinimalEObjectImpl.Container implements Relaxed
 				setMissions((Missions)newValue);
 				return;
 			case PatternsPackage.RELAXED__CONFIDENCE:
-				setConfidence((Integer)newValue);
+				setConfidence((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

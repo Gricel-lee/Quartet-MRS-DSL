@@ -29,10 +29,10 @@ import patterns.Robots;
  *   <li>{@link patterns.impl.EquidistanceImpl#getMissions <em>Missions</em>}</li>
  *   <li>{@link patterns.impl.EquidistanceImpl#getLocation1 <em>Location1</em>}</li>
  *   <li>{@link patterns.impl.EquidistanceImpl#getLocation2 <em>Location2</em>}</li>
- *   <li>{@link patterns.impl.EquidistanceImpl#getDistance <em>Distance</em>}</li>
  *   <li>{@link patterns.impl.EquidistanceImpl#getRobots1 <em>Robots1</em>}</li>
  *   <li>{@link patterns.impl.EquidistanceImpl#getRobots2 <em>Robots2</em>}</li>
  *   <li>{@link patterns.impl.EquidistanceImpl#getRobots <em>Robots</em>}</li>
+ *   <li>{@link patterns.impl.EquidistanceImpl#getDistance <em>Distance</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,26 +69,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	protected Location location2;
 
 	/**
-	 * The default value of the '{@link #getDistance() <em>Distance</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDistance()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int DISTANCE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getDistance() <em>Distance</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDistance()
-	 * @generated
-	 * @ordered
-	 */
-	protected int distance = DISTANCE_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getRobots1() <em>Robots1</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,6 +97,26 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * @ordered
 	 */
 	protected Robots robots;
+
+	/**
+	 * The default value of the '{@link #getDistance() <em>Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDistance()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double DISTANCE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getDistance() <em>Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDistance()
+	 * @generated
+	 * @ordered
+	 */
+	protected double distance = DISTANCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,7 +261,7 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getDistance() {
+	public double getDistance() {
 		return distance;
 	}
 
@@ -270,8 +270,8 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDistance(int newDistance) {
-		int oldDistance = distance;
+	public void setDistance(double newDistance) {
+		double oldDistance = distance;
 		distance = newDistance;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternsPackage.EQUIDISTANCE__DISTANCE, oldDistance, distance));
@@ -421,8 +421,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 			case PatternsPackage.EQUIDISTANCE__LOCATION2:
 				if (resolve) return getLocation2();
 				return basicGetLocation2();
-			case PatternsPackage.EQUIDISTANCE__DISTANCE:
-				return getDistance();
 			case PatternsPackage.EQUIDISTANCE__ROBOTS1:
 				if (resolve) return getRobots1();
 				return basicGetRobots1();
@@ -432,6 +430,8 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 			case PatternsPackage.EQUIDISTANCE__ROBOTS:
 				if (resolve) return getRobots();
 				return basicGetRobots();
+			case PatternsPackage.EQUIDISTANCE__DISTANCE:
+				return getDistance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -453,9 +453,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 			case PatternsPackage.EQUIDISTANCE__LOCATION2:
 				setLocation2((Location)newValue);
 				return;
-			case PatternsPackage.EQUIDISTANCE__DISTANCE:
-				setDistance((Integer)newValue);
-				return;
 			case PatternsPackage.EQUIDISTANCE__ROBOTS1:
 				setRobots1((Robots)newValue);
 				return;
@@ -464,6 +461,9 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 				return;
 			case PatternsPackage.EQUIDISTANCE__ROBOTS:
 				setRobots((Robots)newValue);
+				return;
+			case PatternsPackage.EQUIDISTANCE__DISTANCE:
+				setDistance((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -486,9 +486,6 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 			case PatternsPackage.EQUIDISTANCE__LOCATION2:
 				setLocation2((Location)null);
 				return;
-			case PatternsPackage.EQUIDISTANCE__DISTANCE:
-				setDistance(DISTANCE_EDEFAULT);
-				return;
 			case PatternsPackage.EQUIDISTANCE__ROBOTS1:
 				setRobots1((Robots)null);
 				return;
@@ -497,6 +494,9 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 				return;
 			case PatternsPackage.EQUIDISTANCE__ROBOTS:
 				setRobots((Robots)null);
+				return;
+			case PatternsPackage.EQUIDISTANCE__DISTANCE:
+				setDistance(DISTANCE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -516,14 +516,14 @@ public class EquidistanceImpl extends MinimalEObjectImpl.Container implements Eq
 				return location1 != null;
 			case PatternsPackage.EQUIDISTANCE__LOCATION2:
 				return location2 != null;
-			case PatternsPackage.EQUIDISTANCE__DISTANCE:
-				return distance != DISTANCE_EDEFAULT;
 			case PatternsPackage.EQUIDISTANCE__ROBOTS1:
 				return robots1 != null;
 			case PatternsPackage.EQUIDISTANCE__ROBOTS2:
 				return robots2 != null;
 			case PatternsPackage.EQUIDISTANCE__ROBOTS:
 				return robots != null;
+			case PatternsPackage.EQUIDISTANCE__DISTANCE:
+				return distance != DISTANCE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
