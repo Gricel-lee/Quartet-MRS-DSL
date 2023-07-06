@@ -628,6 +628,63 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//CompositePatterns
 		public RuleCall getCompositePatternsParserRuleCall_3() { return cCompositePatternsParserRuleCall_3; }
 	}
+	public class Mission_no_prob_rewElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Mission_no_prob_rew");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cShallMissionsParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cComplexMissionsParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPauseParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cTimeoutParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cRepeatParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cEndParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cExecuteParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		
+		////Missions that do not contain any probabilities or rewards
+		////This avoids nested probabilistic and reward operators
+		//Mission_no_prob_rew returns Missions:
+		//    ShallMissions |
+		//    ComplexMissions |
+		//    //CompositePatterns
+		//    Pause |
+		//    Timeout |
+		//    Repeat |
+		//    End |
+		//    Execute
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ShallMissions |
+		//ComplexMissions |
+		////CompositePatterns
+		//Pause |
+		//Timeout |
+		//Repeat |
+		//End |
+		//Execute
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ShallMissions
+		public RuleCall getShallMissionsParserRuleCall_0() { return cShallMissionsParserRuleCall_0; }
+		
+		//ComplexMissions
+		public RuleCall getComplexMissionsParserRuleCall_1() { return cComplexMissionsParserRuleCall_1; }
+		
+		////CompositePatterns
+		//Pause
+		public RuleCall getPauseParserRuleCall_2() { return cPauseParserRuleCall_2; }
+		
+		//Timeout
+		public RuleCall getTimeoutParserRuleCall_3() { return cTimeoutParserRuleCall_3; }
+		
+		//Repeat
+		public RuleCall getRepeatParserRuleCall_4() { return cRepeatParserRuleCall_4; }
+		
+		//End
+		public RuleCall getEndParserRuleCall_5() { return cEndParserRuleCall_5; }
+		
+		//Execute
+		public RuleCall getExecuteParserRuleCall_6() { return cExecuteParserRuleCall_6; }
+	}
 	public class MissionOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.MissionOperation");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1580,17 +1637,19 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cMeasureAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cMeasureEStringParserRuleCall_3_0 = (RuleCall)cMeasureAssignment_3.eContents().get(0);
 		private final Assignment cMissionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMissionMissionsParserRuleCall_4_0 = (RuleCall)cMissionAssignment_4.eContents().get(0);
+		private final RuleCall cMissionMission_no_prob_rewParserRuleCall_4_0 = (RuleCall)cMissionAssignment_4.eContents().get(0);
 		
 		//Maximize returns Maximize:
 		//    {Maximize}
 		//    reward = ('reward')?
-		//    type=('maximize'|'minimize') measure=EString mission=Missions;
+		//    //Mission cannot be elementary patterns to avoid nested prob. or rewards.
+		//    type=('maximize'|'minimize') measure=EString mission= Mission_no_prob_rew;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Maximize}
 		//reward = ('reward')?
-		//type=('maximize'|'minimize') measure=EString mission=Missions
+		////Mission cannot be elementary patterns to avoid nested prob. or rewards.
+		//type=('maximize'|'minimize') measure=EString mission= Mission_no_prob_rew
 		public Group getGroup() { return cGroup; }
 		
 		//{Maximize}
@@ -1602,6 +1661,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//('reward')
 		public Keyword getRewardRewardKeyword_1_0() { return cRewardRewardKeyword_1_0; }
 		
+		////Mission cannot be elementary patterns to avoid nested prob. or rewards.
 		//type=('maximize'|'minimize')
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
@@ -1620,11 +1680,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//EString
 		public RuleCall getMeasureEStringParserRuleCall_3_0() { return cMeasureEStringParserRuleCall_3_0; }
 		
-		//mission=Missions
+		//mission= Mission_no_prob_rew
 		public Assignment getMissionAssignment_4() { return cMissionAssignment_4; }
 		
-		//Missions
-		public RuleCall getMissionMissionsParserRuleCall_4_0() { return cMissionMissionsParserRuleCall_4_0; }
+		//Mission_no_prob_rew
+		public RuleCall getMissionMission_no_prob_rewParserRuleCall_4_0() { return cMissionMission_no_prob_rewParserRuleCall_4_0; }
 	}
 	public class AtMostElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.AtMost");
@@ -1644,17 +1704,17 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cValueEDoubleParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		private final Assignment cMissionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cMissionMissionsParserRuleCall_5_0 = (RuleCall)cMissionAssignment_5.eContents().get(0);
+		private final RuleCall cMissionMission_no_prob_rewParserRuleCall_5_0 = (RuleCall)cMissionAssignment_5.eContents().get(0);
 		
 		//AtMost returns AtMost:
 		//    {AtMost}
 		//    reward = ('reward')?
-		//    measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EDouble mission=Missions;
+		//    measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EDouble mission=Mission_no_prob_rew;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{AtMost}
 		//reward = ('reward')?
-		//measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EDouble mission=Missions
+		//measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EDouble mission=Mission_no_prob_rew
 		public Group getGroup() { return cGroup; }
 		
 		//{AtMost}
@@ -1699,11 +1759,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//EDouble
 		public RuleCall getValueEDoubleParserRuleCall_4_0() { return cValueEDoubleParserRuleCall_4_0; }
 		
-		//mission=Missions
+		//mission=Mission_no_prob_rew
 		public Assignment getMissionAssignment_5() { return cMissionAssignment_5; }
 		
-		//Missions
-		public RuleCall getMissionMissionsParserRuleCall_5_0() { return cMissionMissionsParserRuleCall_5_0; }
+		//Mission_no_prob_rew
+		public RuleCall getMissionMission_no_prob_rewParserRuleCall_5_0() { return cMissionMission_no_prob_rewParserRuleCall_5_0; }
 	}
 	public class WithinElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Within");
@@ -1723,17 +1783,17 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cValue2Assignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cValue2EDoubleParserRuleCall_6_0 = (RuleCall)cValue2Assignment_6.eContents().get(0);
 		private final Assignment cMissionAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cMissionMissionsParserRuleCall_7_0 = (RuleCall)cMissionAssignment_7.eContents().get(0);
+		private final RuleCall cMissionMission_no_prob_rewParserRuleCall_7_0 = (RuleCall)cMissionAssignment_7.eContents().get(0);
 		
 		//Within returns Within:
 		//    {Within}
 		//    reward = ('reward')?
-		//    measure=EString type=('within'|'strictly within') value1=EDouble 'and' value2=EDouble mission=Missions;
+		//    measure=EString type=('within'|'strictly within') value1=EDouble 'and' value2=EDouble mission=Mission_no_prob_rew;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Within}
 		//reward = ('reward')?
-		//measure=EString type=('within'|'strictly within') value1=EDouble 'and' value2=EDouble mission=Missions
+		//measure=EString type=('within'|'strictly within') value1=EDouble 'and' value2=EDouble mission=Mission_no_prob_rew
 		public Group getGroup() { return cGroup; }
 		
 		//{Within}
@@ -1778,11 +1838,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//EDouble
 		public RuleCall getValue2EDoubleParserRuleCall_6_0() { return cValue2EDoubleParserRuleCall_6_0; }
 		
-		//mission=Missions
+		//mission=Mission_no_prob_rew
 		public Assignment getMissionAssignment_7() { return cMissionAssignment_7; }
 		
-		//Missions
-		public RuleCall getMissionMissionsParserRuleCall_7_0() { return cMissionMissionsParserRuleCall_7_0; }
+		//Mission_no_prob_rew
+		public RuleCall getMissionMission_no_prob_rewParserRuleCall_7_0() { return cMissionMission_no_prob_rewParserRuleCall_7_0; }
 	}
 	public class CompositePatternsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.CompositePatterns");
@@ -1857,15 +1917,15 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cMeasureEStringParserRuleCall_2_0 = (RuleCall)cMeasureAssignment_2.eContents().get(0);
 		private final Keyword cWhileKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cMissionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMissionsMissionsParserRuleCall_4_0 = (RuleCall)cMissionsAssignment_4.eContents().get(0);
+		private final RuleCall cMissionsMission_no_prob_rewParserRuleCall_4_0 = (RuleCall)cMissionsAssignment_4.eContents().get(0);
 		
 		//Conservation returns Conservation:
 		//    {Conservation}
-		//    'conserve' measure=EString 'while' missions=Missions;
+		//    'conserve' measure=EString 'while' missions=Mission_no_prob_rew;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Conservation}
-		//'conserve' measure=EString 'while' missions=Missions
+		//'conserve' measure=EString 'while' missions=Mission_no_prob_rew
 		public Group getGroup() { return cGroup; }
 		
 		//{Conservation}
@@ -1883,11 +1943,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'while'
 		public Keyword getWhileKeyword_3() { return cWhileKeyword_3; }
 		
-		//missions=Missions
+		//missions=Mission_no_prob_rew
 		public Assignment getMissionsAssignment_4() { return cMissionsAssignment_4; }
 		
-		//Missions
-		public RuleCall getMissionsMissionsParserRuleCall_4_0() { return cMissionsMissionsParserRuleCall_4_0; }
+		//Mission_no_prob_rew
+		public RuleCall getMissionsMission_no_prob_rewParserRuleCall_4_0() { return cMissionsMission_no_prob_rewParserRuleCall_4_0; }
 	}
 	public class PreservationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Preservation");
@@ -1906,15 +1966,15 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cRightSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Keyword cWhileKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cMissionsAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cMissionsMissionsParserRuleCall_10_0 = (RuleCall)cMissionsAssignment_10.eContents().get(0);
+		private final RuleCall cMissionsMission_no_prob_rewParserRuleCall_10_0 = (RuleCall)cMissionsAssignment_10.eContents().get(0);
 		
 		//Preservation returns Preservation:
 		//    {Preservation}
-		//    'preserve' measure=EString 'within' '[' value1=EDouble ',' value2=EDouble ']' 'while' missions=Missions;
+		//    'preserve' measure=EString 'within' '[' value1=EDouble ',' value2=EDouble ']' 'while' missions=Mission_no_prob_rew;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Preservation}
-		//'preserve' measure=EString 'within' '[' value1=EDouble ',' value2=EDouble ']' 'while' missions=Missions
+		//'preserve' measure=EString 'within' '[' value1=EDouble ',' value2=EDouble ']' 'while' missions=Mission_no_prob_rew
 		public Group getGroup() { return cGroup; }
 		
 		//{Preservation}
@@ -1956,11 +2016,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'while'
 		public Keyword getWhileKeyword_9() { return cWhileKeyword_9; }
 		
-		//missions=Missions
+		//missions=Mission_no_prob_rew
 		public Assignment getMissionsAssignment_10() { return cMissionsAssignment_10; }
 		
-		//Missions
-		public RuleCall getMissionsMissionsParserRuleCall_10_0() { return cMissionsMissionsParserRuleCall_10_0; }
+		//Mission_no_prob_rew
+		public RuleCall getMissionsMission_no_prob_rewParserRuleCall_10_0() { return cMissionsMission_no_prob_rewParserRuleCall_10_0; }
 	}
 	public class PauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Pause");
@@ -2311,7 +2371,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Action cReliabilityConfidenceAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cAchieveKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cMissionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMissionsMissionsParserRuleCall_2_0 = (RuleCall)cMissionsAssignment_2.eContents().get(0);
+		private final RuleCall cMissionsMission_no_prob_rewParserRuleCall_2_0 = (RuleCall)cMissionsAssignment_2.eContents().get(0);
 		private final Assignment cType1Assignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final Alternatives cType1Alternatives_3_0 = (Alternatives)cType1Assignment_3.eContents().get(0);
 		private final Keyword cType1WithConfidenceKeyword_3_0_0 = (Keyword)cType1Alternatives_3_0.eContents().get(0);
@@ -2327,11 +2387,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//ReliabilityConfidence returns ReliabilityConfidence:
 		//    {ReliabilityConfidence}
-		//    'achieve' missions=Missions type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EDouble ;
+		//    'achieve' missions=Mission_no_prob_rew type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EDouble ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ReliabilityConfidence}
-		//'achieve' missions=Missions type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EDouble
+		//'achieve' missions=Mission_no_prob_rew type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EDouble
 		public Group getGroup() { return cGroup; }
 		
 		//{ReliabilityConfidence}
@@ -2340,11 +2400,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'achieve'
 		public Keyword getAchieveKeyword_1() { return cAchieveKeyword_1; }
 		
-		//missions=Missions
+		//missions=Mission_no_prob_rew
 		public Assignment getMissionsAssignment_2() { return cMissionsAssignment_2; }
 		
-		//Missions
-		public RuleCall getMissionsMissionsParserRuleCall_2_0() { return cMissionsMissionsParserRuleCall_2_0; }
+		//Mission_no_prob_rew
+		public RuleCall getMissionsMission_no_prob_rewParserRuleCall_2_0() { return cMissionsMission_no_prob_rewParserRuleCall_2_0; }
 		
 		//type1=('with confidence'|'with reliability')
 		public Assignment getType1Assignment_3() { return cType1Assignment_3; }
@@ -2613,6 +2673,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final EStringElements pEString;
 	private final TopMissionsElements pTopMissions;
 	private final MissionsElements pMissions;
+	private final Mission_no_prob_rewElements pMission_no_prob_rew;
 	private final MissionOperationElements pMissionOperation;
 	private final ShallMissionsElements pShallMissions;
 	private final ComplexMissionsElements pComplexMissions;
@@ -2669,6 +2730,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pEString = new EStringElements();
 		this.pTopMissions = new TopMissionsElements();
 		this.pMissions = new MissionsElements();
+		this.pMission_no_prob_rew = new Mission_no_prob_rewElements();
 		this.pMissionOperation = new MissionOperationElements();
 		this.pShallMissions = new ShallMissionsElements();
 		this.pComplexMissions = new ComplexMissionsElements();
@@ -2866,6 +2928,26 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getMissionsAccess().getRule();
 	}
 	
+	////Missions that do not contain any probabilities or rewards
+	////This avoids nested probabilistic and reward operators
+	//Mission_no_prob_rew returns Missions:
+	//    ShallMissions |
+	//    ComplexMissions |
+	//    //CompositePatterns
+	//    Pause |
+	//    Timeout |
+	//    Repeat |
+	//    End |
+	//    Execute
+	//;
+	public Mission_no_prob_rewElements getMission_no_prob_rewAccess() {
+		return pMission_no_prob_rew;
+	}
+	
+	public ParserRule getMission_no_prob_rewRule() {
+		return getMission_no_prob_rewAccess().getRule();
+	}
+	
 	//MissionOperation returns MissionOperation:
 	//    Negation | Composition;
 	public MissionOperationElements getMissionOperationAccess() {
@@ -3060,7 +3142,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//Maximize returns Maximize:
 	//    {Maximize}
 	//    reward = ('reward')?
-	//    type=('maximize'|'minimize') measure=EString mission=Missions;
+	//    //Mission cannot be elementary patterns to avoid nested prob. or rewards.
+	//    type=('maximize'|'minimize') measure=EString mission= Mission_no_prob_rew;
 	public MaximizeElements getMaximizeAccess() {
 		return pMaximize;
 	}
@@ -3072,7 +3155,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//AtMost returns AtMost:
 	//    {AtMost}
 	//    reward = ('reward')?
-	//    measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EDouble mission=Missions;
+	//    measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EDouble mission=Mission_no_prob_rew;
 	public AtMostElements getAtMostAccess() {
 		return pAtMost;
 	}
@@ -3084,7 +3167,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//Within returns Within:
 	//    {Within}
 	//    reward = ('reward')?
-	//    measure=EString type=('within'|'strictly within') value1=EDouble 'and' value2=EDouble mission=Missions;
+	//    measure=EString type=('within'|'strictly within') value1=EDouble 'and' value2=EDouble mission=Mission_no_prob_rew;
 	public WithinElements getWithinAccess() {
 		return pWithin;
 	}
@@ -3108,7 +3191,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//Conservation returns Conservation:
 	//    {Conservation}
-	//    'conserve' measure=EString 'while' missions=Missions;
+	//    'conserve' measure=EString 'while' missions=Mission_no_prob_rew;
 	public ConservationElements getConservationAccess() {
 		return pConservation;
 	}
@@ -3119,7 +3202,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//Preservation returns Preservation:
 	//    {Preservation}
-	//    'preserve' measure=EString 'within' '[' value1=EDouble ',' value2=EDouble ']' 'while' missions=Missions;
+	//    'preserve' measure=EString 'within' '[' value1=EDouble ',' value2=EDouble ']' 'while' missions=Mission_no_prob_rew;
 	public PreservationElements getPreservationAccess() {
 		return pPreservation;
 	}
@@ -3211,7 +3294,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//ReliabilityConfidence returns ReliabilityConfidence:
 	//    {ReliabilityConfidence}
-	//    'achieve' missions=Missions type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EDouble ;
+	//    'achieve' missions=Mission_no_prob_rew type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EDouble ;
 	public ReliabilityConfidenceElements getReliabilityConfidenceAccess() {
 		return pReliabilityConfidence;
 	}

@@ -29,7 +29,7 @@ import org.xtext.example.mydsl.myDsl.Timeout;
  *
  * @generated
  */
-public class TimeoutImpl extends CompositePatternsImpl implements Timeout
+public class TimeoutImpl extends MissionsImpl implements Timeout
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.

@@ -51,6 +51,8 @@ public class MyDslGenerator extends AbstractGenerator {
       String _topMissionTranslated = MyDslGenerator.getTopMissionTranslated(tm, resource);
       finalString = (_finalString + _topMissionTranslated);
     }
+    String _finalString_1 = finalString;
+    finalString = (_finalString_1 + "\n\n\n For generated LTL formulae, add existential (E[formula]) or universal (A[formula]) quantifiers to be PRISM compatible.");
     String _lastSegment = resource.getURI().lastSegment();
     String _plus = (_lastSegment + ".prop");
     fsa.generateFile(_plus, finalString);
@@ -81,38 +83,26 @@ public class MyDslGenerator extends AbstractGenerator {
    */
   public static String checkFormulae(final String s) {
     String checked_s = "";
-    boolean _contains = s.contains("(R");
-    if (_contains) {
+    if ((s.contains("(G[") || s.contains("G<"))) {
       String _checked_s = checked_s;
       checked_s = (_checked_s + ("-Formulae: " + s));
       String _checked_s_1 = checked_s;
       checked_s = (_checked_s_1 + "\n  \t\t\t\t-WARNING. Translation into PRISM may not be supported.");
       String _checked_s_2 = checked_s;
-      checked_s = (_checked_s_2 + "\n  \t\t\t\t--Feedback: Reward found inside inside parenthesis-- ");
+      checked_s = (_checked_s_2 + "\n  \t\t\t\t--Feedback: G bounded found inside parenthesis-- ");
       return checked_s;
     } else {
-      boolean _contains_1 = s.contains("(P");
-      if (_contains_1) {
+      boolean _contains = s.contains("(F[");
+      if (_contains) {
         String _checked_s_3 = checked_s;
         checked_s = (_checked_s_3 + ("-Formulae: " + s));
         String _checked_s_4 = checked_s;
         checked_s = (_checked_s_4 + "\n  \t\t\t\t-WARNING. Translation into PRISM may not be supported.");
         String _checked_s_5 = checked_s;
-        checked_s = (_checked_s_5 + "\n  \t\t\t\t--Feedback: Probability found inside parenthesis-- ");
+        checked_s = (_checked_s_5 + "\n  \t\t\t\t--Feedback: F bounded found inside parenthesis-- ");
         return checked_s;
       } else {
-        boolean _contains_2 = s.contains("(G[");
-        if (_contains_2) {
-          String _checked_s_6 = checked_s;
-          checked_s = (_checked_s_6 + ("-Formulae: " + s));
-          String _checked_s_7 = checked_s;
-          checked_s = (_checked_s_7 + "\n  \t\t\t\t-WARNING. Translation into PRISM may not be supported.");
-          String _checked_s_8 = checked_s;
-          checked_s = (_checked_s_8 + "\n  \t\t\t\t--Feedback: G bounded [...] found inside parenthesis-- ");
-          return checked_s;
-        } else {
-          checked_s = s;
-        }
+        checked_s = s;
       }
     }
     return checked_s;

@@ -29,7 +29,7 @@ import org.xtext.example.mydsl.myDsl.Repeat;
  *
  * @generated
  */
-public class RepeatImpl extends CompositePatternsImpl implements Repeat
+public class RepeatImpl extends MissionsImpl implements Repeat
 {
   /**
    * The cached value of the '{@link #getMissions() <em>Missions</em>}' containment reference.

@@ -1402,7 +1402,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAUSE__VALUE = COMPOSITE_PATTERNS_FEATURE_COUNT + 0;
+  int PAUSE__VALUE = MISSIONS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Missions</b></em>' containment reference.
@@ -1411,7 +1411,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAUSE__MISSIONS = COMPOSITE_PATTERNS_FEATURE_COUNT + 1;
+  int PAUSE__MISSIONS = MISSIONS_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Pause</em>' class.
@@ -1420,7 +1420,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAUSE_FEATURE_COUNT = COMPOSITE_PATTERNS_FEATURE_COUNT + 2;
+  int PAUSE_FEATURE_COUNT = MISSIONS_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.TimeoutImpl <em>Timeout</em>}' class.
@@ -1439,7 +1439,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TIMEOUT__VALUE = COMPOSITE_PATTERNS_FEATURE_COUNT + 0;
+  int TIMEOUT__VALUE = MISSIONS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Missions</b></em>' containment reference.
@@ -1448,7 +1448,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TIMEOUT__MISSIONS = COMPOSITE_PATTERNS_FEATURE_COUNT + 1;
+  int TIMEOUT__MISSIONS = MISSIONS_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Timeout</em>' class.
@@ -1457,7 +1457,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TIMEOUT_FEATURE_COUNT = COMPOSITE_PATTERNS_FEATURE_COUNT + 2;
+  int TIMEOUT_FEATURE_COUNT = MISSIONS_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RepeatImpl <em>Repeat</em>}' class.
@@ -1476,7 +1476,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REPEAT__MISSIONS = COMPOSITE_PATTERNS_FEATURE_COUNT + 0;
+  int REPEAT__MISSIONS = MISSIONS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1485,7 +1485,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REPEAT__VALUE = COMPOSITE_PATTERNS_FEATURE_COUNT + 1;
+  int REPEAT__VALUE = MISSIONS_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Repeat</em>' class.
@@ -1494,7 +1494,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REPEAT_FEATURE_COUNT = COMPOSITE_PATTERNS_FEATURE_COUNT + 2;
+  int REPEAT_FEATURE_COUNT = MISSIONS_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.EndImpl <em>End</em>}' class.
@@ -1513,7 +1513,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int END__MISSIONS = COMPOSITE_PATTERNS_FEATURE_COUNT + 0;
+  int END__MISSIONS = MISSIONS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1522,7 +1522,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int END__VALUE = COMPOSITE_PATTERNS_FEATURE_COUNT + 1;
+  int END__VALUE = MISSIONS_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>End</em>' class.
@@ -1531,7 +1531,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int END_FEATURE_COUNT = COMPOSITE_PATTERNS_FEATURE_COUNT + 2;
+  int END_FEATURE_COUNT = MISSIONS_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ProportionalImpl <em>Proportional</em>}' class.
@@ -1596,7 +1596,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXECUTE__ROBOTS = COMPOSITE_PATTERNS_FEATURE_COUNT + 0;
+  int EXECUTE__ROBOTS = MISSIONS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Set Of Actions</b></em>' reference list.
@@ -1605,7 +1605,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXECUTE__SET_OF_ACTIONS = COMPOSITE_PATTERNS_FEATURE_COUNT + 1;
+  int EXECUTE__SET_OF_ACTIONS = MISSIONS_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Execute</em>' class.
@@ -1614,7 +1614,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXECUTE_FEATURE_COUNT = COMPOSITE_PATTERNS_FEATURE_COUNT + 2;
+  int EXECUTE_FEATURE_COUNT = MISSIONS_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.AccrueImpl <em>Accrue</em>}' class.

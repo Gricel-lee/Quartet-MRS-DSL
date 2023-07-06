@@ -21,7 +21,7 @@ package org.xtext.example.mydsl.myDsl;
  * @model
  * @generated
  */
-public interface Pause extends CompositePatterns
+public interface Pause extends Missions, CompositePatterns
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

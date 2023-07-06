@@ -29,7 +29,7 @@ import org.xtext.example.mydsl.myDsl.Pause;
  *
  * @generated
  */
-public class PauseImpl extends CompositePatternsImpl implements Pause
+public class PauseImpl extends MissionsImpl implements Pause
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.

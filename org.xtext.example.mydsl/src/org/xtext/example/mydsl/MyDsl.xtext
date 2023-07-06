@@ -67,7 +67,22 @@ TopMissions returns TopMissions:
 ;
 Missions returns Missions:
 	ShallMissions | ComplexMissions | ElementaryPatterns | CompositePatterns;
-	
+
+
+//Missions that do not contain any probabilities or rewards
+//This avoids nested probabilistic and reward operators
+Mission_no_prob_rew returns Missions:
+	ShallMissions | 
+	ComplexMissions | 
+	//CompositePatterns
+	Pause |
+	Timeout |
+	Repeat |
+	End |
+	Execute
+;
+
+
 MissionOperation returns MissionOperation:
 	Negation | Composition;
 
@@ -162,16 +177,17 @@ ElementaryPatterns returns ElementaryPatterns:
 Maximize returns Maximize:
 	{Maximize}
 	reward = ('reward')?
-	type=('maximize'|'minimize') measure=EString mission=Missions;
+	//Mission cannot be elementary patterns to avoid nested prob. or rewards.
+	type=('maximize'|'minimize') measure=EString mission= Mission_no_prob_rew;
 AtMost returns AtMost:
 	{AtMost}
 	reward = ('reward')?
-	measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EDouble mission=Missions;
+	measure=EString type=('at most'|'less than'|'at least'|'greater than'| 'exactly') value=EDouble mission=Mission_no_prob_rew;
 	
 Within returns Within:
 	{Within}
 	reward = ('reward')?
-	measure=EString type=('within'|'strictly within') value1=EDouble 'and' value2=EDouble mission=Missions;
+	measure=EString type=('within'|'strictly within') value1=EDouble 'and' value2=EDouble mission=Mission_no_prob_rew;
 
 
 
@@ -185,11 +201,11 @@ CompositePatterns returns CompositePatterns:
 
 Conservation returns Conservation:
 	{Conservation}
-	'conserve' measure=EString 'while' missions=Missions;
+	'conserve' measure=EString 'while' missions=Mission_no_prob_rew;
 
 Preservation returns Preservation:
 	{Preservation}
-	'preserve' measure=EString 'within' '[' value1=EDouble ',' value2=EDouble ']' 'while' missions=Missions;
+	'preserve' measure=EString 'within' '[' value1=EDouble ',' value2=EDouble ']' 'while' missions=Mission_no_prob_rew;
 
 Pause returns Pause:
 	{Pause}
@@ -224,7 +240,7 @@ Accrue returns Accrue:
 
 ReliabilityConfidence returns ReliabilityConfidence:
 	{ReliabilityConfidence}
-	'achieve' missions=Missions type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EDouble ;
+	'achieve' missions=Mission_no_prob_rew type1=('with confidence'|'with reliability') measure=EString type2=('greater than'|'less than') value=EDouble ;
 	
 Equidistance returns Equidistance:
 	{Equidistance}

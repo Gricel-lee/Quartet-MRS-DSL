@@ -29,7 +29,7 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  *
  * @generated
  */
-public class EndImpl extends CompositePatternsImpl implements End
+public class EndImpl extends MissionsImpl implements End
 {
   /**
    * The cached value of the '{@link #getMissions() <em>Missions</em>}' containment reference.

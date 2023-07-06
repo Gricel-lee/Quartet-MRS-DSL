@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Execute extends CompositePatterns
+public interface Execute extends Missions, CompositePatterns
 {
   /**
    * Returns the value of the '<em><b>Robots</b></em>' reference.

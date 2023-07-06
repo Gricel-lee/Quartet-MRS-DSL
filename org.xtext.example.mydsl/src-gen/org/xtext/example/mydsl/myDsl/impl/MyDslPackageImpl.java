@@ -2080,11 +2080,16 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     compositePatternsEClass.getESuperTypes().add(this.getMissions());
     conservationEClass.getESuperTypes().add(this.getCompositePatterns());
     preservationEClass.getESuperTypes().add(this.getCompositePatterns());
+    pauseEClass.getESuperTypes().add(this.getMissions());
     pauseEClass.getESuperTypes().add(this.getCompositePatterns());
+    timeoutEClass.getESuperTypes().add(this.getMissions());
     timeoutEClass.getESuperTypes().add(this.getCompositePatterns());
+    repeatEClass.getESuperTypes().add(this.getMissions());
     repeatEClass.getESuperTypes().add(this.getCompositePatterns());
+    endEClass.getESuperTypes().add(this.getMissions());
     endEClass.getESuperTypes().add(this.getCompositePatterns());
     proportionalEClass.getESuperTypes().add(this.getCompositePatterns());
+    executeEClass.getESuperTypes().add(this.getMissions());
     executeEClass.getESuperTypes().add(this.getCompositePatterns());
     accrueEClass.getESuperTypes().add(this.getCompositePatterns());
     reliabilityConfidenceEClass.getESuperTypes().add(this.getCompositePatterns());

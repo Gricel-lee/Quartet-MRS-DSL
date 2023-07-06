@@ -21,7 +21,7 @@ package org.xtext.example.mydsl.myDsl;
  * @model
  * @generated
  */
-public interface Repeat extends CompositePatterns
+public interface Repeat extends Missions, CompositePatterns
 {
   /**
    * Returns the value of the '<em><b>Missions</b></em>' containment reference.

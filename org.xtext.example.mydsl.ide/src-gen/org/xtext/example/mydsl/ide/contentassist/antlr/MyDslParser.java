@@ -34,6 +34,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getMissionsAccess().getAlternatives(), "rule__Missions__Alternatives");
+			builder.put(grammarAccess.getMission_no_prob_rewAccess().getAlternatives(), "rule__Mission_no_prob_rew__Alternatives");
 			builder.put(grammarAccess.getMissionOperationAccess().getAlternatives(), "rule__MissionOperation__Alternatives");
 			builder.put(grammarAccess.getCompositionAccess().getBinaryTypeAlternatives_4_0(), "rule__Composition__BinaryTypeAlternatives_4_0");
 			builder.put(grammarAccess.getSpecificationPatternsAccess().getAlternatives(), "rule__SpecificationPatterns__Alternatives");

@@ -39,6 +39,8 @@ class MyDslGenerator extends AbstractGenerator {
 		for (tm: topmissions.toList){
 			finalString += org.xtext.example.mydsl.generator.MyDslGenerator.getTopMissionTranslated(tm, resource) //check each mission in topmissions
 		}
+		//-- add LTL note
+		finalString += "\n\n\n For generated LTL formulae, add existential (E[formula]) or universal (A[formula]) quantifiers to be PRISM compatible."
 		// --save file
 		fsa.generateFile(resource.getURI().lastSegment + '.prop', finalString);
 		
@@ -75,24 +77,32 @@ class MyDslGenerator extends AbstractGenerator {
 		var checked_s = ""
 		
 		//Reward inside a parenthesis means it is inside a R or P structure P...(R...), or part of a logic boolean formulae (e.g.: (R...)&(...) ) 
-		if (s.contains("(R")){
-			checked_s += "-Formulae: " + s
-			checked_s += "\n  				-WARNING. Translation into PRISM may not be supported."
-			checked_s += "\n  				--Feedback: Reward found inside inside parenthesis-- "
-			return checked_s
-		}
+		//if (s.contains("(R")){
+		//	checked_s += "-Formulae: " + s
+		//	checked_s += "\n  				-WARNING. Translation into PRISM may not be supported."
+		//	checked_s += "\n  				--Feedback: Reward found inside inside parenthesis-- "
+		//	return checked_s
+		//}
 		//Prob. inside a parenthesis means it is inside a R or P structure P...(P...), or part of a logic boolean formulae (e.g.: (P...)&(...) )
-		else if (s.contains("(P")){
+		//else if (s.contains("(P")){
+		//	checked_s += "-Formulae: " + s
+		//	checked_s += "\n  				-WARNING. Translation into PRISM may not be supported."
+		//	checked_s += "\n  				--Feedback: Probability found inside parenthesis-- "
+		//	return checked_s
+		//}
+		
+		//Possible error using (G[
+		if (s.contains("(G[") || s.contains("G<") ){
 			checked_s += "-Formulae: " + s
 			checked_s += "\n  				-WARNING. Translation into PRISM may not be supported."
-			checked_s += "\n  				--Feedback: Probability found inside parenthesis-- "
+			checked_s += "\n  				--Feedback: G bounded found inside parenthesis-- "
 			return checked_s
 		}
-		//Possible error using (G[
-		else if (s.contains("(G[")){
+		//Possible error using (F[
+		else if (s.contains("(F[") ){
 			checked_s += "-Formulae: " + s
 			checked_s += "\n  				-WARNING. Translation into PRISM may not be supported."
-			checked_s += "\n  				--Feedback: G bounded [...] found inside parenthesis-- "
+			checked_s += "\n  				--Feedback: F bounded found inside parenthesis-- "
 			return checked_s
 		}
 		else{

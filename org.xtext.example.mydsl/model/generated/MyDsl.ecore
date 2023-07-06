@@ -140,22 +140,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="missions" eType="#//Missions"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Pause" eSuperTypes="#//CompositePatterns">
+  <eClassifiers xsi:type="ecore:EClass" name="Pause" eSuperTypes="#//Missions #//CompositePatterns">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="missions" eType="#//Missions"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//CompositePatterns">
+  <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//Missions #//CompositePatterns">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="missions" eType="#//Missions"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Repeat" eSuperTypes="#//CompositePatterns">
+  <eClassifiers xsi:type="ecore:EClass" name="Repeat" eSuperTypes="#//Missions #//CompositePatterns">
     <eStructuralFeatures xsi:type="ecore:EReference" name="missions" eType="#//Missions"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="End" eSuperTypes="#//CompositePatterns">
+  <eClassifiers xsi:type="ecore:EClass" name="End" eSuperTypes="#//Missions #//CompositePatterns">
     <eStructuralFeatures xsi:type="ecore:EReference" name="missions" eType="#//Missions"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -167,7 +167,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Execute" eSuperTypes="#//CompositePatterns">
+  <eClassifiers xsi:type="ecore:EClass" name="Execute" eSuperTypes="#//Missions #//CompositePatterns">
     <eStructuralFeatures xsi:type="ecore:EReference" name="robots" eType="#//Robots"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="setOfActions" unique="false"
         upperBound="-1" eType="#//Action"/>

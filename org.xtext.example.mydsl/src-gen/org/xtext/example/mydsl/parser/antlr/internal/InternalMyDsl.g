@@ -996,6 +996,87 @@ ruleMissions returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleMission_no_prob_rew
+entryRuleMission_no_prob_rew returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMission_no_prob_rewRule()); }
+	iv_ruleMission_no_prob_rew=ruleMission_no_prob_rew
+	{ $current=$iv_ruleMission_no_prob_rew.current; }
+	EOF;
+
+// Rule Mission_no_prob_rew
+ruleMission_no_prob_rew returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getMission_no_prob_rewAccess().getShallMissionsParserRuleCall_0());
+		}
+		this_ShallMissions_0=ruleShallMissions
+		{
+			$current = $this_ShallMissions_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMission_no_prob_rewAccess().getComplexMissionsParserRuleCall_1());
+		}
+		this_ComplexMissions_1=ruleComplexMissions
+		{
+			$current = $this_ComplexMissions_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMission_no_prob_rewAccess().getPauseParserRuleCall_2());
+		}
+		this_Pause_2=rulePause
+		{
+			$current = $this_Pause_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMission_no_prob_rewAccess().getTimeoutParserRuleCall_3());
+		}
+		this_Timeout_3=ruleTimeout
+		{
+			$current = $this_Timeout_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMission_no_prob_rewAccess().getRepeatParserRuleCall_4());
+		}
+		this_Repeat_4=ruleRepeat
+		{
+			$current = $this_Repeat_4.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMission_no_prob_rewAccess().getEndParserRuleCall_5());
+		}
+		this_End_5=ruleEnd
+		{
+			$current = $this_End_5.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getMission_no_prob_rewAccess().getExecuteParserRuleCall_6());
+		}
+		this_Execute_6=ruleExecute
+		{
+			$current = $this_Execute_6.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleMissionOperation
 entryRuleMissionOperation returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getMissionOperationRule()); }
@@ -2323,9 +2404,9 @@ ruleMaximize returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMaximizeAccess().getMissionMissionsParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getMaximizeAccess().getMissionMission_no_prob_rewParserRuleCall_4_0());
 				}
-				lv_mission_4_0=ruleMissions
+				lv_mission_4_0=ruleMission_no_prob_rew
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMaximizeRule());
@@ -2334,7 +2415,7 @@ ruleMaximize returns [EObject current=null]
 						$current,
 						"mission",
 						lv_mission_4_0,
-						"org.xtext.example.mydsl.MyDsl.Missions");
+						"org.xtext.example.mydsl.MyDsl.Mission_no_prob_rew");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2480,9 +2561,9 @@ ruleAtMost returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAtMostAccess().getMissionMissionsParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getAtMostAccess().getMissionMission_no_prob_rewParserRuleCall_5_0());
 				}
-				lv_mission_5_0=ruleMissions
+				lv_mission_5_0=ruleMission_no_prob_rew
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAtMostRule());
@@ -2491,7 +2572,7 @@ ruleAtMost returns [EObject current=null]
 						$current,
 						"mission",
 						lv_mission_5_0,
-						"org.xtext.example.mydsl.MyDsl.Missions");
+						"org.xtext.example.mydsl.MyDsl.Mission_no_prob_rew");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2627,9 +2708,9 @@ ruleWithin returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWithinAccess().getMissionMissionsParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getWithinAccess().getMissionMission_no_prob_rewParserRuleCall_7_0());
 				}
-				lv_mission_7_0=ruleMissions
+				lv_mission_7_0=ruleMission_no_prob_rew
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWithinRule());
@@ -2638,7 +2719,7 @@ ruleWithin returns [EObject current=null]
 						$current,
 						"mission",
 						lv_mission_7_0,
-						"org.xtext.example.mydsl.MyDsl.Missions");
+						"org.xtext.example.mydsl.MyDsl.Mission_no_prob_rew");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2825,9 +2906,9 @@ ruleConservation returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConservationAccess().getMissionsMissionsParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getConservationAccess().getMissionsMission_no_prob_rewParserRuleCall_4_0());
 				}
-				lv_missions_4_0=ruleMissions
+				lv_missions_4_0=ruleMission_no_prob_rew
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getConservationRule());
@@ -2836,7 +2917,7 @@ ruleConservation returns [EObject current=null]
 						$current,
 						"missions",
 						lv_missions_4_0,
-						"org.xtext.example.mydsl.MyDsl.Missions");
+						"org.xtext.example.mydsl.MyDsl.Mission_no_prob_rew");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -2951,9 +3032,9 @@ rulePreservation returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPreservationAccess().getMissionsMissionsParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getPreservationAccess().getMissionsMission_no_prob_rewParserRuleCall_10_0());
 				}
-				lv_missions_10_0=ruleMissions
+				lv_missions_10_0=ruleMission_no_prob_rew
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPreservationRule());
@@ -2962,7 +3043,7 @@ rulePreservation returns [EObject current=null]
 						$current,
 						"missions",
 						lv_missions_10_0,
-						"org.xtext.example.mydsl.MyDsl.Missions");
+						"org.xtext.example.mydsl.MyDsl.Mission_no_prob_rew");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -3559,9 +3640,9 @@ ruleReliabilityConfidence returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getReliabilityConfidenceAccess().getMissionsMissionsParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getReliabilityConfidenceAccess().getMissionsMission_no_prob_rewParserRuleCall_2_0());
 				}
-				lv_missions_2_0=ruleMissions
+				lv_missions_2_0=ruleMission_no_prob_rew
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getReliabilityConfidenceRule());
@@ -3570,7 +3651,7 @@ ruleReliabilityConfidence returns [EObject current=null]
 						$current,
 						"missions",
 						lv_missions_2_0,
-						"org.xtext.example.mydsl.MyDsl.Missions");
+						"org.xtext.example.mydsl.MyDsl.Mission_no_prob_rew");
 					afterParserOrEnumRuleCall();
 				}
 			)

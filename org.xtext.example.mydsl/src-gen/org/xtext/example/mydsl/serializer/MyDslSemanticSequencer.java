@@ -251,7 +251,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         measure=EString 
 	 *         (type='at most' | type='less than' | type='at least' | type='greater than' | type='exactly') 
 	 *         value=EDouble 
-	 *         mission=Missions
+	 *         mission=Mission_no_prob_rew
 	 *     )
 	 * </pre>
 	 */
@@ -280,6 +280,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Missions returns ComplexMissions
+	 *     Mission_no_prob_rew returns ComplexMissions
 	 *     ComplexMissions returns ComplexMissions
 	 *
 	 * Constraint:
@@ -320,7 +321,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Conservation returns Conservation
 	 *
 	 * Constraint:
-	 *     (measure=EString missions=Missions)
+	 *     (measure=EString missions=Mission_no_prob_rew)
 	 * </pre>
 	 */
 	protected void sequence_Conservation(ISerializationContext context, Conservation semanticObject) {
@@ -332,7 +333,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getConservationAccess().getMeasureEStringParserRuleCall_2_0(), semanticObject.getMeasure());
-		feeder.accept(grammarAccess.getConservationAccess().getMissionsMissionsParserRuleCall_4_0(), semanticObject.getMissions());
+		feeder.accept(grammarAccess.getConservationAccess().getMissionsMission_no_prob_rewParserRuleCall_4_0(), semanticObject.getMissions());
 		feeder.finish();
 	}
 	
@@ -370,6 +371,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Missions returns End
+	 *     Mission_no_prob_rew returns End
 	 *     CompositePatterns returns End
 	 *     End returns End
 	 *
@@ -441,6 +443,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Missions returns Execute
+	 *     Mission_no_prob_rew returns Execute
 	 *     CompositePatterns returns Execute
 	 *     Execute returns Execute
 	 *
@@ -496,7 +499,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Maximize returns Maximize
 	 *
 	 * Constraint:
-	 *     (reward='reward'? (type='maximize' | type='minimize') measure=EString mission=Missions)
+	 *     (reward='reward'? (type='maximize' | type='minimize') measure=EString mission=Mission_no_prob_rew)
 	 * </pre>
 	 */
 	protected void sequence_Maximize(ISerializationContext context, Maximize semanticObject) {
@@ -544,6 +547,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Missions returns Pause
+	 *     Mission_no_prob_rew returns Pause
 	 *     CompositePatterns returns Pause
 	 *     Pause returns Pause
 	 *
@@ -573,7 +577,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Preservation returns Preservation
 	 *
 	 * Constraint:
-	 *     (measure=EString value1=EDouble value2=EDouble missions=Missions)
+	 *     (measure=EString value1=EDouble value2=EDouble missions=Mission_no_prob_rew)
 	 * </pre>
 	 */
 	protected void sequence_Preservation(ISerializationContext context, Preservation semanticObject) {
@@ -591,7 +595,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		feeder.accept(grammarAccess.getPreservationAccess().getMeasureEStringParserRuleCall_2_0(), semanticObject.getMeasure());
 		feeder.accept(grammarAccess.getPreservationAccess().getValue1EDoubleParserRuleCall_5_0(), semanticObject.getValue1());
 		feeder.accept(grammarAccess.getPreservationAccess().getValue2EDoubleParserRuleCall_7_0(), semanticObject.getValue2());
-		feeder.accept(grammarAccess.getPreservationAccess().getMissionsMissionsParserRuleCall_10_0(), semanticObject.getMissions());
+		feeder.accept(grammarAccess.getPreservationAccess().getMissionsMission_no_prob_rewParserRuleCall_10_0(), semanticObject.getMissions());
 		feeder.finish();
 	}
 	
@@ -671,7 +675,13 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ReliabilityConfidence returns ReliabilityConfidence
 	 *
 	 * Constraint:
-	 *     (missions=Missions (type1='with confidence' | type1='with reliability') measure=EString (type2='greater than' | type2='less than') value=EDouble)
+	 *     (
+	 *         missions=Mission_no_prob_rew 
+	 *         (type1='with confidence' | type1='with reliability') 
+	 *         measure=EString 
+	 *         (type2='greater than' | type2='less than') 
+	 *         value=EDouble
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_ReliabilityConfidence(ISerializationContext context, ReliabilityConfidence semanticObject) {
@@ -683,6 +693,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Missions returns Repeat
+	 *     Mission_no_prob_rew returns Repeat
 	 *     CompositePatterns returns Repeat
 	 *     Repeat returns Repeat
 	 *
@@ -728,6 +739,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Missions returns ShallMissions
+	 *     Mission_no_prob_rew returns ShallMissions
 	 *     ShallMissions returns ShallMissions
 	 *
 	 * Constraint:
@@ -752,6 +764,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Missions returns Timeout
+	 *     Mission_no_prob_rew returns Timeout
 	 *     CompositePatterns returns Timeout
 	 *     Timeout returns Timeout
 	 *
@@ -884,7 +897,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (type='within' | type='strictly within') 
 	 *         value1=EDouble 
 	 *         value2=EDouble 
-	 *         mission=Missions
+	 *         mission=Mission_no_prob_rew
 	 *     )
 	 * </pre>
 	 */

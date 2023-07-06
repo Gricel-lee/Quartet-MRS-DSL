@@ -217,10 +217,10 @@
         eType="#//Robots"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="robots2" lowerBound="1"
         eType="#//Robots"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="robots" lowerBound="1"
-        eType="#//Robots"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="distance" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="robots" lowerBound="1"
+        eType="#//Robots"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Trail" eSuperTypes="#//CompositePatterns #//MissionDependent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="objetToFollow" lowerBound="1"

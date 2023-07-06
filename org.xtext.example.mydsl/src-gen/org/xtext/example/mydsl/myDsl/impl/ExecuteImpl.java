@@ -35,7 +35,7 @@ import org.xtext.example.mydsl.myDsl.Robots;
  *
  * @generated
  */
-public class ExecuteImpl extends CompositePatternsImpl implements Execute
+public class ExecuteImpl extends MissionsImpl implements Execute
 {
   /**
    * The cached value of the '{@link #getRobots() <em>Robots</em>}' reference.
