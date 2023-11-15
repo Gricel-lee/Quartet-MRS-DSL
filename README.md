@@ -73,10 +73,7 @@ It should generate 4 new plugins:
 
 ![image](https://user-images.githubusercontent.com/63869574/157304117-8c0b7fd3-b38c-4126-b9e8-8cc52e0ddc05.png)
 
-Replace these folders with the ones provided here in Github. You'd need to change ```var path_sigAlloyDeclaration``` in MyDslGenerator.xtend to your own directory path.
-
-- (**ERROR1.** If replacing causes problems, try replacing the content in mydsl/MyDsl.xtext (```org.xtext.example.mydsl/src/org/xtext/example/mydsl/MyDsl.xtext```), then right click> Run as> 1 Generate Xtext Artifacts. Three new subfolder must appear: .formatting2, .generator, .scoping and .validation. Go to the second, example.mydsl.generator (```org.xtext.example.mydsl/src/org/xtext/example/mydsl/generator/MyDslGenerator.xtend```), and copy the 3 .txt files. Finally replace MyDslGenerator.xtend in the same folder.)
-- (**ERROR2.** If an error appears in **Files.readString** it may be because of using JavaSE<11. Go to Project Properties > Java Build Path> Libraries > Add Library > JRE System Library > Execution environment> JavaSE-11(jdk19) )
+Replace these folders with the ones provided here in Github. You'd need to change ```var path_sigAlloyDeclaration``` in MyDslGenerator.xtend to your own directory path (see Errors Section below.)
 
 Right click on the .xtext file on the src folder (of the first plugin) > Run As > 1 Generate Xtext artifacts
 Right click on the .mwe2 file on the src folder (of the first plugin) > Run As > MWE2:
@@ -98,3 +95,11 @@ You can copy the examples provided in ```runtime-EclipseXtext/demoQuartet/Exampl
 Note: Sometimes the project needs to be refreshed or cleaned to get the output file:
 
 <img width="193" alt="Screenshot 2022-07-12 at 16 03 08" src="https://user-images.githubusercontent.com/63869574/178522451-ca18c2bb-c6de-42a7-b5d7-f6b3de2bf7a7.png">
+
+# Possible Errors
+- **ERROR1.** If replacing causes problems, try replacing the content in mydsl/MyDsl.xtext (```org.xtext.example.mydsl/src/org/xtext/example/mydsl/MyDsl.xtext```), then right click> Run as> 1 Generate Xtext Artifacts. Three new subfolder must appear: .formatting2, .generator, .scoping and .validation. Go to the second, example.mydsl.generator (```org.xtext.example.mydsl/src/org/xtext/example/mydsl/generator/MyDslGenerator.xtend```), and copy the 3 .txt files. Finally replace MyDslGenerator.xtend in the same folder.
+- **ERROR2.** If an error appears in **Files.readString** it may be because of using JavaSE<11. Go to Project Properties > Java Build Path> Libraries > Add Library > JRE System Library > Execution environment> JavaSE-11(jdk19).
+- **ERROR3.** ``WARNING: Using incubator modules: jdk.incubator.foreign, jdk.incubator.vector``. Make sure that your Run configuration>Launch Runtime Eclipse has RuntimeJRE selected:
+![Screenshot 2023-11-15 at 15 26 58](https://github.com/Gricel-lee/Quartet-MRS-DSL/assets/63869574/75dab041-b0c3-40d4-bcc4-ef252520e04e)
+
+
